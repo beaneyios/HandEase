@@ -12,8 +12,6 @@
 		BE0F6ABF207909FE00587714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0F6ABD207909FE00587714 /* Main.storyboard */; };
 		BE0F6AC1207909FE00587714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE0F6AC0207909FE00587714 /* Assets.xcassets */; };
 		BE0F6AC4207909FE00587714 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0F6AC2207909FE00587714 /* LaunchScreen.storyboard */; };
-		BE0F6ACF207909FF00587714 /* HandEaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6ACE207909FF00587714 /* HandEaseTests.swift */; };
-		BE0F6ADA207909FF00587714 /* HandEaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6AD9207909FF00587714 /* HandEaseUITests.swift */; };
 		BE0F6AEF2079408B00587714 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0F6AEE2079408B00587714 /* Menu.storyboard */; };
 		BE0F6AF2207940D600587714 /* MenuItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6AF0207940D600587714 /* MenuItemCollectionViewCell.swift */; };
 		BE0F6AF3207940D600587714 /* MenuItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0F6AF1207940D600587714 /* MenuItemCollectionViewCell.xib */; };
@@ -27,6 +25,9 @@
 		BE0F6B0A207944F000587714 /* LocalisedKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B09207944F000587714 /* LocalisedKey.swift */; };
 		BE0F6B0C2079475A00587714 /* String+Localisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B0B2079475A00587714 /* String+Localisation.swift */; };
 		BE0F6B0E20795BED00587714 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B0D20795BED00587714 /* MenuViewModel.swift */; };
+		BE0F6B1220795EC600587714 /* LocalMenuDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B1120795EC600587714 /* LocalMenuDataSourceTests.swift */; };
+		BE0F6B152079606E00587714 /* DefaultMenuItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B142079606E00587714 /* DefaultMenuItemViewModelTests.swift */; };
+		BE0F6B182079613700587714 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE0F6B172079613700587714 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +56,8 @@
 		BE0F6AC3207909FE00587714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE0F6AC5207909FE00587714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0F6ACA207909FE00587714 /* HandEaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandEaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE0F6ACE207909FF00587714 /* HandEaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandEaseTests.swift; sourceTree = "<group>"; };
 		BE0F6AD0207909FF00587714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0F6AD5207909FF00587714 /* HandEaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandEaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE0F6AD9207909FF00587714 /* HandEaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandEaseUITests.swift; sourceTree = "<group>"; };
 		BE0F6ADB207909FF00587714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0F6AEE2079408B00587714 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		BE0F6AF0207940D600587714 /* MenuItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -73,6 +72,9 @@
 		BE0F6B09207944F000587714 /* LocalisedKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisedKey.swift; sourceTree = "<group>"; };
 		BE0F6B0B2079475A00587714 /* String+Localisation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localisation.swift"; sourceTree = "<group>"; };
 		BE0F6B0D20795BED00587714 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		BE0F6B1120795EC600587714 /* LocalMenuDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMenuDataSourceTests.swift; sourceTree = "<group>"; };
+		BE0F6B142079606E00587714 /* DefaultMenuItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMenuItemViewModelTests.swift; sourceTree = "<group>"; };
+		BE0F6B172079613700587714 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +141,7 @@
 		BE0F6ACD207909FF00587714 /* HandEaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				BE0F6ACE207909FF00587714 /* HandEaseTests.swift */,
+				BE0F6B0F20795E9200587714 /* Menu */,
 				BE0F6AD0207909FF00587714 /* Info.plist */,
 			);
 			path = HandEaseTests;
@@ -148,7 +150,6 @@
 		BE0F6AD8207909FF00587714 /* HandEaseUITests */ = {
 			isa = PBXGroup;
 			children = (
-				BE0F6AD9207909FF00587714 /* HandEaseUITests.swift */,
 				BE0F6ADB207909FF00587714 /* Info.plist */,
 			);
 			path = HandEaseUITests;
@@ -236,6 +237,7 @@
 		BE0F6AFE207942A300587714 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				BE0F6B162079611100587714 /* Strings */,
 				BE0F6AFF207942A900587714 /* Enums */,
 				BE0F6B02207942B500587714 /* Extensions */,
 			);
@@ -258,6 +260,39 @@
 				BE0F6B0B2079475A00587714 /* String+Localisation.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BE0F6B0F20795E9200587714 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				BE0F6B132079605F00587714 /* View Models */,
+				BE0F6B1020795EB000587714 /* Controllers */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		BE0F6B1020795EB000587714 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE0F6B1120795EC600587714 /* LocalMenuDataSourceTests.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BE0F6B132079605F00587714 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE0F6B142079606E00587714 /* DefaultMenuItemViewModelTests.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		BE0F6B162079611100587714 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				BE0F6B172079613700587714 /* Localizable.strings */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0F6AC4207909FE00587714 /* LaunchScreen.storyboard in Resources */,
+				BE0F6B182079613700587714 /* Localizable.strings in Resources */,
 				BE0F6AF3207940D600587714 /* MenuItemCollectionViewCell.xib in Resources */,
 				BE0F6AC1207909FE00587714 /* Assets.xcassets in Resources */,
 				BE0F6ABF207909FE00587714 /* Main.storyboard in Resources */,
@@ -413,7 +449,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE0F6ACF207909FF00587714 /* HandEaseTests.swift in Sources */,
+				BE0F6B152079606E00587714 /* DefaultMenuItemViewModelTests.swift in Sources */,
+				BE0F6B1220795EC600587714 /* LocalMenuDataSourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +458,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE0F6ADA207909FF00587714 /* HandEaseUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
