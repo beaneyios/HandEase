@@ -12,13 +12,16 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imgIcon: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     
+    static var nib: UINib { return UINib(nibName: String(describing: self), bundle: Bundle.main) }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func configure(with vm: DefaultMenuItemViewModel) {
+    func configure(with vm: MenuItemViewModel) {
         self.imgIcon.image = vm.imgIcon
+        self.imgIcon.tintColor = vm.foreColor
         self.lblTitle.text = vm.strTitle
     }
 }

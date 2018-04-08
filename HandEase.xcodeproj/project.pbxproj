@@ -19,17 +19,22 @@
 		BE0F6AFA2079423600587714 /* MenuItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6AF92079423600587714 /* MenuItemViewModel.swift */; };
 		BE0F6B01207942B300587714 /* ImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B00207942B300587714 /* ImageType.swift */; };
 		BE0F6B04207942C200587714 /* UIImage+ImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B03207942C200587714 /* UIImage+ImageType.swift */; };
-		BE0F6B062079444F00587714 /* MenuDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B052079444F00587714 /* MenuDataSource.swift */; };
-		BE0F6B08207944BE00587714 /* LocalMenuDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B07207944BE00587714 /* LocalMenuDataSource.swift */; };
+		BE0F6B062079444F00587714 /* MenuItemDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B052079444F00587714 /* MenuItemDataSource.swift */; };
+		BE0F6B08207944BE00587714 /* LocalMenuItemDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B07207944BE00587714 /* LocalMenuItemDataSource.swift */; };
 		BE0F6B0A207944F000587714 /* LocalisedKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B09207944F000587714 /* LocalisedKey.swift */; };
 		BE0F6B0C2079475A00587714 /* String+Localisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B0B2079475A00587714 /* String+Localisation.swift */; };
 		BE0F6B0E20795BED00587714 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B0D20795BED00587714 /* MenuViewModel.swift */; };
-		BE0F6B1220795EC600587714 /* LocalMenuDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B1120795EC600587714 /* LocalMenuDataSourceTests.swift */; };
+		BE0F6B1220795EC600587714 /* LocalMenuItemDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B1120795EC600587714 /* LocalMenuItemDataSourceTests.swift */; };
 		BE0F6B152079606E00587714 /* DefaultMenuItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6B142079606E00587714 /* DefaultMenuItemViewModelTests.swift */; };
 		BE0F826A207A7EF800919C51 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE0F826C207A7EF800919C51 /* Localizable.strings */; };
 		BE0F8270207A7F9A00919C51 /* LocalisedKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F826F207A7F9A00919C51 /* LocalisedKeyTests.swift */; };
 		BE0F8273207A82A800919C51 /* ImageTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F8272207A82A800919C51 /* ImageTypeTests.swift */; };
 		BEABD6B3207A856600DC2E7D /* MenuItemCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD6B2207A856600DC2E7D /* MenuItemCollectionViewCellTests.swift */; };
+		BEABD6B5207A888100DC2E7D /* MenuItemSizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD6B4207A888100DC2E7D /* MenuItemSizer.swift */; };
+		BEABD6B7207A88CD00DC2E7D /* LocalMenuItemSizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD6B6207A88CD00DC2E7D /* LocalMenuItemSizer.swift */; };
+		BEABD6B9207A914200DC2E7D /* DefaultMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD6B8207A914200DC2E7D /* DefaultMenuViewModel.swift */; };
+		BEABD6BB207A977200DC2E7D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD6BA207A977200DC2E7D /* MenuViewController.swift */; };
+		BEABD6BD207A9AB700DC2E7D /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD6BC207A9AB700DC2E7D /* CustomColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,17 +73,22 @@
 		BE0F6AF92079423600587714 /* MenuItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewModel.swift; sourceTree = "<group>"; };
 		BE0F6B00207942B300587714 /* ImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageType.swift; sourceTree = "<group>"; };
 		BE0F6B03207942C200587714 /* UIImage+ImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageType.swift"; sourceTree = "<group>"; };
-		BE0F6B052079444F00587714 /* MenuDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDataSource.swift; sourceTree = "<group>"; };
-		BE0F6B07207944BE00587714 /* LocalMenuDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMenuDataSource.swift; sourceTree = "<group>"; };
+		BE0F6B052079444F00587714 /* MenuItemDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemDataSource.swift; sourceTree = "<group>"; };
+		BE0F6B07207944BE00587714 /* LocalMenuItemDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMenuItemDataSource.swift; sourceTree = "<group>"; };
 		BE0F6B09207944F000587714 /* LocalisedKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisedKey.swift; sourceTree = "<group>"; };
 		BE0F6B0B2079475A00587714 /* String+Localisation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localisation.swift"; sourceTree = "<group>"; };
 		BE0F6B0D20795BED00587714 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
-		BE0F6B1120795EC600587714 /* LocalMenuDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMenuDataSourceTests.swift; sourceTree = "<group>"; };
+		BE0F6B1120795EC600587714 /* LocalMenuItemDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMenuItemDataSourceTests.swift; sourceTree = "<group>"; };
 		BE0F6B142079606E00587714 /* DefaultMenuItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMenuItemViewModelTests.swift; sourceTree = "<group>"; };
 		BE0F826B207A7EF800919C51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE0F826F207A7F9A00919C51 /* LocalisedKeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisedKeyTests.swift; sourceTree = "<group>"; };
 		BE0F8272207A82A800919C51 /* ImageTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTypeTests.swift; sourceTree = "<group>"; };
 		BEABD6B2207A856600DC2E7D /* MenuItemCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCollectionViewCellTests.swift; sourceTree = "<group>"; };
+		BEABD6B4207A888100DC2E7D /* MenuItemSizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemSizer.swift; sourceTree = "<group>"; };
+		BEABD6B6207A88CD00DC2E7D /* LocalMenuItemSizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMenuItemSizer.swift; sourceTree = "<group>"; };
+		BEABD6B8207A914200DC2E7D /* DefaultMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMenuViewModel.swift; sourceTree = "<group>"; };
+		BEABD6BA207A977200DC2E7D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		BEABD6BC207A9AB700DC2E7D /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +194,7 @@
 		BE0F6AE92079405300587714 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BEABD6BA207A977200DC2E7D /* MenuViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -192,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				BE0F6AF6207941FD00587714 /* DefaultMenuItemViewModel.swift */,
+				BEABD6B8207A914200DC2E7D /* DefaultMenuViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -199,7 +211,8 @@
 		BE0F6AEB2079406700587714 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BE0F6B07207944BE00587714 /* LocalMenuDataSource.swift */,
+				BE0F6B07207944BE00587714 /* LocalMenuItemDataSource.swift */,
+				BEABD6B6207A88CD00DC2E7D /* LocalMenuItemSizer.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -224,8 +237,9 @@
 			isa = PBXGroup;
 			children = (
 				BE0F6AF92079423600587714 /* MenuItemViewModel.swift */,
-				BE0F6B052079444F00587714 /* MenuDataSource.swift */,
+				BE0F6B052079444F00587714 /* MenuItemDataSource.swift */,
 				BE0F6B0D20795BED00587714 /* MenuViewModel.swift */,
+				BEABD6B4207A888100DC2E7D /* MenuItemSizer.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -253,6 +267,7 @@
 			children = (
 				BE0F6B00207942B300587714 /* ImageType.swift */,
 				BE0F6B09207944F000587714 /* LocalisedKey.swift */,
+				BEABD6BC207A9AB700DC2E7D /* CustomColor.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -279,7 +294,7 @@
 		BE0F6B1020795EB000587714 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BE0F6B1120795EC600587714 /* LocalMenuDataSourceTests.swift */,
+				BE0F6B1120795EC600587714 /* LocalMenuItemDataSourceTests.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -469,13 +484,18 @@
 			files = (
 				BE0F6AF52079415A00587714 /* MenuItem.swift in Sources */,
 				BE0F6ABA207909FE00587714 /* AppDelegate.swift in Sources */,
-				BE0F6B062079444F00587714 /* MenuDataSource.swift in Sources */,
+				BEABD6BD207A9AB700DC2E7D /* CustomColor.swift in Sources */,
+				BE0F6B062079444F00587714 /* MenuItemDataSource.swift in Sources */,
 				BE0F6B0C2079475A00587714 /* String+Localisation.swift in Sources */,
+				BEABD6B5207A888100DC2E7D /* MenuItemSizer.swift in Sources */,
+				BEABD6B7207A88CD00DC2E7D /* LocalMenuItemSizer.swift in Sources */,
 				BE0F6B04207942C200587714 /* UIImage+ImageType.swift in Sources */,
+				BEABD6BB207A977200DC2E7D /* MenuViewController.swift in Sources */,
 				BE0F6AF7207941FD00587714 /* DefaultMenuItemViewModel.swift in Sources */,
 				BE0F6B01207942B300587714 /* ImageType.swift in Sources */,
-				BE0F6B08207944BE00587714 /* LocalMenuDataSource.swift in Sources */,
+				BE0F6B08207944BE00587714 /* LocalMenuItemDataSource.swift in Sources */,
 				BE0F6B0A207944F000587714 /* LocalisedKey.swift in Sources */,
+				BEABD6B9207A914200DC2E7D /* DefaultMenuViewModel.swift in Sources */,
 				BE0F6B0E20795BED00587714 /* MenuViewModel.swift in Sources */,
 				BE0F6AFA2079423600587714 /* MenuItemViewModel.swift in Sources */,
 				BE0F6AF2207940D600587714 /* MenuItemCollectionViewCell.swift in Sources */,
@@ -489,7 +509,7 @@
 				BE0F8270207A7F9A00919C51 /* LocalisedKeyTests.swift in Sources */,
 				BE0F6B152079606E00587714 /* DefaultMenuItemViewModelTests.swift in Sources */,
 				BEABD6B3207A856600DC2E7D /* MenuItemCollectionViewCellTests.swift in Sources */,
-				BE0F6B1220795EC600587714 /* LocalMenuDataSourceTests.swift in Sources */,
+				BE0F6B1220795EC600587714 /* LocalMenuItemDataSourceTests.swift in Sources */,
 				BE0F8273207A82A800919C51 /* ImageTypeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

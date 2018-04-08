@@ -9,6 +9,7 @@
 import Foundation
 
 struct MenuItem {
-    var strTitle : LocalisedKey
-    var imgType  : ImageType
+    var strTitle    : LocalisedKey
+    var imgType     : ImageType
+    var foreColor   : CustomColor
 }

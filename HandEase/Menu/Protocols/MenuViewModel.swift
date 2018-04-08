@@ -8,3 +8,7 @@
 
 import Foundation
 import UIKit
+
+protocol MenuViewModel {
+    func bind(cview: UICollectionView)
+}

@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 @testable import HandEase
 
-class LocalMenuDataSourceTests: XCTestCase {
+class LocalMenuItemDataSourceTests.swift: XCTestCase {
     func testThatDataSourceReturnsCorrectNumberOfItems() {
         let sut     = LocalMenuDataSource()
         let items   = sut.fetchMenuItems()
