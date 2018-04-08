@@ -11,7 +11,7 @@ import Foundation
 class LocalMenuDataSource : MenuDataSource {
     func fetchMenuItems() -> [MenuItem] {
         return [
-            MenuItem(strTitle: .menuMyExercises,    imgType: .menuStarIcon),
+            MenuItem(strTitle: .menuMyExercises,    imgType: .menuHeartIcon),
             MenuItem(strTitle: .menuAllExercises,   imgType: .menuDoublePageIcon),
             MenuItem(strTitle: .menuRemindMe,       imgType: .menuClockIcon),
             MenuItem(strTitle: .menuProgress,       imgType: .menuPersonIcon),

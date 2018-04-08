@@ -20,4 +20,16 @@ enum LocalisedKey: String {
     var localisedString: String {
         return NSLocalizedString(self.rawValue, comment: "")
     }
+    
+    static var allKeys: Set<LocalisedKey> {
+        return [
+            .menuMyExercises,
+            .menuAllExercises,
+            .menuRemindMe,
+            .menuProgress,
+            .menuLeaflets,
+            .menuDonate,
+            .menuAbout,
+        ]
+    }
 }

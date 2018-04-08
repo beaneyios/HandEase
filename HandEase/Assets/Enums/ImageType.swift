@@ -15,17 +15,17 @@ enum ImageType {
     case menuLeafletIcon
     case menuPersonIcon
     case menuPlusIcon
-    case menuStarIcon
+    case menuHeartIcon
     
     var stringlyTypedImage: String {
         switch self {
-            case .menuClockIcon: return ""
-            case .menuDoublePageIcon: return ""
-            case .menuInfoIcon: return ""
-            case .menuLeafletIcon: return ""
-            case .menuPersonIcon: return ""
-            case .menuPlusIcon: return ""
-            case .menuStarIcon: return ""
+            case .menuClockIcon: return "clock"
+            case .menuDoublePageIcon: return "double-page"
+            case .menuInfoIcon: return "info"
+            case .menuLeafletIcon: return "leaflet"
+            case .menuPersonIcon: return "person"
+            case .menuPlusIcon: return "plus"
+            case .menuHeartIcon: return "heart-unsaved"
         }
     }
     
@@ -37,7 +37,7 @@ enum ImageType {
             .menuLeafletIcon,
             .menuPersonIcon,
             .menuPlusIcon,
-            .menuStarIcon,
+            .menuHeartIcon,
         ]
     }
 }
