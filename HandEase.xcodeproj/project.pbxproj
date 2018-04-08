@@ -45,13 +45,6 @@
 			remoteGlobalIDString = BE0F6AB5207909FE00587714;
 			remoteInfo = HandEase;
 		};
-		BE0F6AD6207909FF00587714 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE0F6AAE207909FE00587714 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BE0F6AB5207909FE00587714;
-			remoteInfo = HandEase;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +56,6 @@
 		BE0F6AC5207909FE00587714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0F6ACA207909FE00587714 /* HandEaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandEaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0F6AD0207909FF00587714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE0F6AD5207909FF00587714 /* HandEaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandEaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0F6ADB207909FF00587714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0F6AEE2079408B00587714 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		BE0F6AF0207940D600587714 /* MenuItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -106,13 +98,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BE0F6AD2207909FF00587714 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -131,7 +116,6 @@
 			children = (
 				BE0F6AB6207909FE00587714 /* HandEase.app */,
 				BE0F6ACA207909FE00587714 /* HandEaseTests.xctest */,
-				BE0F6AD5207909FF00587714 /* HandEaseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -386,24 +370,6 @@
 			productReference = BE0F6ACA207909FE00587714 /* HandEaseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BE0F6AD4207909FF00587714 /* HandEaseUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BE0F6AE4207909FF00587714 /* Build configuration list for PBXNativeTarget "HandEaseUITests" */;
-			buildPhases = (
-				BE0F6AD1207909FF00587714 /* Sources */,
-				BE0F6AD2207909FF00587714 /* Frameworks */,
-				BE0F6AD3207909FF00587714 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BE0F6AD7207909FF00587714 /* PBXTargetDependency */,
-			);
-			name = HandEaseUITests;
-			productName = HandEaseUITests;
-			productReference = BE0F6AD5207909FF00587714 /* HandEaseUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -418,10 +384,6 @@
 						CreatedOnToolsVersion = 9.3;
 					};
 					BE0F6AC9207909FE00587714 = {
-						CreatedOnToolsVersion = 9.3;
-						TestTargetID = BE0F6AB5207909FE00587714;
-					};
-					BE0F6AD4207909FF00587714 = {
 						CreatedOnToolsVersion = 9.3;
 						TestTargetID = BE0F6AB5207909FE00587714;
 					};
@@ -442,7 +404,6 @@
 			targets = (
 				BE0F6AB5207909FE00587714 /* HandEase */,
 				BE0F6AC9207909FE00587714 /* HandEaseTests */,
-				BE0F6AD4207909FF00587714 /* HandEaseUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -462,13 +423,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BE0F6AC8207909FE00587714 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE0F6AD3207909FF00587714 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -514,13 +468,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BE0F6AD1207909FF00587714 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -528,11 +475,6 @@
 			isa = PBXTargetDependency;
 			target = BE0F6AB5207909FE00587714 /* HandEase */;
 			targetProxy = BE0F6ACB207909FE00587714 /* PBXContainerItemProxy */;
-		};
-		BE0F6AD7207909FF00587714 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BE0F6AB5207909FE00587714 /* HandEase */;
-			targetProxy = BE0F6AD6207909FF00587714 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -752,44 +694,6 @@
 			};
 			name = Release;
 		};
-		BE0F6AE5207909FF00587714 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = HandEaseUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.handease.HandEaseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HandEase;
-			};
-			name = Debug;
-		};
-		BE0F6AE6207909FF00587714 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = HandEaseUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.handease.HandEaseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HandEase;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -816,15 +720,6 @@
 			buildConfigurations = (
 				BE0F6AE2207909FF00587714 /* Debug */,
 				BE0F6AE3207909FF00587714 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BE0F6AE4207909FF00587714 /* Build configuration list for PBXNativeTarget "HandEaseUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BE0F6AE5207909FF00587714 /* Debug */,
-				BE0F6AE6207909FF00587714 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

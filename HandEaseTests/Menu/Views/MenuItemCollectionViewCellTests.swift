@@ -17,12 +17,15 @@ class MenuItemCollectionViewCellTests: XCTestCase {
             return
         }
         
-        let menuItem    = MenuItem(strTitle: .menuAbout, imgType: .menuInfoIcon)
+        let menuItem    = MenuItem(strTitle: .menuAbout, imgType: .menuInfoIcon, foreColor: .menuForeColor)
         let vm          = DefaultMenuItemViewModel(menuItem: menuItem)
         cell.configure(with: vm)
         
-        XCTAssert(cell.lblTitle.text == "About", "Cell text not 'About'")
-        XCTAssert(cell.imgIcon.image == #imageLiteral(resourceName: "info"), "Cell image not correct")
+        let expTitle    = "About"
+        let expImg      = #imageLiteral(resourceName: "info").withRenderingMode(.alwaysTemplate)
+        
+        XCTAssert(cell.lblTitle.text == expTitle, "Cell text not 'About'")
+        XCTAssert(cell.imgIcon.image == expImg, "Cell image not correct")
     }
     
     private func fetchCellClass() -> MenuItemCollectionViewCell? {
