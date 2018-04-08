@@ -17,6 +17,8 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    
-
+    func configure(with vm: DefaultMenuItemViewModel) {
+        self.imgIcon.image = vm.imgIcon
+        self.lblTitle.text = vm.strTitle
+    }
 }

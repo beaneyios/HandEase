@@ -28,4 +28,12 @@ class DefaultMenuItemViewModelTests: XCTestCase {
         let sut = DefaultMenuItemViewModel(menuItem: testMenuItem)
         XCTAssert(sut.strTitle == "About")
     }
+    
+    func testThatImageReturnedForMenuItem() {
+        let testMenuItem = MenuItem(strTitle: .menuAbout, imgType: .menuInfoIcon)
+        let sut = DefaultMenuItemViewModel(menuItem: testMenuItem)
+        
+        XCTAssertNotNil(sut.imgIcon)
+        XCTAssert(sut.imgIcon == #imageLiteral(resourceName: "info"))
+    }
 }
