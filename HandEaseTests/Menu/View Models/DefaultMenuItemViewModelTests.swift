@@ -24,13 +24,13 @@ class DefaultMenuItemViewModelTests: XCTestCase {
         //GIVEN an English locale.
         UserDefaults.standard.set(["en"], forKey: self.debugLocaleString)
     
-        let testMenuItem = MenuItem(strTitle: .menuAbout, imgType: .menuInfoIcon, foreColor: .menuForeColor)
+        let testMenuItem = MenuItem(strTitle: .menuAbout, imgType: .menuInfoIcon, foreColor: .menuForeColor, action: .loadView(viewController: ViewControllers.about))
         let sut = DefaultMenuItemViewModel(menuItem: testMenuItem)
         XCTAssert(sut.strTitle == "About")
     }
     
     func testThatImageReturnedForMenuItem() {
-        let testMenuItem = MenuItem(strTitle: .menuAbout, imgType: .menuInfoIcon, foreColor: .menuForeColor)
+        let testMenuItem = MenuItem(strTitle: .menuAbout, imgType: .menuInfoIcon, foreColor: .menuForeColor, action: .loadView(viewController: ViewControllers.about))
         let sut = DefaultMenuItemViewModel(menuItem: testMenuItem)
         
         let expImg      = #imageLiteral(resourceName: "info").withRenderingMode(.alwaysTemplate)

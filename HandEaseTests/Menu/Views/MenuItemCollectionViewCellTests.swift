@@ -17,7 +17,7 @@ class MenuItemCollectionViewCellTests: XCTestCase {
             return
         }
         
-        let menuItem    = MenuItem(strTitle: .menuAbout, imgType: .menuInfoIcon, foreColor: .menuForeColor)
+        let menuItem    = MenuItem(strTitle: .menuAbout, imgType: .menuInfoIcon, foreColor: .menuForeColor, action: .loadView(viewController: ViewControllers.about))
         let vm          = DefaultMenuItemViewModel(menuItem: menuItem)
         cell.configure(with: vm)
         
