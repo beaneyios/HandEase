@@ -35,6 +35,8 @@
 		BEABD6B9207A914200DC2E7D /* DefaultMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD6B8207A914200DC2E7D /* DefaultMenuViewModel.swift */; };
 		BEABD6BB207A977200DC2E7D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD6BA207A977200DC2E7D /* MenuViewController.swift */; };
 		BEABD6BD207A9AB700DC2E7D /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD6BC207A9AB700DC2E7D /* CustomColor.swift */; };
+		BEB06B22208682600051B0A5 /* ItemAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB06B21208682600051B0A5 /* ItemAction.swift */; };
+		BEB06B2720868A1E0051B0A5 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB06B2620868A1E0051B0A5 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		BEABD6B8207A914200DC2E7D /* DefaultMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMenuViewModel.swift; sourceTree = "<group>"; };
 		BEABD6BA207A977200DC2E7D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		BEABD6BC207A9AB700DC2E7D /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		BEB06B21208682600051B0A5 /* ItemAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAction.swift; sourceTree = "<group>"; };
+		BEB06B2620868A1E0051B0A5 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,7 @@
 				BE0F6ABD207909FE00587714 /* Main.storyboard */,
 				BE0F6AC2207909FE00587714 /* LaunchScreen.storyboard */,
 				BE0F6AC5207909FE00587714 /* Info.plist */,
+				BEB06B2620868A1E0051B0A5 /* TestViewController.swift */,
 			);
 			path = HandEase;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 		BE0F6AE72079404600587714 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				BEB06B20208682520051B0A5 /* Enum */,
 				BE0F6AEB2079406700587714 /* Controllers */,
 				BE0F6AED2079407A00587714 /* Model */,
 				BE0F6AF82079420E00587714 /* Protocols */,
@@ -238,10 +244,10 @@
 		BE0F6AFE207942A300587714 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				BE0F8271207A808E00919C51 /* Images */,
-				BE0F6B162079611100587714 /* Strings */,
 				BE0F6AFF207942A900587714 /* Enums */,
 				BE0F6B02207942B500587714 /* Extensions */,
+				BE0F8271207A808E00919C51 /* Images */,
+				BE0F6B162079611100587714 /* Strings */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -330,6 +336,14 @@
 				BEABD6B2207A856600DC2E7D /* MenuItemCollectionViewCellTests.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BEB06B20208682520051B0A5 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				BEB06B21208682600051B0A5 /* ItemAction.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,11 +451,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0F6AF52079415A00587714 /* MenuItem.swift in Sources */,
+				BEB06B2720868A1E0051B0A5 /* TestViewController.swift in Sources */,
 				BE0F6ABA207909FE00587714 /* AppDelegate.swift in Sources */,
 				BEABD6BD207A9AB700DC2E7D /* CustomColor.swift in Sources */,
 				BE0F6B062079444F00587714 /* MenuItemDataSource.swift in Sources */,
 				BE0F6B0C2079475A00587714 /* String+Localisation.swift in Sources */,
 				BEABD6B5207A888100DC2E7D /* MenuItemSizer.swift in Sources */,
+				BEB06B22208682600051B0A5 /* ItemAction.swift in Sources */,
 				BEABD6B7207A88CD00DC2E7D /* LocalMenuItemSizer.swift in Sources */,
 				BE0F6B04207942C200587714 /* UIImage+ImageType.swift in Sources */,
 				BEABD6BB207A977200DC2E7D /* MenuViewController.swift in Sources */,

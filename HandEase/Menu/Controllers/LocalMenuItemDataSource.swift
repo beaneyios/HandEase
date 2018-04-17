@@ -11,12 +11,53 @@ import Foundation
 struct LocalMenuItemDataSource : MenuItemDataSource {    
     var items: [MenuItem] {
         return [
-            MenuItem(strTitle: .menuMyExercises,    imgType: .menuHeartIcon, foreColor: .menuForeColor),
-            MenuItem(strTitle: .menuAllExercises,   imgType: .menuDoublePageIcon, foreColor: .menuForeColor),
-            MenuItem(strTitle: .menuRemindMe,       imgType: .menuClockIcon, foreColor: .menuForeColor),
-            MenuItem(strTitle: .menuProgress,       imgType: .menuPersonIcon, foreColor: .menuForeColor),
-            MenuItem(strTitle: .menuLeaflets,       imgType: .menuLeafletIcon, foreColor: .menuForeColor),
-            MenuItem(strTitle: .menuAbout,          imgType: .menuInfoIcon, foreColor: .menuForeColor),
+            //MY EXERCISES
+            MenuItem(
+                strTitle    : .menuMyExercises,
+                imgType     : .menuHeartIcon,
+                foreColor   : .menuForeColor,
+                action      : .loadView(viewController: ViewControllers.myExercises)
+            ),
+            
+            //ALL EXERCISES
+            MenuItem(
+                strTitle    : .menuAllExercises,
+                imgType     : .menuDoublePageIcon,
+                foreColor   : .menuForeColor,
+                action      : .loadView(viewController: ViewControllers.allExercises)
+            ),
+            
+            //REMIND ME
+            MenuItem(
+                strTitle    : .menuRemindMe,
+                imgType     : .menuClockIcon,
+                foreColor   : .menuForeColor,
+                action      : .loadView(viewController: ViewControllers.remindMe)
+            ),
+            
+            //PROGRESS
+            MenuItem(
+                strTitle    : .menuProgress,
+                imgType     : .menuPersonIcon,
+                foreColor   : .menuForeColor,
+                action      : .loadView(viewController: ViewControllers.progress)
+            ),
+            
+            //LEAFLETS
+            MenuItem(
+                strTitle    : .menuLeaflets,
+                imgType     : .menuLeafletIcon,
+                foreColor   : .menuForeColor,
+                action      : .loadView(viewController: ViewControllers.leaflets)
+            ),
+            
+            //ABOUT
+            MenuItem(
+                strTitle    : .menuAbout,
+                imgType     : .menuInfoIcon,
+                foreColor   : .menuForeColor,
+                action      : .loadView(viewController: ViewControllers.about)
+            ),
         ]
     }
 }

@@ -13,4 +13,5 @@ protocol MenuItemViewModel {
     var strTitle: String    { get }
     var imgIcon: UIImage?   { get }
     var foreColor: UIColor  { get }
+    var action: ItemAction  { get }
 }

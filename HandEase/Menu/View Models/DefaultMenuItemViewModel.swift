@@ -26,5 +26,9 @@ struct DefaultMenuItemViewModel : MenuItemViewModel {
     
     var foreColor: UIColor {
         return menuItem.foreColor.uiColor
-    }    
+    }
+    
+    var action: ItemAction {
+        return menuItem.action
+    }
 }

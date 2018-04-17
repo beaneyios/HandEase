@@ -12,4 +12,5 @@ struct MenuItem {
     var strTitle    : LocalisedKey
     var imgType     : ImageType
     var foreColor   : CustomColor
+    var action      : ItemAction
 }

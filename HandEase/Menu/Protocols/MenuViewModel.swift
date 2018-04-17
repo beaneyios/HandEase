@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+typealias MenuItemActionClosure = (_ action: ItemAction) -> ()
+
 protocol MenuViewModel {
+    var action: MenuItemActionClosure? { get set }
     func bind(cview: UICollectionView)
 }

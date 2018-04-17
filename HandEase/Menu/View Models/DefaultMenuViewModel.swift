@@ -13,9 +13,15 @@ class DefaultMenuViewModel : NSObject, MenuViewModel {
     fileprivate var sizer       : MenuItemSizer
     fileprivate var dataSource  : MenuItemDataSource
     
+    var action: MenuItemActionClosure?
+    
     init(sizer: MenuItemSizer, dataSource: MenuItemDataSource) {
         self.sizer      = sizer
         self.dataSource = dataSource
+    }
+    
+    func bind(withAction action: @escaping MenuItemActionClosure) {
+        self.action = action
     }
     
     func bind(cview: UICollectionView) {
@@ -49,5 +55,15 @@ extension DefaultMenuViewModel : UICollectionViewDelegateFlowLayout {
 }
 
 extension DefaultMenuViewModel : UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? MenuItemCollectionViewCell else {
+            return
+        }
+        
+        guard let action = cell.vm?.action else {
+            return
+        }
+        
+        self.action?(action)
+    }
 }
