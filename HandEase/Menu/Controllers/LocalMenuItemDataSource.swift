@@ -11,52 +11,52 @@ import Foundation
 struct LocalMenuItemDataSource : MenuItemDataSource {    
     var items: [MenuItem] {
         return [
-            //MY EXERCISES
+            //MARK: MY EXERCISES
             MenuItem(
                 strTitle    : .menuMyExercises,
                 imgType     : .menuHeartIcon,
                 foreColor   : .menuForeColor,
-                action      : .loadView(viewController: ViewControllers.myExercises)
+                action      : .loadView(viewController: ViewControllerRepresentations.myExercises)
             ),
             
-            //ALL EXERCISES
+            //MARK: ALL EXERCISES
             MenuItem(
                 strTitle    : .menuAllExercises,
                 imgType     : .menuDoublePageIcon,
                 foreColor   : .menuForeColor,
-                action      : .loadView(viewController: ViewControllers.allExercises)
+                action      : .loadView(viewController: ViewControllerRepresentations.allExercises)
             ),
             
-            //REMIND ME
+            //MARK: REMIND ME
             MenuItem(
                 strTitle    : .menuRemindMe,
                 imgType     : .menuClockIcon,
                 foreColor   : .menuForeColor,
-                action      : .loadView(viewController: ViewControllers.remindMe)
+                action      : .loadView(viewController: ViewControllerRepresentations.remindMe)
             ),
             
-            //PROGRESS
+            //MARK: PROGRESS
             MenuItem(
                 strTitle    : .menuProgress,
                 imgType     : .menuPersonIcon,
                 foreColor   : .menuForeColor,
-                action      : .loadView(viewController: ViewControllers.progress)
+                action      : .loadView(viewController: ViewControllerRepresentations.progress)
             ),
             
-            //LEAFLETS
+            //MARK: LEAFLETS
             MenuItem(
                 strTitle    : .menuLeaflets,
                 imgType     : .menuLeafletIcon,
                 foreColor   : .menuForeColor,
-                action      : .loadView(viewController: ViewControllers.leaflets)
+                action      : .loadView(viewController: ViewControllerRepresentations.leaflets)
             ),
             
-            //ABOUT
+            //MARK: ABOUT
             MenuItem(
                 strTitle    : .menuAbout,
                 imgType     : .menuInfoIcon,
                 foreColor   : .menuForeColor,
-                action      : .loadView(viewController: ViewControllers.about)
+                action      : .loadView(viewController: ViewControllerRepresentations.about)
             ),
         ]
     }

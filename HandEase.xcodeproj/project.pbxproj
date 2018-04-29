@@ -29,6 +29,12 @@
 		BE0F826A207A7EF800919C51 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE0F826C207A7EF800919C51 /* Localizable.strings */; };
 		BE0F8270207A7F9A00919C51 /* LocalisedKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F826F207A7F9A00919C51 /* LocalisedKeyTests.swift */; };
 		BE0F8273207A82A800919C51 /* ImageTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F8272207A82A800919C51 /* ImageTypeTests.swift */; };
+		BE3B291D20964D1900CA42EA /* UIViewController+AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B291C20964D1900CA42EA /* UIViewController+AddChildViewController.swift */; };
+		BE3B292020964DF600CA42EA /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B291F20964DF600CA42EA /* ViewControllers.swift */; };
+		BE3B29222096506700CA42EA /* UIStoryboard+ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B29212096506700CA42EA /* UIStoryboard+ViewControllers.swift */; };
+		BE3B2929209659D300CA42EA /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B2928209659D300CA42EA /* ExerciseListViewController.swift */; };
+		BE3B292B20965A1B00CA42EA /* Exercises.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE3B292A20965A1B00CA42EA /* Exercises.storyboard */; };
+		BE3B292D20965AC500CA42EA /* UIView+AutoLayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B292C20965AC500CA42EA /* UIView+AutoLayoutHelpers.swift */; };
 		BEABD6B3207A856600DC2E7D /* MenuItemCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD6B2207A856600DC2E7D /* MenuItemCollectionViewCellTests.swift */; };
 		BEABD6B5207A888100DC2E7D /* MenuItemSizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD6B4207A888100DC2E7D /* MenuItemSizer.swift */; };
 		BEABD6B7207A88CD00DC2E7D /* LocalMenuItemSizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD6B6207A88CD00DC2E7D /* LocalMenuItemSizer.swift */; };
@@ -36,7 +42,7 @@
 		BEABD6BB207A977200DC2E7D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD6BA207A977200DC2E7D /* MenuViewController.swift */; };
 		BEABD6BD207A9AB700DC2E7D /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD6BC207A9AB700DC2E7D /* CustomColor.swift */; };
 		BEB06B22208682600051B0A5 /* ItemAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB06B21208682600051B0A5 /* ItemAction.swift */; };
-		BEB06B2720868A1E0051B0A5 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB06B2620868A1E0051B0A5 /* TestViewController.swift */; };
+		BEB06B2720868A1E0051B0A5 /* HomeContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB06B2620868A1E0051B0A5 /* HomeContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +83,12 @@
 		BE0F826B207A7EF800919C51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE0F826F207A7F9A00919C51 /* LocalisedKeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisedKeyTests.swift; sourceTree = "<group>"; };
 		BE0F8272207A82A800919C51 /* ImageTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTypeTests.swift; sourceTree = "<group>"; };
+		BE3B291C20964D1900CA42EA /* UIViewController+AddChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddChildViewController.swift"; sourceTree = "<group>"; };
+		BE3B291F20964DF600CA42EA /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
+		BE3B29212096506700CA42EA /* UIStoryboard+ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+ViewControllers.swift"; sourceTree = "<group>"; };
+		BE3B2928209659D300CA42EA /* ExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
+		BE3B292A20965A1B00CA42EA /* Exercises.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exercises.storyboard; sourceTree = "<group>"; };
+		BE3B292C20965AC500CA42EA /* UIView+AutoLayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayoutHelpers.swift"; sourceTree = "<group>"; };
 		BEABD6B2207A856600DC2E7D /* MenuItemCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCollectionViewCellTests.swift; sourceTree = "<group>"; };
 		BEABD6B4207A888100DC2E7D /* MenuItemSizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemSizer.swift; sourceTree = "<group>"; };
 		BEABD6B6207A88CD00DC2E7D /* LocalMenuItemSizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMenuItemSizer.swift; sourceTree = "<group>"; };
@@ -84,7 +96,7 @@
 		BEABD6BA207A977200DC2E7D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		BEABD6BC207A9AB700DC2E7D /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		BEB06B21208682600051B0A5 /* ItemAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAction.swift; sourceTree = "<group>"; };
-		BEB06B2620868A1E0051B0A5 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		BEB06B2620868A1E0051B0A5 /* HomeContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,14 +139,15 @@
 		BE0F6AB8207909FE00587714 /* HandEase */ = {
 			isa = PBXGroup;
 			children = (
-				BE0F6AFE207942A300587714 /* Assets */,
-				BE0F6AFC2079429800587714 /* Core */,
-				BE0F6AE72079404600587714 /* Menu */,
 				BE0F6AB9207909FE00587714 /* AppDelegate.swift */,
-				BE0F6ABD207909FE00587714 /* Main.storyboard */,
-				BE0F6AC2207909FE00587714 /* LaunchScreen.storyboard */,
+				BE3B2925209659B900CA42EA /* Exercises */,
+				BE0F6AFE207942A300587714 /* Assets */,
+				BE3B2923209650D900CA42EA /* Container */,
+				BE0F6AFC2079429800587714 /* Core */,
 				BE0F6AC5207909FE00587714 /* Info.plist */,
-				BEB06B2620868A1E0051B0A5 /* TestViewController.swift */,
+				BE0F6AC2207909FE00587714 /* LaunchScreen.storyboard */,
+				BE0F6ABD207909FE00587714 /* Main.storyboard */,
+				BE0F6AE72079404600587714 /* Menu */,
 			);
 			path = HandEase;
 			sourceTree = "<group>";
@@ -237,6 +250,8 @@
 		BE0F6AFC2079429800587714 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BE3B291E20964DE600CA42EA /* Constants */,
+				BE3B291B20964D0700CA42EA /* Extensions */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -328,6 +343,65 @@
 				BE0F6AC0207909FE00587714 /* Assets.xcassets */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		BE3B291B20964D0700CA42EA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BE3B291C20964D1900CA42EA /* UIViewController+AddChildViewController.swift */,
+				BE3B29212096506700CA42EA /* UIStoryboard+ViewControllers.swift */,
+				BE3B292C20965AC500CA42EA /* UIView+AutoLayoutHelpers.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BE3B291E20964DE600CA42EA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				BE3B291F20964DF600CA42EA /* ViewControllers.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		BE3B2923209650D900CA42EA /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				BE3B2924209650E200CA42EA /* ViewControllers */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		BE3B2924209650E200CA42EA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BEB06B2620868A1E0051B0A5 /* HomeContainerViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BE3B2925209659B900CA42EA /* Exercises */ = {
+			isa = PBXGroup;
+			children = (
+				BE3B2927209659C800CA42EA /* Storyboard */,
+				BE3B2926209659C300CA42EA /* ViewControllers */,
+			);
+			path = Exercises;
+			sourceTree = "<group>";
+		};
+		BE3B2926209659C300CA42EA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE3B2928209659D300CA42EA /* ExerciseListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BE3B2927209659C800CA42EA /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BE3B292A20965A1B00CA42EA /* Exercises.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		BEABD6B1207A855A00DC2E7D /* Views */ = {
@@ -429,6 +503,7 @@
 			files = (
 				BE0F6AC4207909FE00587714 /* LaunchScreen.storyboard in Resources */,
 				BE0F826A207A7EF800919C51 /* Localizable.strings in Resources */,
+				BE3B292B20965A1B00CA42EA /* Exercises.storyboard in Resources */,
 				BE0F6AF3207940D600587714 /* MenuItemCollectionViewCell.xib in Resources */,
 				BE0F6AC1207909FE00587714 /* Assets.xcassets in Resources */,
 				BE0F6ABF207909FE00587714 /* Main.storyboard in Resources */,
@@ -451,18 +526,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0F6AF52079415A00587714 /* MenuItem.swift in Sources */,
-				BEB06B2720868A1E0051B0A5 /* TestViewController.swift in Sources */,
+				BEB06B2720868A1E0051B0A5 /* HomeContainerViewController.swift in Sources */,
 				BE0F6ABA207909FE00587714 /* AppDelegate.swift in Sources */,
+				BE3B2929209659D300CA42EA /* ExerciseListViewController.swift in Sources */,
 				BEABD6BD207A9AB700DC2E7D /* CustomColor.swift in Sources */,
 				BE0F6B062079444F00587714 /* MenuItemDataSource.swift in Sources */,
 				BE0F6B0C2079475A00587714 /* String+Localisation.swift in Sources */,
+				BE3B292D20965AC500CA42EA /* UIView+AutoLayoutHelpers.swift in Sources */,
 				BEABD6B5207A888100DC2E7D /* MenuItemSizer.swift in Sources */,
 				BEB06B22208682600051B0A5 /* ItemAction.swift in Sources */,
 				BEABD6B7207A88CD00DC2E7D /* LocalMenuItemSizer.swift in Sources */,
 				BE0F6B04207942C200587714 /* UIImage+ImageType.swift in Sources */,
 				BEABD6BB207A977200DC2E7D /* MenuViewController.swift in Sources */,
 				BE0F6AF7207941FD00587714 /* DefaultMenuItemViewModel.swift in Sources */,
+				BE3B291D20964D1900CA42EA /* UIViewController+AddChildViewController.swift in Sources */,
+				BE3B29222096506700CA42EA /* UIStoryboard+ViewControllers.swift in Sources */,
 				BE0F6B01207942B300587714 /* ImageType.swift in Sources */,
+				BE3B292020964DF600CA42EA /* ViewControllers.swift in Sources */,
 				BE0F6B08207944BE00587714 /* LocalMenuItemDataSource.swift in Sources */,
 				BE0F6B0A207944F000587714 /* LocalisedKey.swift in Sources */,
 				BEABD6B9207A914200DC2E7D /* DefaultMenuViewModel.swift in Sources */,
