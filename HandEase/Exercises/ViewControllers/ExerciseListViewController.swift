@@ -10,5 +10,7 @@ import Foundation
 import UIKit
 
 class ExerciseListViewController: UIViewController {
-    
+    @IBAction func openMenu(_ sender: Any) {
+        
+    }
 }

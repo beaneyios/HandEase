@@ -15,12 +15,17 @@ class MenuViewController : UIViewController {
     var vm: MenuViewModel = {
         return DefaultMenuViewModel(
             sizer: LocalMenuItemSizer(),
-            dataSource: LocalMenuItemDataSource()
+            dataSource: LocalMenuItemDataSource(),
+            theme: LocalMenuTheme()
         )
     }()
     
     public func configure(with vm: MenuViewModel) {
         self.vm = vm
+    }
+    
+    override func viewDidLoad() {
+        cview.contentInsetAdjustmentBehavior = .never
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -13,6 +13,7 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imgIcon: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var container: UIView!
     
     var vm: MenuItemViewModel?
     
@@ -25,6 +26,7 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
         self.vm = vm
         self.imgIcon.image = vm.imgIcon
         self.imgIcon.tintColor = vm.foreColor
+        self.container.backgroundColor = vm.backColor
         self.lblTitle.text = vm.strTitle
     }
 }

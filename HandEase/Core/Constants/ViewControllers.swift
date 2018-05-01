@@ -10,14 +10,15 @@ import Foundation
 import UIKit
 
 struct ViewControllerRepresentations {
-    static var myExercises      = StoryboardRepresentation(sbName: "Exercises", sbIdentifier: "exercises")
-    static var allExercises     = StoryboardRepresentation(sbName: "", sbIdentifier: "")
+    static var myExercises      = StoryboardRepresentation(sbName: "Exercises", sbIdentifier: "myExercises")
+    static var allExercises     = StoryboardRepresentation(sbName: "Exercises", sbIdentifier: "allExercises")
     static var remindMe         = StoryboardRepresentation(sbName: "", sbIdentifier: "")
     static var progress         = StoryboardRepresentation(sbName: "", sbIdentifier: "")
     static var leaflets         = StoryboardRepresentation(sbName: "", sbIdentifier: "")
     static var donate           = StoryboardRepresentation(sbName: "", sbIdentifier: "")
     static var about            = StoryboardRepresentation(sbName: "", sbIdentifier: "")
     static var menu             = StoryboardRepresentation(sbName: "Main", sbIdentifier: "menu")
+    static var container        = StoryboardRepresentation(sbName: "Main", sbIdentifier: "homeContainer")
 }
 
 //TODO: I'm force-unwrapping here, so we need to write tests to be absolutely sure they exist.
@@ -30,6 +31,7 @@ struct ViewControllers {
     static var donate           = UIStoryboard.viewController(for: ViewControllerRepresentations.donate)!
     static var about            = UIStoryboard.viewController(for: ViewControllerRepresentations.about)!
     static var menu             = UIStoryboard.viewController(for: ViewControllerRepresentations.menu)!
+    static var container        = UIStoryboard.viewController(for: ViewControllerRepresentations.container)!
 }
 
 struct StoryboardRepresentation {

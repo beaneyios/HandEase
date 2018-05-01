@@ -10,11 +10,13 @@ import Foundation
 import UIKit
 
 enum CustomColor {
-    case menuForeColor
+    case menuItemForeColor
+    case menuItemBackColor
     
     var uiColor: UIColor {
         switch self {
-        case .menuForeColor: return UIColor.white
+        case .menuItemForeColor: return UIColor.white
+        case .menuItemBackColor: return UIColor.darkGray
         }
     }
 }

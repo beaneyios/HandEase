@@ -12,12 +12,14 @@ import UIKit
 class DefaultMenuViewModel : NSObject, MenuViewModel {
     fileprivate var sizer       : MenuItemSizer
     fileprivate var dataSource  : MenuItemDataSource
+    fileprivate var theme       : MenuTheme
     
     var action: MenuItemActionClosure?
     
-    init(sizer: MenuItemSizer, dataSource: MenuItemDataSource) {
+    init(sizer: MenuItemSizer, dataSource: MenuItemDataSource, theme: MenuTheme) {
         self.sizer      = sizer
         self.dataSource = dataSource
+        self.theme      = theme
     }
     
     func bind(withAction action: @escaping MenuItemActionClosure) {
@@ -26,8 +28,9 @@ class DefaultMenuViewModel : NSObject, MenuViewModel {
     
     func bind(cview: UICollectionView) {
         cview.register(MenuItemCollectionViewCell.nib, forCellWithReuseIdentifier: "standard_cell")
-        cview.delegate      = self
-        cview.dataSource    = self
+        cview.delegate          = self
+        cview.dataSource        = self
+        cview.backgroundColor   = self.theme.backColor.uiColor
         cview.reloadData()
     }
 }

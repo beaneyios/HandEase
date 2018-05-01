@@ -15,7 +15,8 @@ struct LocalMenuItemDataSource : MenuItemDataSource {
             MenuItem(
                 strTitle    : .menuMyExercises,
                 imgType     : .menuHeartIcon,
-                foreColor   : .menuForeColor,
+                foreColor   : .menuItemForeColor,
+                backColor   : .menuItemBackColor,
                 action      : .loadView(viewController: ViewControllerRepresentations.myExercises)
             ),
             
@@ -23,7 +24,8 @@ struct LocalMenuItemDataSource : MenuItemDataSource {
             MenuItem(
                 strTitle    : .menuAllExercises,
                 imgType     : .menuDoublePageIcon,
-                foreColor   : .menuForeColor,
+                foreColor   : .menuItemForeColor,
+                backColor   : .menuItemBackColor,
                 action      : .loadView(viewController: ViewControllerRepresentations.allExercises)
             ),
             
@@ -31,7 +33,8 @@ struct LocalMenuItemDataSource : MenuItemDataSource {
             MenuItem(
                 strTitle    : .menuRemindMe,
                 imgType     : .menuClockIcon,
-                foreColor   : .menuForeColor,
+                foreColor   : .menuItemForeColor,
+                backColor   : .menuItemBackColor,
                 action      : .loadView(viewController: ViewControllerRepresentations.remindMe)
             ),
             
@@ -39,7 +42,8 @@ struct LocalMenuItemDataSource : MenuItemDataSource {
             MenuItem(
                 strTitle    : .menuProgress,
                 imgType     : .menuPersonIcon,
-                foreColor   : .menuForeColor,
+                foreColor   : .menuItemForeColor,
+                backColor   : .menuItemBackColor,
                 action      : .loadView(viewController: ViewControllerRepresentations.progress)
             ),
             
@@ -47,7 +51,8 @@ struct LocalMenuItemDataSource : MenuItemDataSource {
             MenuItem(
                 strTitle    : .menuLeaflets,
                 imgType     : .menuLeafletIcon,
-                foreColor   : .menuForeColor,
+                foreColor   : .menuItemForeColor,
+                backColor   : .menuItemBackColor,
                 action      : .loadView(viewController: ViewControllerRepresentations.leaflets)
             ),
             
@@ -55,7 +60,8 @@ struct LocalMenuItemDataSource : MenuItemDataSource {
             MenuItem(
                 strTitle    : .menuAbout,
                 imgType     : .menuInfoIcon,
-                foreColor   : .menuForeColor,
+                foreColor   : .menuItemForeColor,
+                backColor   : .menuItemBackColor,
                 action      : .loadView(viewController: ViewControllerRepresentations.about)
             ),
         ]
