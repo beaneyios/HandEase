@@ -35,14 +35,14 @@ class ContainerViewController : UIViewController, ViewControllerContaining, Menu
         self.currentViewController?.view.removeFromSuperview()
         self.currentViewController?.removeFromParentViewController()
         
+        if let controller = viewController as? ExerciseListViewController {
+            controller.configure(flowController: self.flowController, viewModel: DefaultExerciseListViewModel(fetcher: ExerciseFetcher()))
+        }
+        
         self.currentViewController = viewController
         self.addChild(viewController)
         self.containerView.addSubview(viewController.view)
         self.containerView.fixSizeToContainer(subview: viewController.view)
-        
-        if let controller = viewController as? ExerciseListViewController {
-            controller.configure(flowController: self.flowController)
-        }
     }
 }
 

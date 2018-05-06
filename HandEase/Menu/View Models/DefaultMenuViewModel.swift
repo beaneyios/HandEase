@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DefaultMenuViewModel : NSObject, MenuViewModel {
+class DefaultMenuViewModel: NSObject, MenuViewModel {
     fileprivate var sizer       : MenuItemSizer
     fileprivate var dataSource  : MenuItemDataSource
     fileprivate var theme       : MenuTheme

@@ -51,6 +51,15 @@
 		BEEBAAC1209DEFDA002EA251 /* MenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC0209DEFDA002EA251 /* MenuDelegate.swift */; };
 		BEEBAAC4209DF187002EA251 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC3209DF187002EA251 /* Navigator.swift */; };
 		BEEBAACA209F779C002EA251 /* ContainerFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC9209F779C002EA251 /* ContainerFlowControllerTests.swift */; };
+		BEEBAACF209F8034002EA251 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAACE209F8034002EA251 /* Exercise.swift */; };
+		BEEBAAD1209F8404002EA251 /* ExerciseFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAD0209F8404002EA251 /* ExerciseFetching.swift */; };
+		BEEBAAD4209F8473002EA251 /* ExerciseFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAD3209F8473002EA251 /* ExerciseFetcher.swift */; };
+		BEEBAAD7209F887D002EA251 /* DefaultExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAD6209F887D002EA251 /* DefaultExerciseViewModel.swift */; };
+		BEEBAADB209F8A0D002EA251 /* SmallExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAD9209F8A0D002EA251 /* SmallExerciseCell.swift */; };
+		BEEBAADC209F8A0D002EA251 /* SmallExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEEBAADA209F8A0D002EA251 /* SmallExerciseCell.xib */; };
+		BEEBAADE209F8B7B002EA251 /* DefaultExerciseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAADD209F8B7B002EA251 /* DefaultExerciseListViewModel.swift */; };
+		BEEBAAE0209F8BA2002EA251 /* ExerciseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAADF209F8BA2002EA251 /* ExerciseListViewModel.swift */; };
+		BEEBAAE3209F91FF002EA251 /* UIView+Swoosh.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAE2209F91FF002EA251 /* UIView+Swoosh.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +122,15 @@
 		BEEBAAC0209DEFDA002EA251 /* MenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
 		BEEBAAC3209DF187002EA251 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		BEEBAAC9209F779C002EA251 /* ContainerFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerFlowControllerTests.swift; sourceTree = "<group>"; };
+		BEEBAACE209F8034002EA251 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		BEEBAAD0209F8404002EA251 /* ExerciseFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFetching.swift; sourceTree = "<group>"; };
+		BEEBAAD3209F8473002EA251 /* ExerciseFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFetcher.swift; sourceTree = "<group>"; };
+		BEEBAAD6209F887D002EA251 /* DefaultExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExerciseViewModel.swift; sourceTree = "<group>"; };
+		BEEBAAD9209F8A0D002EA251 /* SmallExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallExerciseCell.swift; sourceTree = "<group>"; };
+		BEEBAADA209F8A0D002EA251 /* SmallExerciseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallExerciseCell.xib; sourceTree = "<group>"; };
+		BEEBAADD209F8B7B002EA251 /* DefaultExerciseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExerciseListViewModel.swift; sourceTree = "<group>"; };
+		BEEBAADF209F8BA2002EA251 /* ExerciseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewModel.swift; sourceTree = "<group>"; };
+		BEEBAAE2209F91FF002EA251 /* UIView+Swoosh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Swoosh.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,9 +288,9 @@
 		BE0F6AFC2079429800587714 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				BEEBAAC2209DF174002EA251 /* Type Aliases */,
 				BE3B291E20964DE600CA42EA /* Constants */,
 				BE3B291B20964D0700CA42EA /* Extensions */,
+				BEEBAAC2209DF174002EA251 /* Type Aliases */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -372,6 +390,7 @@
 				BE3B291C20964D1900CA42EA /* UIViewController+AddChildViewController.swift */,
 				BE3B29212096506700CA42EA /* UIStoryboard+ViewControllers.swift */,
 				BE3B292C20965AC500CA42EA /* UIView+AutoLayoutHelpers.swift */,
+				BEEBAAE2209F91FF002EA251 /* UIView+Swoosh.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -406,8 +425,13 @@
 		BE3B2925209659B900CA42EA /* Exercises */ = {
 			isa = PBXGroup;
 			children = (
+				BEEBAAD2209F8469002EA251 /* Controllers */,
+				BEEBAACD209F8027002EA251 /* Model */,
+				BEEBAACC209F801F002EA251 /* Protocols */,
 				BE3B2927209659C800CA42EA /* Storyboard */,
 				BE3B2926209659C300CA42EA /* ViewControllers */,
+				BEEBAAD5209F885D002EA251 /* View Models */,
+				BEEBAAD8209F89EE002EA251 /* Views */,
 			);
 			path = Exercises;
 			sourceTree = "<group>";
@@ -490,6 +514,49 @@
 				BEEBAAC9209F779C002EA251 /* ContainerFlowControllerTests.swift */,
 			);
 			path = "Flow Controllers";
+			sourceTree = "<group>";
+		};
+		BEEBAACC209F801F002EA251 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BEEBAAD0209F8404002EA251 /* ExerciseFetching.swift */,
+				BEEBAADF209F8BA2002EA251 /* ExerciseListViewModel.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BEEBAACD209F8027002EA251 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BEEBAACE209F8034002EA251 /* Exercise.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BEEBAAD2209F8469002EA251 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BEEBAAD3209F8473002EA251 /* ExerciseFetcher.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BEEBAAD5209F885D002EA251 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				BEEBAAD6209F887D002EA251 /* DefaultExerciseViewModel.swift */,
+				BEEBAADD209F8B7B002EA251 /* DefaultExerciseListViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		BEEBAAD8209F89EE002EA251 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEEBAAD9209F8A0D002EA251 /* SmallExerciseCell.swift */,
+				BEEBAADA209F8A0D002EA251 /* SmallExerciseCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -580,6 +647,7 @@
 				BE0F6AC1207909FE00587714 /* Assets.xcassets in Resources */,
 				BE0F6ABF207909FE00587714 /* Container.storyboard in Resources */,
 				BE0F6AEF2079408B00587714 /* Menu.storyboard in Resources */,
+				BEEBAADC209F8A0D002EA251 /* SmallExerciseCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,12 +666,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0F6AF52079415A00587714 /* MenuItem.swift in Sources */,
+				BEEBAACF209F8034002EA251 /* Exercise.swift in Sources */,
 				BE385BCA209DEEC6001E018E /* MenuOpening.swift in Sources */,
 				BEB06B2720868A1E0051B0A5 /* ContainerViewController.swift in Sources */,
 				BE0F6ABA207909FE00587714 /* AppDelegate.swift in Sources */,
 				BE3B2929209659D300CA42EA /* ExerciseListViewController.swift in Sources */,
 				BEABD6BD207A9AB700DC2E7D /* CustomColor.swift in Sources */,
+				BEEBAADB209F8A0D002EA251 /* SmallExerciseCell.swift in Sources */,
 				BE0F6B062079444F00587714 /* MenuItemDataSource.swift in Sources */,
+				BEEBAAD1209F8404002EA251 /* ExerciseFetching.swift in Sources */,
+				BEEBAADE209F8B7B002EA251 /* DefaultExerciseListViewModel.swift in Sources */,
 				BE0F6B0C2079475A00587714 /* String+Localisation.swift in Sources */,
 				BE3B292D20965AC500CA42EA /* UIView+AutoLayoutHelpers.swift in Sources */,
 				BEABD6B5207A888100DC2E7D /* MenuItemSizer.swift in Sources */,
@@ -614,12 +686,15 @@
 				BEABD6BB207A977200DC2E7D /* MenuViewController.swift in Sources */,
 				BE0F6AF7207941FD00587714 /* DefaultMenuItemViewModel.swift in Sources */,
 				BE3B291D20964D1900CA42EA /* UIViewController+AddChildViewController.swift in Sources */,
+				BEEBAAD4209F8473002EA251 /* ExerciseFetcher.swift in Sources */,
 				BE3B29222096506700CA42EA /* UIStoryboard+ViewControllers.swift in Sources */,
 				BE0F6B01207942B300587714 /* ImageType.swift in Sources */,
 				BE3B292020964DF600CA42EA /* ViewControllers.swift in Sources */,
+				BEEBAAE3209F91FF002EA251 /* UIView+Swoosh.swift in Sources */,
 				BE71C6A22098F90900DFB510 /* LocalMenuTheme.swift in Sources */,
 				BE0F6B08207944BE00587714 /* LocalMenuItemDataSource.swift in Sources */,
 				BE0F6B0A207944F000587714 /* LocalisedKey.swift in Sources */,
+				BEEBAAD7209F887D002EA251 /* DefaultExerciseViewModel.swift in Sources */,
 				BEABD6B9207A914200DC2E7D /* DefaultMenuViewModel.swift in Sources */,
 				BE0F6B0E20795BED00587714 /* MenuViewModel.swift in Sources */,
 				BE0F6AFA2079423600587714 /* MenuItemViewModel.swift in Sources */,
@@ -627,6 +702,7 @@
 				BE71C6A52098FB1F00DFB510 /* ContainerFlowController.swift in Sources */,
 				BE0F6AF2207940D600587714 /* MenuItemCollectionViewCell.swift in Sources */,
 				BE71C6A82098FDB400DFB510 /* FlowController.swift in Sources */,
+				BEEBAAE0209F8BA2002EA251 /* ExerciseListViewModel.swift in Sources */,
 				BEEBAAC1209DEFDA002EA251 /* MenuDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
