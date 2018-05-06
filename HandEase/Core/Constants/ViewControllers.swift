@@ -17,8 +17,8 @@ struct ViewControllerRepresentations {
     static var leaflets         = StoryboardRepresentation(sbName: "", sbIdentifier: "")
     static var donate           = StoryboardRepresentation(sbName: "", sbIdentifier: "")
     static var about            = StoryboardRepresentation(sbName: "", sbIdentifier: "")
-    static var menu             = StoryboardRepresentation(sbName: "Main", sbIdentifier: "menu")
-    static var container        = StoryboardRepresentation(sbName: "Main", sbIdentifier: "homeContainer")
+    static var menu             = StoryboardRepresentation(sbName: "Menu", sbIdentifier: "menu")
+    static var container        = StoryboardRepresentation(sbName: "Container", sbIdentifier: "homeContainer")
 }
 
 //TODO: I'm force-unwrapping here, so we need to write tests to be absolutely sure they exist.

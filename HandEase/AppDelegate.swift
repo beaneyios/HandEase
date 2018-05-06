@@ -11,7 +11,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var flowController: ContainerFlowController?
+    var flowController: FlowController?
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
         let bounds = UIScreen.main.bounds
@@ -21,14 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func fetchInitialViewController() -> UIViewController? {
-        guard let container = ViewControllers.container as? HomeContainerViewController else {
+        guard let container = ViewControllers.container as? ContainerViewController else {
             return nil
         }
         
         let navigation = UINavigationController(rootViewController: container)
         navigation.setNavigationBarHidden(true, animated: false)
         
-        let flowController = DefaultContainerFlowController(container: container, navigation: navigation)
+        let flowController = ContainerFlowController(containerVC: container, navigationController: navigation)
         container.configure(flowController: flowController)
         self.flowController = flowController
         return navigation

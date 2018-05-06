@@ -10,7 +10,8 @@ import Foundation
 
 struct LocalMenuItemDataSource : MenuItemDataSource {    
     var items: [MenuItem] {
-        return [
+        return [           
+            
             //MARK: MY EXERCISES
             MenuItem(
                 strTitle    : .menuMyExercises,

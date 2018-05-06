@@ -9,18 +9,20 @@
 import Foundation
 import UIKit
 
-class HomeContainerViewController : UIViewController {
+protocol ViewControllerContaining {
+    func configure(flowController: Navigator)
+    func setCurrentViewController(viewController: UIViewController)
+}
+
+
+class ContainerViewController : UIViewController, ViewControllerContaining, MenuOpening {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var containerCenterX: NSLayoutConstraint!
     
     private var currentViewController: UIViewController?
-    private weak var flowController: ContainerFlowController! {
-        didSet {
-            
-        }
-    }
+    private weak var flowController: Navigator!
     
-    func configure(flowController: ContainerFlowController) {
+    func configure(flowController: Navigator) {
         self.flowController = flowController
     }
     
@@ -29,7 +31,7 @@ class HomeContainerViewController : UIViewController {
         self.configureMenu()
     }
     
-    func setCurrentViewController(viewController: UIViewController) {
+    public func setCurrentViewController(viewController: UIViewController) {
         self.currentViewController?.view.removeFromSuperview()
         self.currentViewController?.removeFromParentViewController()
         
@@ -37,13 +39,21 @@ class HomeContainerViewController : UIViewController {
         self.addChild(viewController)
         self.containerView.addSubview(viewController.view)
         self.containerView.fixSizeToContainer(subview: viewController.view)
+        
+        if let controller = viewController as? ExerciseListViewController {
+            controller.configure(flowController: self.flowController)
+        }
     }
 }
 
 //MARK: MENU LOGIC
-extension HomeContainerViewController {
-    @IBAction func openMenu(_ sender: Any) {
-        self.animateMenuOpen()
+extension ContainerViewController {
+    public func toggleMenu() {
+        if self.containerCenterX.constant != 0.0 {
+            self.animateMenuClosed()
+        } else {
+            self.animateMenuOpen()
+        }
     }
     
     private func animateMenuOpen() {

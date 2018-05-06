@@ -17,12 +17,16 @@ class MenuItemCollectionViewCellTests: XCTestCase {
             return
         }
         
-        let menuItem    = MenuItem(strTitle: .menuAbout, imgType: .menuInfoIcon, foreColor: .menuForeColor, action: .loadView(viewController: ViewControllers.about))
-        let vm          = DefaultMenuItemViewModel(menuItem: menuItem)
+        let testMenuItem    = MenuItem(strTitle: .menuAbout,
+                                       imgType: .menuInfoIcon,
+                                       foreColor: .menuItemForeColor,
+                                       backColor: .menuItemBackColor,
+                                       action: .loadView(viewController: ViewControllerRepresentations.about))
+        let vm              = DefaultMenuItemViewModel(menuItem: testMenuItem)
         cell.configure(with: vm)
         
-        let expTitle    = "About"
-        let expImg      = #imageLiteral(resourceName: "info").withRenderingMode(.alwaysTemplate)
+        let expTitle        = "About"
+        let expImg          = #imageLiteral(resourceName: "info").withRenderingMode(.alwaysTemplate)
         
         XCTAssert(cell.lblTitle.text == expTitle, "Cell text not 'About'")
         XCTAssert(cell.imgIcon.image == expImg, "Cell image not correct")

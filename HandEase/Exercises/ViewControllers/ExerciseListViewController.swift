@@ -10,7 +10,19 @@ import Foundation
 import UIKit
 
 class ExerciseListViewController: UIViewController {
-    @IBAction func openMenu(_ sender: Any) {
-        
+    private var flowController: Navigator!
+    
+    @IBAction func toggleMenu(_ sender: Any) {
+        self.toggleMenu()
+    }
+    
+    func configure(flowController: Navigator) {
+        self.flowController = flowController
+    }
+}
+
+extension ExerciseListViewController: MenuOpening {
+    func toggleMenu() {
+        self.flowController?.toggleMenu()
     }
 }
