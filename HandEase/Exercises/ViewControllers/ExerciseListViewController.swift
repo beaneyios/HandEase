@@ -11,6 +11,7 @@ import UIKit
 
 class ExerciseListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+    
     private var flowController: Navigator!
     private var viewModel: ExerciseListViewModel!
     

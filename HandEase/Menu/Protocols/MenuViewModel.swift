@@ -13,5 +13,6 @@ typealias MenuItemActionClosure = (_ action: ItemAction) -> ()
 
 protocol MenuViewModel {
     var action: MenuItemActionClosure? { get set }
+    var backgroundColor: UIColor { get }
     func bind(cview: UICollectionView)
 }

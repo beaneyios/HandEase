@@ -25,7 +25,8 @@ class MenuViewController : UIViewController {
     }
     
     override func viewDidLoad() {
-        cview.contentInsetAdjustmentBehavior = .never
+        self.cview.contentInsetAdjustmentBehavior = .never
+        self.view.backgroundColor = self.vm.backgroundColor
     }
     
     override func viewWillAppear(_ animated: Bool) {

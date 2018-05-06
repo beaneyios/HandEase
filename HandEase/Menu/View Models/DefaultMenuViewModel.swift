@@ -16,6 +16,10 @@ class DefaultMenuViewModel: NSObject, MenuViewModel {
     
     var action: MenuItemActionClosure?
     
+    var backgroundColor: UIColor {
+        return self.theme.backColor.uiColor
+    }
+    
     init(sizer: MenuItemSizer, dataSource: MenuItemDataSource, theme: MenuTheme) {
         self.sizer      = sizer
         self.dataSource = dataSource

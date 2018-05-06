@@ -38,7 +38,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.1764705882" green="0.44705882349999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.36862745098039218" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="3EP-qx-GiA"/>
                                     <constraint firstAttribute="bottom" secondItem="85a-ow-5m4" secondAttribute="bottom" constant="8" id="40F-bc-Sbz"/>
@@ -109,7 +110,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.1764705882" green="0.44705882349999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.36862745098039218" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="OxQ-5G-oYA" secondAttribute="bottom" constant="8" id="BpK-F4-Gze"/>
                                     <constraint firstItem="xaz-xd-Z2V" firstAttribute="top" secondItem="FtZ-UH-lOq" secondAttribute="top" constant="12" id="Bq6-Jd-F0B"/>
