@@ -11,7 +11,6 @@ import Foundation
 struct LocalMenuItemDataSource : MenuItemDataSource {    
     var items: [MenuItem] {
         return [           
-            
             //MARK: MY EXERCISES
             MenuItem(
                 strTitle    : .menuMyExercises,
@@ -64,7 +63,7 @@ struct LocalMenuItemDataSource : MenuItemDataSource {
                 foreColor   : .menuItemForeColor,
                 backColor   : .menuItemBackColor,
                 action      : .loadView(viewController: ViewControllerRepresentations.about)
-            ),
+            )
         ]
     }
 }
