@@ -15,3 +15,9 @@ struct MenuItem {
     var backColor   : CustomColor
     var action      : ItemAction
 }
+
+extension MenuItem: Equatable {
+    static func == (lhs: MenuItem, rhs: MenuItem) -> Bool {
+        return  lhs.strTitle == rhs.strTitle
+    }    
+}
