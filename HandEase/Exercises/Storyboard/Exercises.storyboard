@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Exercise List View Controller-->
+        <scene sceneID="EZ4-SB-aWO">
+            <objects>
+                <viewController storyboardIdentifier="myExercises" automaticallyAdjustsScrollViewInsets="NO" id="9Az-Wl-NZR" customClass="ExerciseListViewController" customModule="HandEase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fTA-of-WpG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Exercises" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzr-2Z-Ci5">
+                                <rect key="frame" x="137.5" y="323" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSq-jL-3aR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6LG-Cp-4l5">
+                                        <rect key="frame" x="16" y="12" width="50" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <state key="normal" title="Menu">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggleMenu:" destination="9Az-Wl-NZR" eventType="touchUpInside" id="o2T-GZ-ZHq"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Exercises" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85a-ow-5m4">
+                                        <rect key="frame" x="130" y="12" width="116.5" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1764705882" green="0.44705882349999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="3EP-qx-GiA"/>
+                                    <constraint firstAttribute="bottom" secondItem="85a-ow-5m4" secondAttribute="bottom" constant="8" id="40F-bc-Sbz"/>
+                                    <constraint firstItem="85a-ow-5m4" firstAttribute="centerX" secondItem="sSq-jL-3aR" secondAttribute="centerX" id="9O6-x9-8ET"/>
+                                    <constraint firstAttribute="bottom" secondItem="6LG-Cp-4l5" secondAttribute="bottom" constant="8" id="Be3-4i-2Lz"/>
+                                    <constraint firstItem="6LG-Cp-4l5" firstAttribute="leading" secondItem="sSq-jL-3aR" secondAttribute="leading" constant="16" id="LRF-Al-WFH"/>
+                                    <constraint firstItem="85a-ow-5m4" firstAttribute="top" secondItem="sSq-jL-3aR" secondAttribute="top" constant="12" id="eGr-Mz-1iA"/>
+                                    <constraint firstItem="6LG-Cp-4l5" firstAttribute="top" secondItem="sSq-jL-3aR" secondAttribute="top" constant="12" id="gL1-GV-pjo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sSq-jL-3aR" firstAttribute="leading" secondItem="fTA-of-WpG" secondAttribute="leading" id="9eQ-rm-3Sy"/>
+                            <constraint firstItem="wzr-2Z-Ci5" firstAttribute="centerX" secondItem="fTA-of-WpG" secondAttribute="centerX" id="mTs-OM-xQ8"/>
+                            <constraint firstAttribute="trailing" secondItem="sSq-jL-3aR" secondAttribute="trailing" id="u7c-g0-wGD"/>
+                            <constraint firstItem="sSq-jL-3aR" firstAttribute="top" secondItem="fTA-of-WpG" secondAttribute="top" id="wKq-QH-ZQL"/>
+                            <constraint firstItem="wzr-2Z-Ci5" firstAttribute="centerY" secondItem="fTA-of-WpG" secondAttribute="centerY" id="z8e-Uq-Rxa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Nam-BK-asb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F90-mM-sfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="98" y="110"/>
+        </scene>
+        <!--Exercise List View Controller-->
+        <scene sceneID="ifV-Zd-ULo">
+            <objects>
+                <viewController storyboardIdentifier="allExercises" automaticallyAdjustsScrollViewInsets="NO" id="Ugh-U9-R5K" customClass="ExerciseListViewController" customModule="HandEase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HEX-ht-RMC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Exercises" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gV3-Lb-mfz">
+                                <rect key="frame" x="139.5" y="323" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FtZ-UH-lOq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxQ-5G-oYA">
+                                        <rect key="frame" x="16" y="12" width="50" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <state key="normal" title="Menu">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggleMenu:" destination="Ugh-U9-R5K" eventType="touchUpInside" id="XQC-A2-u3t"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Exercises" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaz-xd-Z2V">
+                                        <rect key="frame" x="131.5" y="12" width="112" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1764705882" green="0.44705882349999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="OxQ-5G-oYA" secondAttribute="bottom" constant="8" id="BpK-F4-Gze"/>
+                                    <constraint firstItem="xaz-xd-Z2V" firstAttribute="top" secondItem="FtZ-UH-lOq" secondAttribute="top" constant="12" id="Bq6-Jd-F0B"/>
+                                    <constraint firstItem="xaz-xd-Z2V" firstAttribute="centerX" secondItem="FtZ-UH-lOq" secondAttribute="centerX" id="Bw1-8l-zL9"/>
+                                    <constraint firstItem="OxQ-5G-oYA" firstAttribute="top" secondItem="FtZ-UH-lOq" secondAttribute="top" constant="12" id="CJh-sl-fIZ"/>
+                                    <constraint firstAttribute="height" constant="64" id="PpS-k3-DXz"/>
+                                    <constraint firstAttribute="bottom" secondItem="xaz-xd-Z2V" secondAttribute="bottom" constant="8" id="fem-km-rg1"/>
+                                    <constraint firstItem="OxQ-5G-oYA" firstAttribute="leading" secondItem="FtZ-UH-lOq" secondAttribute="leading" constant="16" id="h5L-b8-9Gb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FtZ-UH-lOq" firstAttribute="top" secondItem="HEX-ht-RMC" secondAttribute="top" id="YDw-5x-AKO"/>
+                            <constraint firstItem="gV3-Lb-mfz" firstAttribute="centerX" secondItem="HEX-ht-RMC" secondAttribute="centerX" id="ban-O6-niJ"/>
+                            <constraint firstItem="FtZ-UH-lOq" firstAttribute="leading" secondItem="HEX-ht-RMC" secondAttribute="leading" id="r99-Ab-mH2"/>
+                            <constraint firstItem="gV3-Lb-mfz" firstAttribute="centerY" secondItem="HEX-ht-RMC" secondAttribute="centerY" id="vPr-SS-H34"/>
+                            <constraint firstAttribute="trailing" secondItem="FtZ-UH-lOq" secondAttribute="trailing" id="xNE-Cy-rbx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RsQ-fk-kSP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ROD-nu-JXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="817" y="109"/>
+        </scene>
+    </scenes>
+</document>

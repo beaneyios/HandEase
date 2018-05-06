@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol MenuDataSource {
-    func fetchMenuItems() -> [MenuItem]
+protocol MenuItemDataSource {
+    var items: [MenuItem] { get }
 }

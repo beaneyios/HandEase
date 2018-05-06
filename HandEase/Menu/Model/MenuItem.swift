@@ -9,6 +9,15 @@
 import Foundation
 
 struct MenuItem {
-    var strTitle : LocalisedKey
-    var imgType  : ImageType
+    var strTitle    : LocalisedKey
+    var imgType     : ImageType
+    var foreColor   : CustomColor
+    var backColor   : CustomColor
+    var action      : ItemAction
+}
+
+extension MenuItem: Equatable {
+    static func == (lhs: MenuItem, rhs: MenuItem) -> Bool {
+        return  lhs.strTitle == rhs.strTitle
+    }    
 }

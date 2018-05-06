@@ -21,8 +21,18 @@ struct DefaultMenuItemViewModel : MenuItemViewModel {
     }
     
     var imgIcon: UIImage? {
-        return UIImage(type: self.menuItem.imgType)
+        return UIImage(type: self.menuItem.imgType)?.withRenderingMode(.alwaysTemplate)
     }
     
+    var foreColor: UIColor {
+        return menuItem.foreColor.uiColor
+    }
     
+    var backColor: UIColor {
+        return menuItem.backColor.uiColor
+    }
+    
+    var action: ItemAction {
+        return menuItem.action
+    }
 }
