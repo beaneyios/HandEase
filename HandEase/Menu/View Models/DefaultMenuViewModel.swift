@@ -27,7 +27,7 @@ class DefaultMenuViewModel : NSObject, MenuViewModel {
     }
     
     func bind(cview: UICollectionView) {
-        cview.register(MenuItemCollectionViewCell.nib, forCellWithReuseIdentifier: "standard_cell")
+        cview.register          (MenuItemCollectionViewCell.nib, forCellWithReuseIdentifier: "standard_cell")
         cview.delegate          = self
         cview.dataSource        = self
         cview.backgroundColor   = self.theme.backColor.uiColor
@@ -37,11 +37,11 @@ class DefaultMenuViewModel : NSObject, MenuViewModel {
 
 extension DefaultMenuViewModel : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "standard_cell", for: indexPath)
-        guard let castCell = cell as? MenuItemCollectionViewCell else { return MenuItemCollectionViewCell() }
+        let cell            = collectionView.dequeueReusableCell(withReuseIdentifier: "standard_cell", for: indexPath)
+        guard let castCell  = cell as? MenuItemCollectionViewCell else { return MenuItemCollectionViewCell() }
         
-        let item = self.dataSource.items[indexPath.row]
-        castCell.configure(with: DefaultMenuItemViewModel(menuItem: item))
+        let item            = self.dataSource.items[indexPath.row]
+        castCell.configure  (with: DefaultMenuItemViewModel(menuItem: item))
         return cell
     }
     
@@ -51,19 +51,24 @@ extension DefaultMenuViewModel : UICollectionViewDataSource {
 }
 
 extension DefaultMenuViewModel : UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let item = self.dataSource.items[indexPath.row]
-        return self.sizer.size(for: item, container: collectionView)
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let item                = self.dataSource.items[indexPath.row]
+        return self.sizer.size  (for: item, container: collectionView)
     }
 }
 
 extension DefaultMenuViewModel : UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? MenuItemCollectionViewCell else {
-            return
-        }
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
         
-        guard let action = cell.vm?.action else {
+        guard
+            let cell = collectionView.cellForItem(at: indexPath) as? MenuItemCollectionViewCell,
+            let action = cell.vm?.action
+        else
+        {
             return
         }
         
