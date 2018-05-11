@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MBNetworking
 import UIKit
 
 protocol ViewControllerContaining {
@@ -36,7 +37,8 @@ class ContainerViewController : UIViewController, ViewControllerContaining, Menu
         self.currentViewController?.removeFromParentViewController()
         
         if let controller = viewController as? ExerciseListViewController {
-            controller.configure(flowController: self.flowController, viewModel: DefaultExerciseListViewModel(fetcher: ExerciseFetcher()))
+            let fetcher = ExerciseFetcher(getter: NetworkGetter())
+            controller.configure(flowController: self.flowController, viewModel: DefaultExerciseListViewModel(fetcher: fetcher))
         }
         
         self.currentViewController = viewController

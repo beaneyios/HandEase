@@ -8,7 +8,12 @@
 
 import Foundation
 
-typealias ExerciseFetchCompletion = (_ exercises: [Exercise]) -> Void
+enum ExerciseResult {
+    case success(exercises: [Exercise])
+    case failure(error: Error, defaultExercises: [Exercise])
+}
+
+typealias ExerciseFetchCompletion = (_ result: ExerciseResult) -> Void
 protocol ExerciseFetching {
     func fetchExercises(completion: @escaping ExerciseFetchCompletion)
 }

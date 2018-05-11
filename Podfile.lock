@@ -1,0 +1,20 @@
+PODS:
+  - CryptoSwift (0.9.0)
+  - MBNetworking (0.1.1):
+    - CryptoSwift (~> 0.9.0)
+
+DEPENDENCIES:
+  - MBNetworking
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CryptoSwift
+    - MBNetworking
+
+SPEC CHECKSUMS:
+  CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
+  MBNetworking: 96122ed3c2bc32641fbc49ed973c6d9d88ce2dfd
+
+PODFILE CHECKSUM: 60a29077bf486383e8225426718e7dabd9dc0998
+
+COCOAPODS: 1.5.0

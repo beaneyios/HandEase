@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4990EB3F6E51E190F6F575C9 /* Pods_HandEaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001540FD8FDAF63186B31F49 /* Pods_HandEaseTests.framework */; };
+		782B8C6CD1F0956D222A004C /* Pods_HandEase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F2E00F6CF6920CF6370011 /* Pods_HandEase.framework */; };
 		BE0F6ABA207909FE00587714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F6AB9207909FE00587714 /* AppDelegate.swift */; };
 		BE0F6ABF207909FE00587714 /* Container.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0F6ABD207909FE00587714 /* Container.storyboard */; };
 		BE0F6AC1207909FE00587714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE0F6AC0207909FE00587714 /* Assets.xcassets */; };
@@ -73,6 +75,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		001540FD8FDAF63186B31F49 /* Pods_HandEaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HandEaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1624E8F441D08B09064DF031 /* Pods-HandEaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandEaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HandEaseTests/Pods-HandEaseTests.release.xcconfig"; sourceTree = "<group>"; };
+		37E7118D54A4A3507E2347A1 /* Pods-HandEaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandEaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HandEaseTests/Pods-HandEaseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		68EA6FE31F628B8E834A6C81 /* Pods-HandEase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandEase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HandEase/Pods-HandEase.debug.xcconfig"; sourceTree = "<group>"; };
+		783A29E98E33D82B4845F84C /* Pods-HandEase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandEase.release.xcconfig"; path = "Pods/Target Support Files/Pods-HandEase/Pods-HandEase.release.xcconfig"; sourceTree = "<group>"; };
+		79F2E00F6CF6920CF6370011 /* Pods_HandEase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HandEase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0F6AB6207909FE00587714 /* HandEase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandEase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0F6AB9207909FE00587714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE0F6ABE207909FE00587714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Container.storyboard; sourceTree = "<group>"; };
@@ -138,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				782B8C6CD1F0956D222A004C /* Pods_HandEase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,12 +154,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4990EB3F6E51E190F6F575C9 /* Pods_HandEaseTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30558B23C56D6F6BB30127A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68EA6FE31F628B8E834A6C81 /* Pods-HandEase.debug.xcconfig */,
+				783A29E98E33D82B4845F84C /* Pods-HandEase.release.xcconfig */,
+				37E7118D54A4A3507E2347A1 /* Pods-HandEaseTests.debug.xcconfig */,
+				1624E8F441D08B09064DF031 /* Pods-HandEaseTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BE0F6AAD207909FE00587714 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +179,8 @@
 				BE0F6ACD207909FF00587714 /* HandEaseTests */,
 				BE0F6AD8207909FF00587714 /* HandEaseUITests */,
 				BE0F6AB7207909FE00587714 /* Products */,
+				30558B23C56D6F6BB30127A1 /* Pods */,
+				DEDC22F1C41494653134F20C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +211,7 @@
 		BE0F6ACD207909FF00587714 /* HandEaseTests */ = {
 			isa = PBXGroup;
 			children = (
+				BEEBAAE420A0DC57002EA251 /* Exercises */,
 				BE0F826D207A7F6F00919C51 /* Assets */,
 				BEEBAAC7209F777E002EA251 /* Container */,
 				BE0F6B0F20795E9200587714 /* Menu */,
@@ -288,8 +312,10 @@
 		BE0F6AFC2079429800587714 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BEEBAAEA20A0DD0B002EA251 /* Controllers */,
 				BE3B291E20964DE600CA42EA /* Constants */,
 				BE3B291B20964D0700CA42EA /* Extensions */,
+				BEEBAAE520A0DC7D002EA251 /* Protocol */,
 				BEEBAAC2209DF174002EA251 /* Type Aliases */,
 			);
 			path = Core;
@@ -559,6 +585,36 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		BEEBAAE420A0DC57002EA251 /* Exercises */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Exercises;
+			sourceTree = "<group>";
+		};
+		BEEBAAE520A0DC7D002EA251 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		BEEBAAEA20A0DD0B002EA251 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DEDC22F1C41494653134F20C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79F2E00F6CF6920CF6370011 /* Pods_HandEase.framework */,
+				001540FD8FDAF63186B31F49 /* Pods_HandEaseTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -566,9 +622,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE0F6ADE207909FF00587714 /* Build configuration list for PBXNativeTarget "HandEase" */;
 			buildPhases = (
+				37313FAAF3786F15D9CA3C52 /* [CP] Check Pods Manifest.lock */,
 				BE0F6AB2207909FE00587714 /* Sources */,
 				BE0F6AB3207909FE00587714 /* Frameworks */,
 				BE0F6AB4207909FE00587714 /* Resources */,
+				EB9CB37D9B72BAC420ACFBC8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -583,6 +641,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE0F6AE1207909FF00587714 /* Build configuration list for PBXNativeTarget "HandEaseTests" */;
 			buildPhases = (
+				6B57676F7B649531EEDFFC1E /* [CP] Check Pods Manifest.lock */,
 				BE0F6AC6207909FE00587714 /* Sources */,
 				BE0F6AC7207909FE00587714 /* Frameworks */,
 				BE0F6AC8207909FE00587714 /* Resources */,
@@ -659,6 +718,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37313FAAF3786F15D9CA3C52 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HandEase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B57676F7B649531EEDFFC1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HandEaseTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB9CB37D9B72BAC420ACFBC8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HandEase/Pods-HandEase-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MBNetworking/MBNetworking.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBNetworking.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HandEase/Pods-HandEase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BE0F6AB2207909FE00587714 /* Sources */ = {
@@ -874,14 +992,12 @@
 		};
 		BE0F6ADF207909FF00587714 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68EA6FE31F628B8E834A6C81 /* Pods-HandEase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HandEase/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.handease.HandEase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -891,14 +1007,12 @@
 		};
 		BE0F6AE0207909FF00587714 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 783A29E98E33D82B4845F84C /* Pods-HandEase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HandEase/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.handease.HandEase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -908,16 +1022,13 @@
 		};
 		BE0F6AE2207909FF00587714 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37E7118D54A4A3507E2347A1 /* Pods-HandEaseTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HandEaseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.handease.HandEaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -928,16 +1039,13 @@
 		};
 		BE0F6AE3207909FF00587714 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1624E8F441D08B09064DF031 /* Pods-HandEaseTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HandEaseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.handease.HandEaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

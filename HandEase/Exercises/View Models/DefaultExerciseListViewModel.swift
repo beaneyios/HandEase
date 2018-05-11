@@ -23,8 +23,15 @@ class DefaultExerciseListViewModel: NSObject, ExerciseListViewModel {
         cview.delegate          = self
         cview.dataSource        = self
         
-        self.fetcher.fetchExercises { (exercises) in
-            self.exercises = exercises
+        self.fetcher.fetchExercises { (result) in
+            switch result {
+            case .success(exercises: let exercises):
+                self.exercises = exercises
+            case .failure(error: let error, defaultExercises: let exercises):
+                print(error)
+                self.exercises = exercises
+            }
+            
             DispatchQueue.main.async {
                 cview.reloadData()
             }
