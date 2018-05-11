@@ -14,7 +14,7 @@ import UIKit
 /// - Navigation controller based navigation to other views not held in the container.
 typealias MenuContainer = ViewControllerContaining & MenuOpening
 
-class ContainerFlowController: FlowController {
+class ContainerFlowController: ExerciseFlowController {
     var containerVC: MenuContainer
     var navigationController: UINavigationController
     
@@ -25,6 +25,10 @@ class ContainerFlowController: FlowController {
     
     func closeCurrentVC(viewController: UIViewController) {
         self.navigationController.popViewController(animated: true)
+    }
+    
+    func exerciseTapped(exercise: Exercise) {
+        print("Exercise with title \(exercise.title)")
     }
 }
 

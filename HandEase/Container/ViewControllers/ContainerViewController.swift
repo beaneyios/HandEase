@@ -38,7 +38,8 @@ class ContainerViewController : UIViewController, ViewControllerContaining, Menu
         
         if let controller = viewController as? ExerciseListViewController {
             let fetcher = ExerciseFetcher(getter: NetworkGetter())
-            controller.configure(flowController: self.flowController, viewModel: DefaultExerciseListViewModel(fetcher: fetcher))
+            let viewModel = DefaultExerciseListViewModel(fetcher: fetcher, navigator: flowController)
+            controller.configure(flowController: flowController, viewModel: viewModel)
         }
         
         self.currentViewController = viewController

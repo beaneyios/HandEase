@@ -14,3 +14,7 @@ protocol FlowController: class {
     
     func closeCurrentVC(viewController: UIViewController)
 }
+
+protocol ExerciseFlowController: FlowController {
+    func exerciseTapped(exercise: Exercise)
+}

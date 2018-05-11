@@ -12,10 +12,13 @@ import UIKit
 class DefaultExerciseListViewModel: NSObject, ExerciseListViewModel {
     var action: ExerciseItemActionClosure?
     private var fetcher: ExerciseFetching
+    private var navigator: ExerciseFlowController
+    
     private var exercises: [Exercise] = []
     
-    init(fetcher: ExerciseFetching) {
+    init(fetcher: ExerciseFetching, navigator: ExerciseFlowController) {
         self.fetcher = fetcher
+        self.navigator = navigator
     }
     
     func bind(cview: UICollectionView) {
@@ -50,12 +53,11 @@ extension DefaultExerciseListViewModel: UICollectionViewDataSource {
         
         let exercise        = self.exercises[indexPath.row]
         castCell.configure  (viewModel: DefaultExerciseViewModel(exercise: exercise))
+        castCell.exerciseTap = {
+            self.navigator.exerciseTapped(exercise: exercise)
+        }
         return cell
     }
-}
-
-extension DefaultExerciseListViewModel: UICollectionViewDelegate {
-    
 }
 
 extension DefaultExerciseListViewModel: UICollectionViewDelegateFlowLayout {

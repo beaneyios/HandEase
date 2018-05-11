@@ -15,6 +15,9 @@ class SmallExerciseCell: UICollectionViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnFavourite: UIButton!
     
+    typealias ExerciseTap = () -> Void
+    var exerciseTap: ExerciseTap?
+    
     func configure(viewModel: DefaultExerciseViewModel) {
         viewModel.image { (image) in
             DispatchQueue.main.async {
@@ -30,7 +33,7 @@ class SmallExerciseCell: UICollectionViewCell {
     
     @objc func select(sender: UITapGestureRecognizer) {
         self.select(parent: self, sender: sender, duration: 0.2, tintColor: CustomColor.swooshSelectionColor.uiColor) {
-            
+            self.exerciseTap?()
         }
     }
 }

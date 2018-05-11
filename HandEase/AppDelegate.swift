@@ -11,7 +11,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var flowController: FlowController?
+    var flowController: ExerciseFlowController?
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
         let bounds = UIScreen.main.bounds

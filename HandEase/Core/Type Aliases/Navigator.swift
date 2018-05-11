@@ -8,4 +8,4 @@
 
 import Foundation
 
-typealias Navigator = FlowController & MenuActionDelegate & MenuOpening
+typealias Navigator = ExerciseFlowController & MenuActionDelegate & MenuOpening
