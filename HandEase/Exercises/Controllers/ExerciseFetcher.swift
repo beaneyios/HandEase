@@ -26,7 +26,7 @@ class ExerciseFetcher: ExerciseFetching {
     
     /**
      The main entry point to fetching exercises
-     -param completion: The completion into which we either pass a user-pretty error or successful exercise lists.
+     - parameter  completion: The completion into which we either pass a user-pretty error or successful exercise lists.
     */
     func fetchExercises(completion: @escaping ExerciseFetchCompletion) {
         guard let url = self.exercisesURL else { return }
@@ -45,9 +45,9 @@ class ExerciseFetcher: ExerciseFetching {
     
     /**
      The main entry point into which we pass our download result, returned from MBNetworking.
-     -param url: The URL that we have attempted a download on.
-     -param result: The download result.
-     -param completion: The completion into which we either pass a user-pretty error or successful exercise lists.
+     - parameter  url: The URL that we have attempted a download on.
+     - parameter  result: The download result.
+     - parameter  completion: The completion into which we either pass a user-pretty error or successful exercise lists.
     */
     private func handleResult(url: URL, result: DownloadResult, completion: @escaping ExerciseFetchCompletion) {
         switch result {
@@ -60,10 +60,10 @@ class ExerciseFetcher: ExerciseFetching {
     
     /**
      If the network request is successful, we need to do something with the data and response.
-     -param url: The URL that has succeeded in downloading
-     -param data: The unwrapped JSON data.
-     -param response: The HTTP response (currently unused).
-     -param completion: The completion into which we pass the finished list of exercises to display.
+     - parameter  url: The URL that has succeeded in downloading
+     - parameter  data: The unwrapped JSON data.
+     - parameter  response: The HTTP response (currently unused).
+     - parameter  completion: The completion into which we pass the finished list of exercises to display.
     */
     private func handleSuccess(url: URL, data: Data, response: HTTPURLResponse, completion: @escaping ExerciseFetchCompletion) {
         guard let exercises = self.parseJSON(data: data) else {
@@ -80,9 +80,9 @@ class ExerciseFetcher: ExerciseFetching {
     
     /**
      Specifically handles networking failures from MBNetworking.
-     -param url: The URL that has failed to download.
-     -param error: An optional error from MBNetworking.
-     -param completion: The completion into which we pass our user-pretty error.
+     - parameter  url: The URL that has failed to download.
+     - parameter  error: An optional error from MBNetworking.
+     - parameter  completion: The completion into which we pass our user-pretty error.
     */
     private func handleFailure(url: URL, error: Error?, completion: @escaping ExerciseFetchCompletion) {
         guard let error = error else {
@@ -100,11 +100,11 @@ class ExerciseFetcher: ExerciseFetching {
     
     /**
      Should any part of the exercises fetching fail, we need to at least try and provide some cached exercises.
-     -param url: This is the URL we have called and want to retrieve cached content for. A requirement for MBNetworking.
+     - parameter  url: This is the URL we have called and want to retrieve cached content for. A requirement for MBNetworking.
      -returns: An optional list of exercises.
     */
     private func fetchCachedExercises(for url: URL) -> [Exercise]? {
-        guard case DownloadResult.success(data: let data, response: _) = cacher.get(url: url) else {
+        guard case .success(data: let data, response: _) = cacher.get(url: url) else {
             return nil
         }
         
@@ -113,7 +113,7 @@ class ExerciseFetcher: ExerciseFetching {
     
     /**
      Our feed is delivered via JSON, we need to be able to map this to an object.
-     -param data: The data returned representing the JSON feed.
+     - parameter data: The data returned representing the JSON feed.
     */
     private func parseJSON(data: Data) -> [Exercise]? {
         let decoder = JSONDecoder()
