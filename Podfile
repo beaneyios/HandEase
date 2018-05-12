@@ -6,7 +6,7 @@ target 'HandEase' do
   use_frameworks!
 
   # Pods for HandEase
-  pod 'MBNetworking'
+  pod 'MBNetworking', :path => '../Networking/Networking'
 
   target 'HandEaseTests' do
     inherit! :search_paths

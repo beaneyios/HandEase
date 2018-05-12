@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MBNetworking
 
 class DefaultExerciseListViewModel: NSObject, ExerciseListViewModel {
     var action: ExerciseItemActionClosure?
@@ -31,14 +32,17 @@ class DefaultExerciseListViewModel: NSObject, ExerciseListViewModel {
             case .success(exercises: let exercises):
                 self.exercises = exercises
             case .failure(error: let error, defaultExercises: let exercises):
-                print(error)
-                self.exercises = exercises
+                self.updateErrorUI(error: error, defaultExercises: exercises)
             }
             
             DispatchQueue.main.async {
                 cview.reloadData()
             }
         }
+    }
+    
+    private func updateErrorUI(error: CustomError, defaultExercises: [Exercise]?) {
+        //TODO: Handle error front end.
     }
 }
 

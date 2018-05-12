@@ -50,6 +50,10 @@
 		BEABD6BD207A9AB700DC2E7D /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD6BC207A9AB700DC2E7D /* CustomColor.swift */; };
 		BEB06B22208682600051B0A5 /* ItemAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB06B21208682600051B0A5 /* ItemAction.swift */; };
 		BEB06B2720868A1E0051B0A5 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB06B2620868A1E0051B0A5 /* ContainerViewController.swift */; };
+		BEDA7DE220A7221B0009F2C2 /* ExerciseFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA7DE120A7221B0009F2C2 /* ExerciseFetcherTests.swift */; };
+		BEDA7DE520A722660009F2C2 /* Sample_Exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = BEDA7DE420A722660009F2C2 /* Sample_Exercises.json */; };
+		BEDA7DE820A722DF0009F2C2 /* MockGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA7DE720A722DF0009F2C2 /* MockGetter.swift */; };
+		BEDA7DEA20A72C1B0009F2C2 /* MockCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA7DE920A72C1B0009F2C2 /* MockCacher.swift */; };
 		BEEBAAC1209DEFDA002EA251 /* MenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC0209DEFDA002EA251 /* MenuDelegate.swift */; };
 		BEEBAAC4209DF187002EA251 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC3209DF187002EA251 /* Navigator.swift */; };
 		BEEBAACA209F779C002EA251 /* ContainerFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC9209F779C002EA251 /* ContainerFlowControllerTests.swift */; };
@@ -127,6 +131,10 @@
 		BEABD6BC207A9AB700DC2E7D /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		BEB06B21208682600051B0A5 /* ItemAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAction.swift; sourceTree = "<group>"; };
 		BEB06B2620868A1E0051B0A5 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		BEDA7DE120A7221B0009F2C2 /* ExerciseFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFetcherTests.swift; sourceTree = "<group>"; };
+		BEDA7DE420A722660009F2C2 /* Sample_Exercises.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Sample_Exercises.json; sourceTree = "<group>"; };
+		BEDA7DE720A722DF0009F2C2 /* MockGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGetter.swift; sourceTree = "<group>"; };
+		BEDA7DE920A72C1B0009F2C2 /* MockCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCacher.swift; sourceTree = "<group>"; };
 		BEEBAAC0209DEFDA002EA251 /* MenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
 		BEEBAAC3209DF187002EA251 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		BEEBAAC9209F779C002EA251 /* ContainerFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerFlowControllerTests.swift; sourceTree = "<group>"; };
@@ -312,10 +320,8 @@
 		BE0F6AFC2079429800587714 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				BEEBAAEA20A0DD0B002EA251 /* Controllers */,
 				BE3B291E20964DE600CA42EA /* Constants */,
 				BE3B291B20964D0700CA42EA /* Extensions */,
-				BEEBAAE520A0DC7D002EA251 /* Protocol */,
 				BEEBAAC2209DF174002EA251 /* Type Aliases */,
 			);
 			path = Core;
@@ -510,6 +516,31 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		BEDA7DE020A722100009F2C2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BEDA7DE120A7221B0009F2C2 /* ExerciseFetcherTests.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BEDA7DE320A722590009F2C2 /* Test Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BEDA7DE420A722660009F2C2 /* Sample_Exercises.json */,
+			);
+			path = "Test Resources";
+			sourceTree = "<group>";
+		};
+		BEDA7DE620A722D60009F2C2 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				BEDA7DE720A722DF0009F2C2 /* MockGetter.swift */,
+				BEDA7DE920A72C1B0009F2C2 /* MockCacher.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		BEEBAAC2209DF174002EA251 /* Type Aliases */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,22 +619,11 @@
 		BEEBAAE420A0DC57002EA251 /* Exercises */ = {
 			isa = PBXGroup;
 			children = (
+				BEDA7DE620A722D60009F2C2 /* Mocks */,
+				BEDA7DE320A722590009F2C2 /* Test Resources */,
+				BEDA7DE020A722100009F2C2 /* Controllers */,
 			);
 			path = Exercises;
-			sourceTree = "<group>";
-		};
-		BEEBAAE520A0DC7D002EA251 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		BEEBAAEA20A0DD0B002EA251 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		DEDC22F1C41494653134F20C /* Frameworks */ = {
@@ -714,6 +734,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEDA7DE520A722660009F2C2 /* Sample_Exercises.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -829,11 +850,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEDA7DE820A722DF0009F2C2 /* MockGetter.swift in Sources */,
+				BEDA7DE220A7221B0009F2C2 /* ExerciseFetcherTests.swift in Sources */,
 				BE0F8270207A7F9A00919C51 /* LocalisedKeyTests.swift in Sources */,
 				BEEBAACA209F779C002EA251 /* ContainerFlowControllerTests.swift in Sources */,
 				BE0F6B152079606E00587714 /* DefaultMenuItemViewModelTests.swift in Sources */,
 				BEABD6B3207A856600DC2E7D /* MenuItemCollectionViewCellTests.swift in Sources */,
 				BE0F6B1220795EC600587714 /* LocalMenuItemDataSourceTests.swift in Sources */,
+				BEDA7DEA20A72C1B0009F2C2 /* MockCacher.swift in Sources */,
 				BE0F8273207A82A800919C51 /* ImageTypeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -997,7 +1021,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HandEase/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.handease.HandEase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1012,7 +1039,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HandEase/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.handease.HandEase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1028,7 +1058,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HandEaseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.handease.HandEaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1045,7 +1079,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HandEaseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.handease.HandEaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import MBNetworking
 
 enum ExerciseResult {
     case success(exercises: [Exercise])
-    case failure(error: Error, defaultExercises: [Exercise])
+    case failure(error: CustomError, defaultExercises: [Exercise]?)
 }
 
 typealias ExerciseFetchCompletion = (_ result: ExerciseResult) -> Void
