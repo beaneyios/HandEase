@@ -56,7 +56,8 @@ extension DefaultExerciseListViewModel: UICollectionViewDataSource {
         guard let castCell  = cell as? SmallExerciseCell else { return SmallExerciseCell() }
         
         let exercise        = self.exercises[indexPath.row]
-        castCell.configure  (viewModel: DefaultExerciseViewModel(exercise: exercise))
+        let downloader      = ImageDownloader(getter: NetworkGetter(), cacher: Cacher())
+        castCell.configure  (viewModel: DefaultExerciseViewModel(exercise: exercise, imageDownloader: downloader))
         castCell.exerciseTap = {
             self.navigator.exerciseTapped(exercise: exercise)
         }

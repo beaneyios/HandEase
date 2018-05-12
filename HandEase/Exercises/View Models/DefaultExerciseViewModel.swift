@@ -9,14 +9,15 @@
 import Foundation
 import UIKit
 
-typealias ImageCompletion = (_ image: UIImage) -> Void
+typealias ImageCompletion = (_ image: UIImage?) -> Void
 
 class DefaultExerciseViewModel {
     private var exercise: Exercise
-    private var imageTask: URLSessionDataTask?
+    private var imageDownloader: ImageDownloading
     
-    init(exercise: Exercise) {
+    init(exercise: Exercise, imageDownloader: ImageDownloading) {
         self.exercise = exercise
+        self.imageDownloader = imageDownloader
     }
     
     var titleLabel: String {
@@ -24,15 +25,22 @@ class DefaultExerciseViewModel {
     }
     
     func image(completion: @escaping ImageCompletion) {
-        self.imageTask?.cancel()
+        self.imageDownloader.cancelDownload()
+        
         guard let url = URL(string: self.exercise.imageURL) else { return }
-        
-        let session = URLSession(configuration: URLSessionConfiguration.default)
-        self.imageTask = session.dataTask(with: url, completionHandler: { (data, response, error) in
-            guard let data = data, let image = UIImage(data: data) else { return }
+        self.imageDownloader.downloadImage(url: url, defaultImage: nil) { (result) in
+            self.handleImageResult(result: result, completion: completion)
+        }
+    }
+    
+    private func handleImageResult(result: ImageResult, completion: @escaping ImageCompletion) {
+        switch result {
+        case .successful(image: let image):
             completion(image)
-        })
-        
-        self.imageTask?.resume()
+        case .failure(error: let error, defaultImage: let image):
+            //TODO: Handle error logging.
+            print(error)
+            completion(image)
+        }
     }
 }

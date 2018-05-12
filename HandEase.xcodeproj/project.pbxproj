@@ -54,6 +54,8 @@
 		BEDA7DE520A722660009F2C2 /* Sample_Exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = BEDA7DE420A722660009F2C2 /* Sample_Exercises.json */; };
 		BEDA7DE820A722DF0009F2C2 /* MockGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA7DE720A722DF0009F2C2 /* MockGetter.swift */; };
 		BEDA7DEA20A72C1B0009F2C2 /* MockCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA7DE920A72C1B0009F2C2 /* MockCacher.swift */; };
+		BEDA7DEE20A72DED0009F2C2 /* ImageDownloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA7DED20A72DED0009F2C2 /* ImageDownloading.swift */; };
+		BEDA7DF020A72EA50009F2C2 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA7DEF20A72EA50009F2C2 /* ImageDownloader.swift */; };
 		BEEBAAC1209DEFDA002EA251 /* MenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC0209DEFDA002EA251 /* MenuDelegate.swift */; };
 		BEEBAAC4209DF187002EA251 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC3209DF187002EA251 /* Navigator.swift */; };
 		BEEBAACA209F779C002EA251 /* ContainerFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC9209F779C002EA251 /* ContainerFlowControllerTests.swift */; };
@@ -135,6 +137,8 @@
 		BEDA7DE420A722660009F2C2 /* Sample_Exercises.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Sample_Exercises.json; sourceTree = "<group>"; };
 		BEDA7DE720A722DF0009F2C2 /* MockGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGetter.swift; sourceTree = "<group>"; };
 		BEDA7DE920A72C1B0009F2C2 /* MockCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCacher.swift; sourceTree = "<group>"; };
+		BEDA7DED20A72DED0009F2C2 /* ImageDownloading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloading.swift; sourceTree = "<group>"; };
+		BEDA7DEF20A72EA50009F2C2 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		BEEBAAC0209DEFDA002EA251 /* MenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
 		BEEBAAC3209DF187002EA251 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		BEEBAAC9209F779C002EA251 /* ContainerFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerFlowControllerTests.swift; sourceTree = "<group>"; };
@@ -320,6 +324,8 @@
 		BE0F6AFC2079429800587714 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BEDA7DEC20A72DD60009F2C2 /* Protocols */,
+				BEDA7DEB20A72DD00009F2C2 /* Controllers */,
 				BE3B291E20964DE600CA42EA /* Constants */,
 				BE3B291B20964D0700CA42EA /* Extensions */,
 				BEEBAAC2209DF174002EA251 /* Type Aliases */,
@@ -539,6 +545,22 @@
 				BEDA7DE920A72C1B0009F2C2 /* MockCacher.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		BEDA7DEB20A72DD00009F2C2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BEDA7DEF20A72EA50009F2C2 /* ImageDownloader.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BEDA7DEC20A72DD60009F2C2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BEDA7DED20A72DED0009F2C2 /* ImageDownloading.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		BEEBAAC2209DF174002EA251 /* Type Aliases */ = {
@@ -819,6 +841,7 @@
 				BE3B292D20965AC500CA42EA /* UIView+AutoLayoutHelpers.swift in Sources */,
 				BEABD6B5207A888100DC2E7D /* MenuItemSizer.swift in Sources */,
 				BEB06B22208682600051B0A5 /* ItemAction.swift in Sources */,
+				BEDA7DF020A72EA50009F2C2 /* ImageDownloader.swift in Sources */,
 				BEEBAAC4209DF187002EA251 /* Navigator.swift in Sources */,
 				BEABD6B7207A88CD00DC2E7D /* LocalMenuItemSizer.swift in Sources */,
 				BE0F6B04207942C200587714 /* UIImage+ImageType.swift in Sources */,
@@ -838,6 +861,7 @@
 				BE0F6B0E20795BED00587714 /* MenuViewModel.swift in Sources */,
 				BE0F6AFA2079423600587714 /* MenuItemViewModel.swift in Sources */,
 				BE71C6A02098F8BA00DFB510 /* MenuTheme.swift in Sources */,
+				BEDA7DEE20A72DED0009F2C2 /* ImageDownloading.swift in Sources */,
 				BE71C6A52098FB1F00DFB510 /* ContainerFlowController.swift in Sources */,
 				BE0F6AF2207940D600587714 /* MenuItemCollectionViewCell.swift in Sources */,
 				BE71C6A82098FDB400DFB510 /* FlowController.swift in Sources */,
