@@ -16,6 +16,7 @@ class ExerciseFetcher: ExerciseFetching {
     private var host = "https://s3-eu-west-1.amazonaws.com"
     private var endPoint = "/handease/exercises/test.json"
     private var exercisesURL: URL? { return URL(string: host + endPoint) }
+    private var secondsTTL: Int { return 60 * 60 * 24 } //24 hours cache right now.
     
     private var fetchTask: URLSessionDataTaskProtocol?
     
@@ -25,14 +26,25 @@ class ExerciseFetcher: ExerciseFetching {
     }
     
     /**
-     The main entry point to fetching exercises
+     The main entry point to fetching exercises. If an in-date cached copy is available, this will be returned.
      - parameter  completion: The completion into which we either pass a user-pretty error or successful exercise lists.
+     - parameter force: A boolean determining the app should bypass caching and download fresh.
     */
-    func fetchExercises(completion: @escaping ExerciseFetchCompletion) {
-        guard let url = self.exercisesURL else { return }
-        
-        self.fetchTask = self.getter.get(url: url, timeout: 10.0) { (result) in
-            self.handleResult(url: url, result: result, completion: completion)
+    func fetchExercises(force: Bool, completion: @escaping ExerciseFetchCompletion) {
+        DispatchQueue.global().async {
+            guard let url = self.exercisesURL else { return }
+            
+            if !force && self.shouldFetchExerciseFromCache() {
+                if let cachedExercises = self.fetchCachedExercises(for: url) {
+                    let result = ExerciseResult.success(exercises: cachedExercises)
+                    completion(result)
+                    return
+                }
+            }
+            
+            self.fetchTask = self.getter.get(url: url, timeout: 10.0) { (result) in
+                self.handleResult(url: url, result: result, completion: completion)
+            }
         }
     }
     
@@ -41,6 +53,15 @@ class ExerciseFetcher: ExerciseFetching {
     */
     func cancelFetch() {
         self.fetchTask?.cancel()
+    }
+    
+    /**
+     If we have an in-date cache, no need to download.
+     - returns: A boolean determing if we should or should not download.
+    */
+    private func shouldFetchExerciseFromCache() -> Bool {
+        guard let url = self.exercisesURL else { return false }
+        return self.cacher.cacheInDate(url: url)
     }
     
     /**
@@ -53,6 +74,7 @@ class ExerciseFetcher: ExerciseFetching {
         switch result {
         case .success(data: let data, response: let response):
             self.handleSuccess(url: url, data: data, response: response, completion: completion)
+            self.cacher.set(url: url, data: data, secondsTTL: self.secondsTTL)
         case .failure(error: let error):
             self.handleFailure(url: url, error: error, completion: completion)
         }
@@ -73,7 +95,6 @@ class ExerciseFetcher: ExerciseFetching {
             return
         }
         
-        self.cacher.set(url: url, data: data)
         let result = ExerciseResult.success(exercises: exercises)
         completion(result)
     }

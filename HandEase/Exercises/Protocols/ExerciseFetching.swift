@@ -16,5 +16,5 @@ enum ExerciseResult {
 
 typealias ExerciseFetchCompletion = (_ result: ExerciseResult) -> Void
 protocol ExerciseFetching {
-    func fetchExercises(completion: @escaping ExerciseFetchCompletion)
+    func fetchExercises(force: Bool, completion: @escaping ExerciseFetchCompletion)
 }
