@@ -11,7 +11,7 @@ import UIKit
 
 typealias ImageCompletion = (_ image: UIImage?) -> Void
 
-class DefaultExerciseViewModel {
+class ExerciseViewModel {
     private var exercise: Exercise
     private var imageDownloader: ImageDownloading
     

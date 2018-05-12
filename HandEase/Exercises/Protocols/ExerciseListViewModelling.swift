@@ -11,7 +11,6 @@ import UIKit
 
 typealias ExerciseItemActionClosure = (_ action: Exercise) -> ()
 
-protocol ExerciseListViewModel {
-    var action: ExerciseItemActionClosure? { get set }
+protocol ExerciseListViewModelling {
     func bind(cview: UICollectionView)
 }

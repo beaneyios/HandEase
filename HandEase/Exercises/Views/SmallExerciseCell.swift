@@ -18,7 +18,7 @@ class SmallExerciseCell: UICollectionViewCell {
     typealias ExerciseTap = () -> Void
     var exerciseTap: ExerciseTap?
     
-    func configure(viewModel: DefaultExerciseViewModel) {
+    func configure(viewModel: ExerciseViewModel) {
         viewModel.image { (image) in
             DispatchQueue.main.async {
                 self.thumbnail.image = image

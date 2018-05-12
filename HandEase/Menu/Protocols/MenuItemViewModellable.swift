@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol MenuItemViewModel {
+protocol MenuItemViewModellable {
     var strTitle: String    { get }
     var imgIcon: UIImage?   { get }
     var foreColor: UIColor  { get }

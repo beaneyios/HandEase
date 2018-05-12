@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 @testable import HandEase
 
-class DefaultMenuItemViewModelTests: XCTestCase {
+class MenuItemViewModelTests: XCTestCase {
     var debugLocaleString: String = "AppleLanguages"
     override func setUp() {
         UserDefaults.standard.removeObject(forKey: self.debugLocaleString)
@@ -29,7 +29,7 @@ class DefaultMenuItemViewModelTests: XCTestCase {
                                     foreColor: .menuItemForeColor,
                                     backColor: .menuItemBackColor,
                                     action: .loadView(viewController: ViewControllerRepresentations.about))
-        let sut = DefaultMenuItemViewModel(menuItem: testMenuItem)
+        let sut = MenuItemViewModel(menuItem: testMenuItem)
         XCTAssert(sut.strTitle == "About")
     }
     
@@ -39,7 +39,7 @@ class DefaultMenuItemViewModelTests: XCTestCase {
                                     foreColor: .menuItemForeColor,
                                     backColor: .menuItemBackColor,
                                     action: .loadView(viewController: ViewControllerRepresentations.about))
-        let sut = DefaultMenuItemViewModel(menuItem: testMenuItem)
+        let sut = MenuItemViewModel(menuItem: testMenuItem)
         
         let expImg      = #imageLiteral(resourceName: "info").withRenderingMode(.alwaysTemplate)
         

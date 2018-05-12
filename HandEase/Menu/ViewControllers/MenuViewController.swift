@@ -12,13 +12,7 @@ import UIKit
 class MenuViewController : UIViewController {
     @IBOutlet weak var cview: UICollectionView!
     
-    var vm: MenuViewModel = {
-        return DefaultMenuViewModel(
-            sizer: LocalMenuItemSizer(),
-            dataSource: LocalMenuItemDataSource(),
-            theme: LocalMenuTheme()
-        )
-    }()
+    var vm: MenuViewModel!
     
     public func configure(with vm: MenuViewModel) {
         self.vm = vm

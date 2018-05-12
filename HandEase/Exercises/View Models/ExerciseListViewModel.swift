@@ -10,16 +10,14 @@ import Foundation
 import UIKit
 import MBNetworking
 
-class DefaultExerciseListViewModel: NSObject, ExerciseListViewModel {
-    var action: ExerciseItemActionClosure?
-    private var fetcher: ExerciseFetching
-    private var navigator: ExerciseFlowController
+class ExerciseListViewModel: NSObject, ExerciseListViewModelling {
+    typealias Dependencies = HasExerciseFetcher & HasImageDownloader & HasExerciseFlowController
+    private var dependencies: Dependencies
     
     private var exercises: [Exercise] = []
     
-    init(fetcher: ExerciseFetching, navigator: ExerciseFlowController) {
-        self.fetcher = fetcher
-        self.navigator = navigator
+    init(dependencies: Dependencies) {
+        self.dependencies = dependencies
     }
     
     func bind(cview: UICollectionView) {
@@ -27,7 +25,7 @@ class DefaultExerciseListViewModel: NSObject, ExerciseListViewModel {
         cview.delegate          = self
         cview.dataSource        = self
         
-        self.fetcher.fetchExercises { (result) in
+        self.dependencies.exerciseFetcher.fetchExercises { (result) in
             switch result {
             case .success(exercises: let exercises):
                 self.exercises = exercises
@@ -44,9 +42,15 @@ class DefaultExerciseListViewModel: NSObject, ExerciseListViewModel {
     private func updateErrorUI(error: CustomError, defaultExercises: [Exercise]?) {
         //TODO: Handle error front end.
     }
+    
+    struct Config: Dependencies {
+        var exerciseFetcher: ExerciseFetching
+        var imageDownloader: ImageDownloading
+        var navigator: ExerciseFlowController
+    }
 }
 
-extension DefaultExerciseListViewModel: UICollectionViewDataSource {
+extension ExerciseListViewModel: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.exercises.count
     }
@@ -57,15 +61,15 @@ extension DefaultExerciseListViewModel: UICollectionViewDataSource {
         
         let exercise        = self.exercises[indexPath.row]
         let downloader      = ImageDownloader(getter: NetworkGetter(), cacher: Cacher())
-        castCell.configure  (viewModel: DefaultExerciseViewModel(exercise: exercise, imageDownloader: downloader))
+        castCell.configure  (viewModel: ExerciseViewModel(exercise: exercise, imageDownloader: downloader))
         castCell.exerciseTap = {
-            self.navigator.exerciseTapped(exercise: exercise)
+            self.dependencies.navigator.exerciseTapped(exercise: exercise)
         }
         return cell
     }
 }
 
-extension DefaultExerciseListViewModel: UICollectionViewDelegateFlowLayout {
+extension ExerciseListViewModel: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width, height: 100.0)
     }

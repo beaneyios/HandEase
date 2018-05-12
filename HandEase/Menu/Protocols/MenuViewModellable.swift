@@ -11,7 +11,7 @@ import UIKit
 
 typealias MenuItemActionClosure = (_ action: ItemAction) -> ()
 
-protocol MenuViewModel {
+protocol MenuViewModellable {
     var action: MenuItemActionClosure? { get set }
     var backgroundColor: UIColor { get }
     func bind(cview: UICollectionView)

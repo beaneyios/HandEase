@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct DefaultMenuItemViewModel : MenuItemViewModel {
+struct MenuItemViewModel : MenuItemViewModellable {
     private var menuItem: MenuItem
     
     init(menuItem: MenuItem) {
