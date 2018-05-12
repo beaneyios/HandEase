@@ -17,6 +17,7 @@ class ExerciseFetcher: ExerciseFetching {
     private var endPoint = "/handease/exercises/test.json"
     private var exercisesURL: URL? { return URL(string: host + endPoint) }
     private var secondsTTL: Int { return 60 * 60 * 24 } //24 hours cache right now.
+    private var cacheType: String = "exercises"
     
     private var fetchTask: URLSessionDataTaskProtocol?
     
@@ -61,7 +62,7 @@ class ExerciseFetcher: ExerciseFetching {
     */
     private func shouldFetchExerciseFromCache() -> Bool {
         guard let url = self.exercisesURL else { return false }
-        return self.cacher.cacheInDate(url: url)
+        return self.cacher.cacheInDate(url: url, type: self.cacheType)
     }
     
     /**
@@ -74,7 +75,7 @@ class ExerciseFetcher: ExerciseFetching {
         switch result {
         case .success(data: let data, response: let response):
             self.handleSuccess(url: url, data: data, response: response, completion: completion)
-            self.cacher.set(url: url, data: data, secondsTTL: self.secondsTTL)
+            self.cacher.set(url: url, data: data, secondsTTL: self.secondsTTL, type: self.cacheType)
         case .failure(error: let error):
             self.handleFailure(url: url, error: error, completion: completion)
         }
@@ -125,7 +126,7 @@ class ExerciseFetcher: ExerciseFetching {
      -returns: An optional list of exercises.
     */
     private func fetchCachedExercises(for url: URL) -> [Exercise]? {
-        guard case .success(data: let data, response: _) = cacher.get(url: url) else {
+        guard case .success(data: let data, response: _) = cacher.get(url: url, type: self.cacheType) else {
             return nil
         }
         

@@ -11,7 +11,7 @@ import UIKit
 import MBNetworking
 
 class ExerciseListViewModel: NSObject, ExerciseListViewModelling {
-    typealias Dependencies = HasExerciseFetcher & HasImageDownloader & HasExerciseFlowController & HasImageDownloader
+    typealias Dependencies = HasExerciseFetcher & HasExerciseFlowController
     private var dependencies: Dependencies
     
     private var exercises: [Exercise] = []
@@ -45,7 +45,6 @@ class ExerciseListViewModel: NSObject, ExerciseListViewModelling {
     
     struct Config: Dependencies {
         var exerciseFetcher: ExerciseFetching
-        var imageDownloader: ImageDownloading
         var navigator: ExerciseFlowController
     }
 }
@@ -60,12 +59,18 @@ extension ExerciseListViewModel: UICollectionViewDataSource {
         guard let castCell  = cell as? SmallExerciseCell else { return SmallExerciseCell() }
         
         let exercise        = self.exercises[indexPath.row]
-        let downloader      = self.dependencies.imageDownloader
+        let downloader      = self.fetchImageDownloader()
         castCell.configure  (viewModel: ExerciseViewModel(exercise: exercise, imageDownloader: downloader))
         castCell.exerciseTap = {
             self.dependencies.navigator.exerciseTapped(exercise: exercise)
         }
         return cell
+    }
+    
+    private func fetchImageDownloader() -> ImageDownloader {
+        let getter = NetworkGetter()
+        let cacher = Cacher(ttlManager: TTLManager())
+        return ImageDownloader(getter: getter, cacher: cacher)
     }
 }
 

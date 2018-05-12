@@ -52,8 +52,7 @@ class ContainerViewController : UIViewController, ViewControllerContaining, Menu
         let getter = NetworkGetter()
         let cacher = Cacher(ttlManager: ttlManager)
         let fetcher = ExerciseFetcher(getter: getter, cacher: cacher)
-        let imageDownloader = ImageDownloader(getter: getter, cacher: cacher)
-        return ExerciseListViewModel.Config(exerciseFetcher: fetcher, imageDownloader: imageDownloader, navigator: self.flowController)
+        return ExerciseListViewModel.Config(exerciseFetcher: fetcher, navigator: self.flowController)
     }
 }
 

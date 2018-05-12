@@ -13,6 +13,7 @@ class ImageDownloader: ImageDownloading {
     private var getter: Getter
     private var cacher: Cacheable
     
+    private var cacheType: String = "images"
     private var imageDownloadTask: URLSessionDataTaskProtocol?
     
     init(getter: Getter, cacher: Cacheable) {
@@ -95,7 +96,7 @@ class ImageDownloader: ImageDownloading {
      - parameter completion: The completion into which we pass our user-pretty error.
      */
     private func fetchCachedImage(url: URL) -> UIImage? {
-        guard case .success(data: let data, response: _) = cacher.get(url: url) else {
+        guard case .success(data: let data, response: _) = cacher.get(url: url, type: self.cacheType) else {
             return nil
         }
         
