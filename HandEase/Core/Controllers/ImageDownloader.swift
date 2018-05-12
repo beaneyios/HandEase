@@ -14,6 +14,7 @@ class ImageDownloader: ImageDownloading {
     private var cacher: Cacheable
     
     private var cacheType: String = "images"
+    private var secondsTTL: Int { return 60*60*24 }
     private var imageDownloadTask: URLSessionDataTaskProtocol?
     
     init(getter: Getter, cacher: Cacheable) {
@@ -28,8 +29,17 @@ class ImageDownloader: ImageDownloading {
      - parameter completion: The completion into which we'll pass a user-pretty error or an image.
     */
     func downloadImage(url: URL, defaultImage: UIImage? = nil, completion: @escaping ImageDownloadCompletion) {
-        self.imageDownloadTask = self.getter.get(url: url, timeout: 60.0) { (result) in
-            self.handleResult(url: url, result: result, defaultImage: defaultImage, completion: completion)
+        DispatchQueue.global().async {
+            if self.shouldImageFromCache(url: url) {
+                if let cachedImage = self.fetchCachedImage(url: url) {
+                    completion(ImageResult.successful(image: cachedImage))
+                    return
+                }
+            }
+            
+            self.imageDownloadTask = self.getter.get(url: url, timeout: 60.0) { (result) in
+                self.handleResult(url: url, result: result, defaultImage: defaultImage, completion: completion)
+            }
         }
     }
     
@@ -38,6 +48,14 @@ class ImageDownloader: ImageDownloading {
      */
     func cancelDownload() {
         self.imageDownloadTask?.cancel()
+    }
+    
+    /**
+     If we have an in-date cache, no need to download.
+     - returns: A boolean determing if we should or should not download.
+     */
+    private func shouldImageFromCache(url: URL) -> Bool {
+        return self.cacher.cacheInDate(url: url, type: self.cacheType)
     }
     
     /**
@@ -50,6 +68,7 @@ class ImageDownloader: ImageDownloading {
         switch result {
         case .success(data: let data, response: _):
             self.handleSuccess(url: url, data: data, defaultImage: defaultImage, completion: completion)
+            self.cacher.set(url: url, data: data, secondsTTL: self.secondsTTL, type: self.cacheType)
         case .failure(error: let error):
             self.handleFailure(url: url, error: error, defaultImage: defaultImage, completion: completion)
         }
