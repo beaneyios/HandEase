@@ -69,6 +69,7 @@
 		BEEBAADE209F8B7B002EA251 /* ExerciseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAADD209F8B7B002EA251 /* ExerciseListViewModel.swift */; };
 		BEEBAAE0209F8BA2002EA251 /* ExerciseListViewModelling.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAADF209F8BA2002EA251 /* ExerciseListViewModelling.swift */; };
 		BEEBAAE3209F91FF002EA251 /* UIView+Swoosh.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAE2209F91FF002EA251 /* UIView+Swoosh.swift */; };
+		BEF6D40920AB28C10015346D /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF6D40820AB28C10015346D /* ExerciseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		BEEBAADD209F8B7B002EA251 /* ExerciseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewModel.swift; sourceTree = "<group>"; };
 		BEEBAADF209F8BA2002EA251 /* ExerciseListViewModelling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewModelling.swift; sourceTree = "<group>"; };
 		BEEBAAE2209F91FF002EA251 /* UIView+Swoosh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Swoosh.swift"; sourceTree = "<group>"; };
+		BEF6D40820AB28C10015346D /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -480,6 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				BE3B2928209659D300CA42EA /* ExerciseListViewController.swift */,
+				BEF6D40820AB28C10015346D /* ExerciseViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -837,6 +840,7 @@
 				BE3B2929209659D300CA42EA /* ExerciseListViewController.swift in Sources */,
 				BEABD6BD207A9AB700DC2E7D /* CustomColor.swift in Sources */,
 				BEEBAADB209F8A0D002EA251 /* SmallExerciseCell.swift in Sources */,
+				BEF6D40920AB28C10015346D /* ExerciseViewController.swift in Sources */,
 				BE0F6B062079444F00587714 /* MenuItemDataSource.swift in Sources */,
 				BEEBAAD1209F8404002EA251 /* ExerciseFetching.swift in Sources */,
 				BEEBAADE209F8B7B002EA251 /* ExerciseListViewModel.swift in Sources */,

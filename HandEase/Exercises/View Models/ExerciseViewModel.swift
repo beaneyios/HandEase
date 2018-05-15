@@ -24,6 +24,10 @@ class ExerciseViewModel {
         return exercise.title
     }
     
+    var body: String {
+        return exercise.body
+    }
+    
     func image(completion: @escaping ImageCompletion) {
         self.imageDownloader.cancelDownload()
         

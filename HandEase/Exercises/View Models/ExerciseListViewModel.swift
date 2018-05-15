@@ -60,9 +60,10 @@ extension ExerciseListViewModel: UICollectionViewDataSource {
         
         let exercise        = self.exercises[indexPath.row]
         let downloader      = self.fetchImageDownloader()
-        castCell.configure  (viewModel: ExerciseViewModel(exercise: exercise, imageDownloader: downloader))
+        let vm              = ExerciseViewModel(exercise: exercise, imageDownloader: downloader)
+        castCell.configure  (viewModel: vm)
         castCell.exerciseTap = {
-            self.dependencies.navigator.exerciseTapped(exercise: exercise)
+            self.dependencies.navigator.exerciseTapped(exercise: vm)
         }
         return cell
     }

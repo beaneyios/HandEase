@@ -27,8 +27,11 @@ class ContainerFlowController: ExerciseFlowController {
         self.navigationController.popViewController(animated: true)
     }
     
-    func exerciseTapped(exercise: Exercise) {
-        print("Exercise with title \(exercise.title)")
+    func exerciseTapped(exercise: ExerciseViewModel) {
+        if let vc = ViewControllers.exercise as? ExerciseViewController {
+            vc.configure(flowController: self, exercise: exercise)
+            self.navigationController.pushViewController(vc, animated: true)
+        }
     }
 }
 
