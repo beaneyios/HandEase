@@ -14,6 +14,7 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imgIcon: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var container: UIView!
+    @IBOutlet weak var keyLine: UIView!
     
     var vm: MenuItemViewModel?
     
@@ -25,7 +26,10 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
     func configure(with vm: MenuItemViewModel) {
         self.vm = vm
         self.imgIcon.image = vm.imgIcon
+        
         self.imgIcon.tintColor = vm.foreColor
+        self.keyLine.backgroundColor = vm.foreColor
+        
         self.container.backgroundColor = vm.backColor
         self.lblTitle.text = vm.strTitle
     }

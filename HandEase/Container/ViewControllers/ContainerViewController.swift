@@ -7,13 +7,13 @@
 //
 
 import Foundation
+import MBNetworking
 import UIKit
 
 protocol ViewControllerContaining {
     func configure(flowController: Navigator)
     func setCurrentViewController(viewController: UIViewController)
 }
-
 
 class ContainerViewController : UIViewController, ViewControllerContaining, MenuOpening {
     @IBOutlet weak var containerView: UIView!
@@ -35,14 +35,24 @@ class ContainerViewController : UIViewController, ViewControllerContaining, Menu
         self.currentViewController?.view.removeFromSuperview()
         self.currentViewController?.removeFromParentViewController()
         
+        if let controller = viewController as? ExerciseListViewController {
+            let config = self.fetchExerciseListDependencies()
+            let viewModel = ExerciseListViewModel(dependencies: config)
+            controller.configure(flowController: flowController, viewModel: viewModel)
+        }
+        
         self.currentViewController = viewController
         self.addChild(viewController)
         self.containerView.addSubview(viewController.view)
         self.containerView.fixSizeToContainer(subview: viewController.view)
-        
-        if let controller = viewController as? ExerciseListViewController {
-            controller.configure(flowController: self.flowController)
-        }
+    }
+    
+    private func fetchExerciseListDependencies() -> ExerciseListViewModel.Config {
+        let ttlManager = TTLManager()
+        let getter = NetworkGetter()
+        let cacher = Cacher(ttlManager: ttlManager)
+        let fetcher = ExerciseFetcher(getter: getter, cacher: cacher)
+        return ExerciseListViewModel.Config(exerciseFetcher: fetcher, navigator: self.flowController)
     }
 }
 
@@ -77,9 +87,10 @@ extension ContainerViewController {
     private func configureMenu() {
         guard let menu = ViewControllers.menu as? MenuViewController else { return }
         
-        let menuVM = DefaultMenuViewModel(sizer: LocalMenuItemSizer(),
-                                          dataSource: LocalMenuItemDataSource(),
-                                          theme: LocalMenuTheme())
+        let config = MenuViewModel.Config(dataSource : LocalMenuItemDataSource(),
+                                          sizer      : LocalMenuItemSizer(),
+                                          theme      : LocalMenuTheme())
+        let menuVM = MenuViewModel(dependencies: config)
         menu.vm = menuVM
         
         menuVM.bind { (action) in

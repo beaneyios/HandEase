@@ -12,20 +12,15 @@ import UIKit
 class MenuViewController : UIViewController {
     @IBOutlet weak var cview: UICollectionView!
     
-    var vm: MenuViewModel = {
-        return DefaultMenuViewModel(
-            sizer: LocalMenuItemSizer(),
-            dataSource: LocalMenuItemDataSource(),
-            theme: LocalMenuTheme()
-        )
-    }()
+    var vm: MenuViewModel!
     
     public func configure(with vm: MenuViewModel) {
         self.vm = vm
     }
     
     override func viewDidLoad() {
-        cview.contentInsetAdjustmentBehavior = .never
+        self.cview.contentInsetAdjustmentBehavior = .never
+        self.view.backgroundColor = self.vm.backgroundColor
     }
     
     override func viewWillAppear(_ animated: Bool) {

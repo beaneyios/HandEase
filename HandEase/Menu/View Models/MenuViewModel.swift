@@ -9,17 +9,24 @@
 import Foundation
 import UIKit
 
-class DefaultMenuViewModel : NSObject, MenuViewModel {
-    fileprivate var sizer       : MenuItemSizer
-    fileprivate var dataSource  : MenuItemDataSource
-    fileprivate var theme       : MenuTheme
+class MenuViewModel: NSObject, MenuViewModellable {
+    typealias Dependencies = HasMenuItemSizer & HasMenuTheme & HasMenuItemDataSource
+    private var dependencies: Dependencies
+    
+    struct Config: Dependencies {
+        var dataSource: MenuItemDataSource
+        var sizer: MenuItemSizer
+        var theme: MenuTheme
+    }
     
     var action: MenuItemActionClosure?
     
-    init(sizer: MenuItemSizer, dataSource: MenuItemDataSource, theme: MenuTheme) {
-        self.sizer      = sizer
-        self.dataSource = dataSource
-        self.theme      = theme
+    var backgroundColor: UIColor {
+        return self.dependencies.theme.backColor.uiColor
+    }
+    
+    init(dependencies: Dependencies) {
+        self.dependencies = dependencies
     }
     
     func bind(withAction action: @escaping MenuItemActionClosure) {
@@ -30,37 +37,37 @@ class DefaultMenuViewModel : NSObject, MenuViewModel {
         cview.register          (MenuItemCollectionViewCell.nib, forCellWithReuseIdentifier: "standard_cell")
         cview.delegate          = self
         cview.dataSource        = self
-        cview.backgroundColor   = self.theme.backColor.uiColor
+        cview.backgroundColor   = self.dependencies.theme.backColor.uiColor
         cview.reloadData()
     }
 }
 
-extension DefaultMenuViewModel : UICollectionViewDataSource {
+extension MenuViewModel : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell            = collectionView.dequeueReusableCell(withReuseIdentifier: "standard_cell", for: indexPath)
         guard let castCell  = cell as? MenuItemCollectionViewCell else { return MenuItemCollectionViewCell() }
         
-        let item            = self.dataSource.items[indexPath.row]
-        castCell.configure  (with: DefaultMenuItemViewModel(menuItem: item))
+        let item            = self.dependencies.dataSource.items[indexPath.row]
+        castCell.configure  (with: MenuItemViewModel(menuItem: item))
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.dataSource.items.count
+        return self.dependencies.dataSource.items.count
     }
 }
 
-extension DefaultMenuViewModel : UICollectionViewDelegateFlowLayout {
+extension MenuViewModel : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let item                = self.dataSource.items[indexPath.row]
-        return self.sizer.size  (for: item, container: collectionView)
+        let item                = self.dependencies.dataSource.items[indexPath.row]
+        return self.dependencies.sizer.size  (for: item, container: collectionView)
     }
 }
 
-extension DefaultMenuViewModel : UICollectionViewDelegate {
+extension MenuViewModel : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         

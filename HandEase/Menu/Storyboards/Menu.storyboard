@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8Cd-rC-j7G">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aeT-C0-M3A">
                                     <size key="itemSize" width="50" height="50"/>
@@ -35,7 +35,7 @@
                             <constraint firstItem="mgZ-d2-5ky" firstAttribute="bottom" secondItem="8Cd-rC-j7G" secondAttribute="bottom" id="GS8-0V-LCY"/>
                             <constraint firstItem="8Cd-rC-j7G" firstAttribute="trailing" secondItem="mgZ-d2-5ky" secondAttribute="trailing" id="U0y-I6-l3e"/>
                             <constraint firstItem="8Cd-rC-j7G" firstAttribute="leading" secondItem="mgZ-d2-5ky" secondAttribute="leading" id="o4u-uw-92f"/>
-                            <constraint firstItem="8Cd-rC-j7G" firstAttribute="top" secondItem="Oqu-98-vcz" secondAttribute="top" id="wiV-Fg-NmC"/>
+                            <constraint firstItem="8Cd-rC-j7G" firstAttribute="top" secondItem="Oqu-98-vcz" secondAttribute="top" constant="20" id="wiV-Fg-NmC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mgZ-d2-5ky"/>
                     </view>

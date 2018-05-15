@@ -22,7 +22,7 @@ class MenuItemCollectionViewCellTests: XCTestCase {
                                        foreColor: .menuItemForeColor,
                                        backColor: .menuItemBackColor,
                                        action: .loadView(viewController: ViewControllerRepresentations.about))
-        let vm              = DefaultMenuItemViewModel(menuItem: testMenuItem)
+        let vm              = MenuItemViewModel(menuItem: testMenuItem)
         cell.configure(with: vm)
         
         let expTitle        = "About"
