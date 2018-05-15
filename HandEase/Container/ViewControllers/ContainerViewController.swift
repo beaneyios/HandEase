@@ -24,40 +24,33 @@ class ContainerViewController : UIViewController, ViewControllerContaining, Menu
     private weak var flowController: ExerciseFlowController!
     private var menuDelegate: MenuHandler!
     
+    /**
+     Entry point to the view controller, things will crash if this is not called!
+     - parameter flowController: This is used for navigation.
+     - parameter menuDelegate: Used for handling menu actions.
+    */
     func configure(flowController: ExerciseFlowController, menuDelegate: MenuHandler) {
         self.flowController = flowController
         self.menuDelegate = menuDelegate
     }
     
     override func viewDidLoad() {
-        self.setCurrentViewController(viewController: ViewControllers.myExercises)
+        self.flowController.navigate(to: ViewControllerRepresentations.myExercises)
         self.configureMenu()
     }
     
+    /**
+     The primary means of navigation, this should only be called by the flow controller managing this class!
+     - parameter viewController: The view controller to set on the view.
+    */
     public func setCurrentViewController(viewController: UIViewController) {
         self.currentViewController?.view.removeFromSuperview()
         self.currentViewController?.removeFromParentViewController()
-        
-        if let controller = viewController as? ExerciseListViewController {
-            let config = self.fetchExerciseListDependencies()
-            let viewModel = ExerciseListViewModel(dependencies: config)
-            controller.configure(flowController: self.flowController, menuDelegate: self.menuDelegate, viewModel: viewModel)
-        }
         
         self.currentViewController = viewController
         self.addChild(viewController)
         self.containerView.addSubview(viewController.view)
         self.containerView.fixSizeToContainer(subview: viewController.view)
-    }
-    
-    private func fetchExerciseListDependencies() -> ExerciseListViewModel.Config {
-        let ttlManager              = TTLManager()
-        let getter                  = NetworkGetter()
-        let cacher                  = Cacher(ttlManager: ttlManager)
-        let fetcher                 = ExerciseFetcher(getter: getter, cacher: cacher)
-        let imageDownloaderFactory  = ImageDownloaderFactory()
-        
-        return ExerciseListViewModel.Config(exerciseFetcher: fetcher, navigator: self.flowController, imageDownloaderFactory: imageDownloaderFactory)
     }
 }
 

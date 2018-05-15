@@ -9,7 +9,7 @@
 import Foundation
 
 class MenuFlowController {
-    private var parentFlowController: FlowController
+    private weak var parentFlowController: FlowController!
     
     init(parentFlowController: FlowController) {
         self.parentFlowController = parentFlowController
@@ -17,6 +17,11 @@ class MenuFlowController {
 }
 
 extension MenuFlowController: MenuActionDelegate {
+    /**
+     Handles actions delivered up from the menu view controller.
+     Currently this only involves loading view controllers.
+     - parameter action: The action bubbled up from the menu tap.
+    */
     public func handleMenuAction(action: ItemAction) {
         switch action {
         case .loadView(viewController: let viewControllerRep):
@@ -26,6 +31,9 @@ extension MenuFlowController: MenuActionDelegate {
 }
 
 extension MenuFlowController: MenuOpening {
+    /**
+     Decides, based on an action consuming this delegate, to open/close the menu.
+    */
     public func toggleMenu() {
         self.parentFlowController.navigate(to: ViewControllerRepresentations.menu)
     }

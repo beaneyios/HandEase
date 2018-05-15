@@ -21,19 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func fetchInitialViewController() -> UIViewController? {
-        guard let container = ViewControllers.container as? ContainerViewController else {
-            return nil
-        }
+        let config = ContainerFlowController.Config(menuHandlerFactory      : MenuFlowControllerFactory(),
+                                                    exerciseFetcherFactory  : ExerciseFetcherFactory(),
+                                                    imageDownloaderFactory  : ImageDownloaderFactory(),
+                                                    containerFactory        : ContainerFactory())
         
-        let navigation = UINavigationController(rootViewController: container)
-        navigation.setNavigationBarHidden(true, animated: false)
+        let containerFlowController = ContainerFlowController(dependencies: config)
+        containerFlowController.configure()
         
-        let containerFlowController = ContainerFlowController(containerVC: container, navigationController: navigation)
-        let menuFlowController = MenuFlowController(parentFlowController: containerFlowController)
-        
-        container.configure(flowController: containerFlowController, menuDelegate: menuFlowController)
         self.flowController = containerFlowController
-        return navigation
+        return containerFlowController.navigationController
     }    
 }
 
