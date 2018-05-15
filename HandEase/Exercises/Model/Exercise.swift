@@ -10,12 +10,14 @@ import Foundation
 
 struct Exercise: Codable {
     var title    : String
-    var imageURL   : String
+    var imageURL : String
     var body     : String
+    var videoURL : String
     
-    init(title: String, imageURL: String, body: String) {
+    init(title: String, imageURL: String, body: String, videoURL: String) {
         self.title      = title
         self.imageURL   = imageURL
         self.body       = body
+        self.videoURL   = videoURL
     }
 }

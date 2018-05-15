@@ -28,6 +28,14 @@ class ExerciseViewModel {
         return exercise.body
     }
     
+    var imageUrl: URL? {
+        return URL(string: self.exercise.imageURL)
+    }
+    
+    var videoURL: URL? {
+        return URL(string: self.exercise.videoURL)
+    }
+    
     func image(completion: @escaping ImageCompletion) {
         self.imageDownloader.cancelDownload()
         

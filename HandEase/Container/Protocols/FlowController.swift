@@ -17,4 +17,5 @@ protocol FlowController: class {
 
 protocol ExerciseFlowController: FlowController {
     func exerciseTapped(exercise: ExerciseViewModel)
+    func exerciseVideoTapped(exercise: ExerciseViewModel)
 }

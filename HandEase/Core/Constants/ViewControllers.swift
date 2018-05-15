@@ -20,6 +20,7 @@ struct ViewControllerRepresentations {
     static var menu          = StoryboardRepresentation(sbName: "Menu", sbIdentifier: "menu")
     static var container     = StoryboardRepresentation(sbName: "Container", sbIdentifier: "homeContainer")
     static var exercise      = StoryboardRepresentation(sbName: "Exercises", sbIdentifier: "exercise")
+    static var video         = StoryboardRepresentation(sbName: "Exercises", sbIdentifier: "video")
 }
 
 //TODO: I'm force-unwrapping here, so we need to write tests to be absolutely sure they exist.
@@ -34,6 +35,7 @@ struct ViewControllers {
     static var menu         : UIViewController { return UIStoryboard.viewController(for: ViewControllerRepresentations.menu)! }
     static var container    : UIViewController { return UIStoryboard.viewController(for: ViewControllerRepresentations.container)! }
     static var exercise     : UIViewController { return UIStoryboard.viewController(for: ViewControllerRepresentations.exercise)! }
+    static var video        : UIViewController { return UIStoryboard.viewController(for: ViewControllerRepresentations.video)! }
 }
 
 struct StoryboardRepresentation {

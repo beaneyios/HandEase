@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVKit
 
 class ExerciseViewController: UIViewController {
     @IBOutlet weak var img: UIImageView!
@@ -43,6 +44,10 @@ class ExerciseViewController: UIViewController {
     func configure(flowController: Navigator, exercise: ExerciseViewModel) {
         self.flowController     = flowController
         self.exercise           = exercise
+    }
+    
+    @IBAction func watchVideo(_ sender: Any) {
+        self.flowController.exerciseVideoTapped(exercise: self.exercise)
     }
     
     @IBAction func goBack(_ sender: Any) {

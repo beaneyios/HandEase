@@ -70,6 +70,7 @@
 		BEEBAAE0209F8BA2002EA251 /* ExerciseListViewModelling.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAADF209F8BA2002EA251 /* ExerciseListViewModelling.swift */; };
 		BEEBAAE3209F91FF002EA251 /* UIView+Swoosh.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAE2209F91FF002EA251 /* UIView+Swoosh.swift */; };
 		BEF6D40920AB28C10015346D /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF6D40820AB28C10015346D /* ExerciseViewController.swift */; };
+		BEF6D40B20AB32C50015346D /* ExerciseVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF6D40A20AB32C50015346D /* ExerciseVideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		BEEBAADF209F8BA2002EA251 /* ExerciseListViewModelling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewModelling.swift; sourceTree = "<group>"; };
 		BEEBAAE2209F91FF002EA251 /* UIView+Swoosh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Swoosh.swift"; sourceTree = "<group>"; };
 		BEF6D40820AB28C10015346D /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		BEF6D40A20AB32C50015346D /* ExerciseVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseVideoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -483,6 +485,7 @@
 			children = (
 				BE3B2928209659D300CA42EA /* ExerciseListViewController.swift */,
 				BEF6D40820AB28C10015346D /* ExerciseViewController.swift */,
+				BEF6D40A20AB32C50015346D /* ExerciseVideoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -866,6 +869,7 @@
 				BE0F6B0A207944F000587714 /* LocalisedKey.swift in Sources */,
 				BEEBAAD7209F887D002EA251 /* ExerciseViewModel.swift in Sources */,
 				BEABD6B9207A914200DC2E7D /* MenuViewModel.swift in Sources */,
+				BEF6D40B20AB32C50015346D /* ExerciseVideoViewController.swift in Sources */,
 				BE0F6B0E20795BED00587714 /* MenuViewModellable.swift in Sources */,
 				BE0F6AFA2079423600587714 /* MenuItemViewModellable.swift in Sources */,
 				BE71C6A02098F8BA00DFB510 /* MenuTheme.swift in Sources */,

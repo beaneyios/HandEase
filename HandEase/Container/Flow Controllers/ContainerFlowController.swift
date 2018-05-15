@@ -28,10 +28,15 @@ class ContainerFlowController: ExerciseFlowController {
     }
     
     func exerciseTapped(exercise: ExerciseViewModel) {
-        if let vc = ViewControllers.exercise as? ExerciseViewController {
-            vc.configure(flowController: self, exercise: exercise)
-            self.navigationController.pushViewController(vc, animated: true)
-        }
+        guard let vc = ViewControllers.exercise as? ExerciseViewController else { return }
+        vc.configure(flowController: self, exercise: exercise)
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func exerciseVideoTapped(exercise: ExerciseViewModel) {
+        guard let vc = ViewControllers.video as? ExerciseVideoViewController else { return }
+        vc.configure(exercise: exercise, flowController: self)
+        self.navigationController.pushViewController(vc, animated: true)
     }
 }
 
