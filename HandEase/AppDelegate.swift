@@ -28,9 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigation = UINavigationController(rootViewController: container)
         navigation.setNavigationBarHidden(true, animated: false)
         
-        let flowController = ContainerFlowController(containerVC: container, navigationController: navigation)
-        container.configure(flowController: flowController)
-        self.flowController = flowController
+        let containerFlowController = ContainerFlowController(containerVC: container, navigationController: navigation)
+        let menuFlowController = MenuFlowController(parentFlowController: containerFlowController)
+        
+        container.configure(flowController: containerFlowController, menuDelegate: menuFlowController)
+        self.flowController = containerFlowController
         return navigation
     }    
 }

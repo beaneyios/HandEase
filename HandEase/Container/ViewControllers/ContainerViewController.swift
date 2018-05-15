@@ -10,8 +10,9 @@ import Foundation
 import MBNetworking
 import UIKit
 
+typealias MenuHandler = MenuOpening & MenuActionDelegate
 protocol ViewControllerContaining {
-    func configure(flowController: Navigator)
+    func configure(flowController: ExerciseFlowController, menuDelegate: MenuHandler)
     func setCurrentViewController(viewController: UIViewController)
 }
 
@@ -20,10 +21,12 @@ class ContainerViewController : UIViewController, ViewControllerContaining, Menu
     @IBOutlet weak var containerCenterX: NSLayoutConstraint!
     
     private var currentViewController: UIViewController?
-    private weak var flowController: Navigator!
+    private weak var flowController: ExerciseFlowController!
+    private var menuDelegate: MenuHandler!
     
-    func configure(flowController: Navigator) {
+    func configure(flowController: ExerciseFlowController, menuDelegate: MenuHandler) {
         self.flowController = flowController
+        self.menuDelegate = menuDelegate
     }
     
     override func viewDidLoad() {
@@ -38,7 +41,7 @@ class ContainerViewController : UIViewController, ViewControllerContaining, Menu
         if let controller = viewController as? ExerciseListViewController {
             let config = self.fetchExerciseListDependencies()
             let viewModel = ExerciseListViewModel(dependencies: config)
-            controller.configure(flowController: flowController, viewModel: viewModel)
+            controller.configure(flowController: self.flowController, menuDelegate: self.menuDelegate, viewModel: viewModel)
         }
         
         self.currentViewController = viewController
@@ -48,11 +51,13 @@ class ContainerViewController : UIViewController, ViewControllerContaining, Menu
     }
     
     private func fetchExerciseListDependencies() -> ExerciseListViewModel.Config {
-        let ttlManager = TTLManager()
-        let getter = NetworkGetter()
-        let cacher = Cacher(ttlManager: ttlManager)
-        let fetcher = ExerciseFetcher(getter: getter, cacher: cacher)
-        return ExerciseListViewModel.Config(exerciseFetcher: fetcher, navigator: self.flowController)
+        let ttlManager              = TTLManager()
+        let getter                  = NetworkGetter()
+        let cacher                  = Cacher(ttlManager: ttlManager)
+        let fetcher                 = ExerciseFetcher(getter: getter, cacher: cacher)
+        let imageDownloaderFactory  = ImageDownloaderFactory()
+        
+        return ExerciseListViewModel.Config(exerciseFetcher: fetcher, navigator: self.flowController, imageDownloaderFactory: imageDownloaderFactory)
     }
 }
 
@@ -95,7 +100,7 @@ extension ContainerViewController {
         
         menuVM.bind { (action) in
             self.animateMenuClosed()
-            self.flowController.handleMenuAction(action: action)
+            self.menuDelegate.handleMenuAction(action: action)
         }
         
         self.addChild(menu)

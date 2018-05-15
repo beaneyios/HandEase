@@ -9,15 +9,16 @@
 import Foundation
 
 //Core dependencies
-protocol HasImageDownloader {
-    var imageDownloader: ImageDownloading { get }
+protocol HasImageDownloaderFactory {
+    var imageDownloaderFactory: ImageDownloaderCreating { get }
 }
 
-//Exercise dependencies
+//Navigation
 protocol HasExerciseFlowController {
     var navigator: ExerciseFlowController { get }
 }
 
+//Exercise dependencies
 protocol HasExerciseFetcher {
     var exerciseFetcher: ExerciseFetching { get }
 }

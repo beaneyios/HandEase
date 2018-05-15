@@ -58,7 +58,6 @@
 		BEDA7DF020A72EA50009F2C2 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA7DEF20A72EA50009F2C2 /* ImageDownloader.swift */; };
 		BEDA7DF320A735A20009F2C2 /* HasDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA7DF220A735A20009F2C2 /* HasDependencies.swift */; };
 		BEEBAAC1209DEFDA002EA251 /* MenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC0209DEFDA002EA251 /* MenuDelegate.swift */; };
-		BEEBAAC4209DF187002EA251 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC3209DF187002EA251 /* Navigator.swift */; };
 		BEEBAACA209F779C002EA251 /* ContainerFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC9209F779C002EA251 /* ContainerFlowControllerTests.swift */; };
 		BEEBAACF209F8034002EA251 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAACE209F8034002EA251 /* Exercise.swift */; };
 		BEEBAAD1209F8404002EA251 /* ExerciseFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAD0209F8404002EA251 /* ExerciseFetching.swift */; };
@@ -71,6 +70,13 @@
 		BEEBAAE3209F91FF002EA251 /* UIView+Swoosh.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAE2209F91FF002EA251 /* UIView+Swoosh.swift */; };
 		BEF6D40920AB28C10015346D /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF6D40820AB28C10015346D /* ExerciseViewController.swift */; };
 		BEF6D40B20AB32C50015346D /* ExerciseVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF6D40A20AB32C50015346D /* ExerciseVideoViewController.swift */; };
+		BEF6D41020AB48EC0015346D /* ImageDownloaderCreating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF6D40F20AB48EC0015346D /* ImageDownloaderCreating.swift */; };
+		BEF6D41220AB48F50015346D /* ImageDownloaderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF6D41120AB48F50015346D /* ImageDownloaderFactory.swift */; };
+		BEF6D41420AB4A8C0015346D /* ExerciseFetcherCreating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF6D41320AB4A8C0015346D /* ExerciseFetcherCreating.swift */; };
+		BEF6D41620AB4AA90015346D /* ExerciseFetcherFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF6D41520AB4AA90015346D /* ExerciseFetcherFactory.swift */; };
+		BEF6D41820AB4AF10015346D /* CacherCreating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF6D41720AB4AF10015346D /* CacherCreating.swift */; };
+		BEF6D41A20AB4B110015346D /* CacherFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF6D41920AB4B110015346D /* CacherFactory.swift */; };
+		BEF6D41D20AB4C230015346D /* MenuFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF6D41C20AB4C230015346D /* MenuFlowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,7 +150,6 @@
 		BEDA7DEF20A72EA50009F2C2 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		BEDA7DF220A735A20009F2C2 /* HasDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasDependencies.swift; sourceTree = "<group>"; };
 		BEEBAAC0209DEFDA002EA251 /* MenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
-		BEEBAAC3209DF187002EA251 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		BEEBAAC9209F779C002EA251 /* ContainerFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerFlowControllerTests.swift; sourceTree = "<group>"; };
 		BEEBAACE209F8034002EA251 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		BEEBAAD0209F8404002EA251 /* ExerciseFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFetching.swift; sourceTree = "<group>"; };
@@ -157,6 +162,13 @@
 		BEEBAAE2209F91FF002EA251 /* UIView+Swoosh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Swoosh.swift"; sourceTree = "<group>"; };
 		BEF6D40820AB28C10015346D /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		BEF6D40A20AB32C50015346D /* ExerciseVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseVideoViewController.swift; sourceTree = "<group>"; };
+		BEF6D40F20AB48EC0015346D /* ImageDownloaderCreating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderCreating.swift; sourceTree = "<group>"; };
+		BEF6D41120AB48F50015346D /* ImageDownloaderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderFactory.swift; sourceTree = "<group>"; };
+		BEF6D41320AB4A8C0015346D /* ExerciseFetcherCreating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFetcherCreating.swift; sourceTree = "<group>"; };
+		BEF6D41520AB4AA90015346D /* ExerciseFetcherFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFetcherFactory.swift; sourceTree = "<group>"; };
+		BEF6D41720AB4AF10015346D /* CacherCreating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacherCreating.swift; sourceTree = "<group>"; };
+		BEF6D41920AB4B110015346D /* CacherFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacherFactory.swift; sourceTree = "<group>"; };
+		BEF6D41C20AB4C230015346D /* MenuFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFlowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +232,7 @@
 				BE0F6AFE207942A300587714 /* Assets */,
 				BE3B2923209650D900CA42EA /* Container */,
 				BE0F6AFC2079429800587714 /* Core */,
+				BEF6D40C20AB48C00015346D /* Dependencies */,
 				BE3B2925209659B900CA42EA /* Exercises */,
 				BE0F6AE72079404600587714 /* Menu */,
 			);
@@ -334,7 +347,6 @@
 				BEDA7DEB20A72DD00009F2C2 /* Controllers */,
 				BE3B291E20964DE600CA42EA /* Constants */,
 				BE3B291B20964D0700CA42EA /* Extensions */,
-				BEEBAAC2209DF174002EA251 /* Type Aliases */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -502,6 +514,7 @@
 			isa = PBXGroup;
 			children = (
 				BE71C6A42098FB1F00DFB510 /* ContainerFlowController.swift */,
+				BEF6D41C20AB4C230015346D /* MenuFlowController.swift */,
 			);
 			path = "Flow Controllers";
 			sourceTree = "<group>";
@@ -570,14 +583,6 @@
 				BEDA7DF220A735A20009F2C2 /* HasDependencies.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		BEEBAAC2209DF174002EA251 /* Type Aliases */ = {
-			isa = PBXGroup;
-			children = (
-				BEEBAAC3209DF187002EA251 /* Navigator.swift */,
-			);
-			path = "Type Aliases";
 			sourceTree = "<group>";
 		};
 		BEEBAAC5209DF2EB002EA251 /* Storyboards */ = {
@@ -655,6 +660,35 @@
 				BEDA7DE020A722100009F2C2 /* Controllers */,
 			);
 			path = Exercises;
+			sourceTree = "<group>";
+		};
+		BEF6D40C20AB48C00015346D /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				BEF6D40E20AB48E10015346D /* Protocols */,
+				BEF6D40D20AB48CA0015346D /* Factories */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		BEF6D40D20AB48CA0015346D /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				BEF6D41920AB4B110015346D /* CacherFactory.swift */,
+				BEF6D41520AB4AA90015346D /* ExerciseFetcherFactory.swift */,
+				BEF6D41120AB48F50015346D /* ImageDownloaderFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		BEF6D40E20AB48E10015346D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BEF6D40F20AB48EC0015346D /* ImageDownloaderCreating.swift */,
+				BEF6D41320AB4A8C0015346D /* ExerciseFetcherCreating.swift */,
+				BEF6D41720AB4AF10015346D /* CacherCreating.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		DEDC22F1C41494653134F20C /* Frameworks */ = {
@@ -835,6 +869,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEF6D41020AB48EC0015346D /* ImageDownloaderCreating.swift in Sources */,
 				BE0F6AF52079415A00587714 /* MenuItem.swift in Sources */,
 				BEEBAACF209F8034002EA251 /* Exercise.swift in Sources */,
 				BE385BCA209DEEC6001E018E /* MenuOpening.swift in Sources */,
@@ -847,20 +882,23 @@
 				BE0F6B062079444F00587714 /* MenuItemDataSource.swift in Sources */,
 				BEEBAAD1209F8404002EA251 /* ExerciseFetching.swift in Sources */,
 				BEEBAADE209F8B7B002EA251 /* ExerciseListViewModel.swift in Sources */,
+				BEF6D41420AB4A8C0015346D /* ExerciseFetcherCreating.swift in Sources */,
 				BE0F6B0C2079475A00587714 /* String+Localisation.swift in Sources */,
 				BE3B292D20965AC500CA42EA /* UIView+AutoLayoutHelpers.swift in Sources */,
 				BEABD6B5207A888100DC2E7D /* MenuItemSizer.swift in Sources */,
 				BEB06B22208682600051B0A5 /* ItemAction.swift in Sources */,
 				BEDA7DF020A72EA50009F2C2 /* ImageDownloader.swift in Sources */,
-				BEEBAAC4209DF187002EA251 /* Navigator.swift in Sources */,
 				BEDA7DF320A735A20009F2C2 /* HasDependencies.swift in Sources */,
 				BEABD6B7207A88CD00DC2E7D /* LocalMenuItemSizer.swift in Sources */,
 				BE0F6B04207942C200587714 /* UIImage+ImageType.swift in Sources */,
 				BEABD6BB207A977200DC2E7D /* MenuViewController.swift in Sources */,
+				BEF6D41620AB4AA90015346D /* ExerciseFetcherFactory.swift in Sources */,
+				BEF6D41D20AB4C230015346D /* MenuFlowController.swift in Sources */,
 				BE0F6AF7207941FD00587714 /* MenuItemViewModel.swift in Sources */,
 				BE3B291D20964D1900CA42EA /* UIViewController+AddChildViewController.swift in Sources */,
 				BEEBAAD4209F8473002EA251 /* ExerciseFetcher.swift in Sources */,
 				BE3B29222096506700CA42EA /* UIStoryboard+ViewControllers.swift in Sources */,
+				BEF6D41220AB48F50015346D /* ImageDownloaderFactory.swift in Sources */,
 				BE0F6B01207942B300587714 /* ImageType.swift in Sources */,
 				BE3B292020964DF600CA42EA /* ViewControllers.swift in Sources */,
 				BEEBAAE3209F91FF002EA251 /* UIView+Swoosh.swift in Sources */,
@@ -869,9 +907,11 @@
 				BE0F6B0A207944F000587714 /* LocalisedKey.swift in Sources */,
 				BEEBAAD7209F887D002EA251 /* ExerciseViewModel.swift in Sources */,
 				BEABD6B9207A914200DC2E7D /* MenuViewModel.swift in Sources */,
+				BEF6D41820AB4AF10015346D /* CacherCreating.swift in Sources */,
 				BEF6D40B20AB32C50015346D /* ExerciseVideoViewController.swift in Sources */,
 				BE0F6B0E20795BED00587714 /* MenuViewModellable.swift in Sources */,
 				BE0F6AFA2079423600587714 /* MenuItemViewModellable.swift in Sources */,
+				BEF6D41A20AB4B110015346D /* CacherFactory.swift in Sources */,
 				BE71C6A02098F8BA00DFB510 /* MenuTheme.swift in Sources */,
 				BEDA7DEE20A72DED0009F2C2 /* ImageDownloading.swift in Sources */,
 				BE71C6A52098FB1F00DFB510 /* ContainerFlowController.swift in Sources */,

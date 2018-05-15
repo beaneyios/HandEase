@@ -9,24 +9,21 @@
 import Foundation
 import UIKit
 
-/// - This class broadly speaking achieves navigation in response to requests from view controllers, specifically:
-/// - Menu navigation via a container.
-/// - Navigation controller based navigation to other views not held in the container.
-typealias MenuContainer = ViewControllerContaining & MenuOpening
+typealias SlideMenuExerciseContainer = ViewControllerContaining & MenuOpening
 
 class ContainerFlowController: ExerciseFlowController {
-    var containerVC: MenuContainer
+    var containerVC: SlideMenuExerciseContainer
     var navigationController: UINavigationController
     
-    init(containerVC: MenuContainer, navigationController: UINavigationController) {
+    init(containerVC: SlideMenuExerciseContainer, navigationController: UINavigationController) {
         self.containerVC = containerVC
         self.navigationController = navigationController
     }
     
-    func closeCurrentVC(viewController: UIViewController) {
-        self.navigationController.popViewController(animated: true)
-    }
-    
+    /**
+     Handles opening a specific exercise.
+     - parameter exercise: The view model representing the exercise itself.
+    */
     func exerciseTapped(exercise: ExerciseViewModel) {
         guard let vc = ViewControllers.exercise as? ExerciseViewController else { return }
         vc.configure(flowController: self, exercise: exercise)
@@ -38,21 +35,19 @@ class ContainerFlowController: ExerciseFlowController {
         vc.configure(exercise: exercise, flowController: self)
         self.navigationController.pushViewController(vc, animated: true)
     }
-}
-
-extension ContainerFlowController: MenuActionDelegate {
-    public func handleMenuAction(action: ItemAction) {
-        switch action {
-        case .loadView(viewController: let viewControllerRep):
-            if let vc = UIStoryboard.viewController(for: viewControllerRep) {
-                containerVC.setCurrentViewController(viewController: vc)
-            }
+    
+    func navigate(to vc: StoryboardRepresentation) {
+        if vc == ViewControllerRepresentations.menu {
+            self.containerVC.toggleMenu()
+            return
+        }
+        
+        if let vc = UIStoryboard.viewController(for: vc) {
+            containerVC.setCurrentViewController(viewController: vc)
         }
     }
-}
-
-extension ContainerFlowController: MenuOpening {
-    public func toggleMenu() {
-        self.containerVC.toggleMenu()
+    
+    func closeCurrentVC(viewController: UIViewController) {
+        self.navigationController.popViewController(animated: true)
     }
 }

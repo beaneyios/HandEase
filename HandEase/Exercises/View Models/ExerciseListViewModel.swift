@@ -11,9 +11,8 @@ import UIKit
 import MBNetworking
 
 class ExerciseListViewModel: NSObject, ExerciseListViewModelling {
-    typealias Dependencies = HasExerciseFetcher & HasExerciseFlowController
+    typealias Dependencies = HasExerciseFetcher & HasExerciseFlowController & HasImageDownloaderFactory
     private var dependencies: Dependencies
-    
     private var exercises: [Exercise] = []
     
     init(dependencies: Dependencies) {
@@ -21,7 +20,7 @@ class ExerciseListViewModel: NSObject, ExerciseListViewModelling {
     }
     
     func bind(cview: UICollectionView) {
-        cview.register          (SmallExerciseCell.nib, forCellWithReuseIdentifier: "standard_cell")
+        cview                   .register(SmallExerciseCell.nib, forCellWithReuseIdentifier: "standard_cell")
         cview.delegate          = self
         cview.dataSource        = self
         
@@ -46,6 +45,7 @@ class ExerciseListViewModel: NSObject, ExerciseListViewModelling {
     struct Config: Dependencies {
         var exerciseFetcher: ExerciseFetching
         var navigator: ExerciseFlowController
+        var imageDownloaderFactory: ImageDownloaderCreating
     }
 }
 
@@ -59,19 +59,13 @@ extension ExerciseListViewModel: UICollectionViewDataSource {
         guard let castCell  = cell as? SmallExerciseCell else { return SmallExerciseCell() }
         
         let exercise        = self.exercises[indexPath.row]
-        let downloader      = self.fetchImageDownloader()
+        let downloader      = self.dependencies.imageDownloaderFactory.imageDownloader()
         let vm              = ExerciseViewModel(exercise: exercise, imageDownloader: downloader)
         castCell.configure  (viewModel: vm)
         castCell.exerciseTap = {
             self.dependencies.navigator.exerciseTapped(exercise: vm)
         }
         return cell
-    }
-    
-    private func fetchImageDownloader() -> ImageDownloader {
-        let getter = NetworkGetter()
-        let cacher = Cacher(ttlManager: TTLManager())
-        return ImageDownloader(getter: getter, cacher: cacher)
     }
 }
 
