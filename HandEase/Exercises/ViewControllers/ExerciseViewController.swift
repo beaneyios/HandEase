@@ -50,6 +50,14 @@ class ExerciseViewController: UIViewController {
         self.flowController.exerciseVideoTapped(exercise: self.exercise)
     }
     
+    @IBAction func viewNotes(_ sender: Any) {
+        //TODO: Implement notes.
+    }
+    
+    @IBAction func favourite(_ sender: Any) {
+       
+    }
+    
     @IBAction func goBack(_ sender: Any) {
         self.flowController.closeCurrentVC(viewController: self)
     }

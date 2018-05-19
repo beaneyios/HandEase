@@ -89,7 +89,7 @@ class ExerciseFetcher: ExerciseFetching {
      - parameter  completion: The completion into which we pass the finished list of exercises to display.
     */
     private func handleSuccess(url: URL, data: Data, response: HTTPURLResponse, completion: @escaping ExerciseFetchCompletion) {
-        guard let exercises = self.parseJSON(data: data) else {
+        guard let exercises = Exercise.parseJSON(data: data) else {
             let customError = CustomError(area: "com.handease.json", description: "There was an issue interpreting the exercises, please try again.", code: 500)
             let exerciseResult = ExerciseResult.failure(error: customError, defaultExercises: self.fetchCachedExercises(for: url))
             completion(exerciseResult)
@@ -130,15 +130,6 @@ class ExerciseFetcher: ExerciseFetching {
             return nil
         }
         
-        return self.parseJSON(data: data)
-    }
-    
-    /**
-     Our feed is delivered via JSON, we need to be able to map this to an object.
-     - parameter data: The data returned representing the JSON feed.
-    */
-    private func parseJSON(data: Data) -> [Exercise]? {
-        let decoder = JSONDecoder()
-        return try? decoder.decode([Exercise].self, from: data)
+        return Exercise.parseJSON(data: data)
     }
 }

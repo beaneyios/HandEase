@@ -7,6 +7,11 @@
 //
 
 import Foundation
+import MBNetworking
+
+protocol HasCacher {
+    var cacher: Cacheable { get }
+}
 
 protocol HasExerciseFlowController {
     var navigator: ExerciseFlowController { get }
