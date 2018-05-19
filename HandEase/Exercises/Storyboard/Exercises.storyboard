@@ -215,9 +215,15 @@
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QQ2-kk-4e5">
                                                 <rect key="frame" x="177" y="126" width="20" height="20"/>
                                             </activityIndicatorView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn-play" translatesAutoresizingMaskIntoConstraints="NO" id="Pix-ie-PJX">
+                                                <rect key="frame" x="137" y="86.5" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="f6g-ue-8Be"/>
+                                                    <constraint firstAttribute="height" constant="100" id="rej-kZ-I9G"/>
+                                                </constraints>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMN-f4-BpS">
                                                 <rect key="frame" x="16" y="16" width="343" height="240.5"/>
-                                                <state key="normal" title="Watch"/>
                                                 <connections>
                                                     <action selector="watchVideo:" destination="SOb-d0-dSr" eventType="touchUpInside" id="7xv-nk-VrL"/>
                                                 </connections>
@@ -237,8 +243,10 @@
                                             <constraint firstAttribute="trailing" secondItem="VcE-Ha-A4M" secondAttribute="trailing" constant="16" id="MHO-hB-hMv"/>
                                             <constraint firstItem="nOS-Ef-E6n" firstAttribute="leading" secondItem="Kxi-0u-Hof" secondAttribute="leading" constant="16" id="MSV-Cp-7jG"/>
                                             <constraint firstItem="QQ2-kk-4e5" firstAttribute="centerX" secondItem="a3b-AG-uJu" secondAttribute="centerX" id="cwS-FC-qIK"/>
+                                            <constraint firstItem="Pix-ie-PJX" firstAttribute="centerY" secondItem="bMN-f4-BpS" secondAttribute="centerY" id="h8r-wm-w4f"/>
                                             <constraint firstAttribute="bottom" secondItem="VcE-Ha-A4M" secondAttribute="bottom" constant="16" id="nDu-Pl-Xu3"/>
                                             <constraint firstItem="VcE-Ha-A4M" firstAttribute="leading" secondItem="Kxi-0u-Hof" secondAttribute="leading" constant="16" id="ooS-C7-gmc"/>
+                                            <constraint firstItem="Pix-ie-PJX" firstAttribute="centerX" secondItem="bMN-f4-BpS" secondAttribute="centerX" id="s3T-Lh-bjI"/>
                                             <constraint firstItem="bMN-f4-BpS" firstAttribute="centerY" secondItem="a3b-AG-uJu" secondAttribute="centerY" id="tzN-nG-Len"/>
                                             <constraint firstItem="QQ2-kk-4e5" firstAttribute="centerY" secondItem="a3b-AG-uJu" secondAttribute="centerY" id="xQz-jb-bBf"/>
                                         </constraints>
@@ -351,4 +359,7 @@
             <point key="canvasLocation" x="2420" y="109"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="btn-play" width="1024" height="1024"/>
+    </resources>
 </document>
