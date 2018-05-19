@@ -69,9 +69,26 @@ class ContainerFlowController: ExerciseFlowController {
             return
         }
         
-        if let vc = UIStoryboard.viewController(for: vc) {
-            self.setViewControllerOnContainer(viewController: vc)
+        guard let viewController = UIStoryboard.viewController(for: vc) else { return }
+        
+        if let exercises = viewController as? ExerciseListViewController {
+            switch vc {
+            case ViewControllerRepresentations.allExercises:
+                let viewModelConfig = self.fetchAllExerciseListDependencies()
+                let viewModel = ExerciseListViewModel(dependencies: viewModelConfig)
+                exercises.configure(menuFlowController: self.menuHandler, viewModel: viewModel)
+            case ViewControllerRepresentations.myExercises:
+                let viewModelConfig = self.fetchMyExerciseListDependencies()
+                let viewModel = ExerciseListViewModel(dependencies: viewModelConfig)
+                exercises.configure(menuFlowController: self.menuHandler, viewModel: viewModel)
+            default:
+                let viewModelConfig = self.fetchAllExerciseListDependencies()
+                let viewModel = ExerciseListViewModel(dependencies: viewModelConfig)
+                exercises.configure(menuFlowController: self.menuHandler, viewModel: viewModel)
+            }
         }
+        
+        self.setViewControllerOnContainer(viewController: viewController)
     }
     
     /**
@@ -88,9 +105,7 @@ class ContainerFlowController: ExerciseFlowController {
         
         switch viewController {
         case let viewController as ExerciseListViewController:
-            let viewModelConfig = self.fetchExerciseListDependencies()
-            let viewModel = ExerciseListViewModel(dependencies: viewModelConfig)
-            viewController.configure(menuFlowController: self.menuHandler, viewModel: viewModel)
+            
             setClosure(viewController)
             break
         default:
@@ -99,7 +114,7 @@ class ContainerFlowController: ExerciseFlowController {
         }
     }
     
-    private func fetchExerciseListDependencies() -> ExerciseListViewModel.Config {
+    private func fetchAllExerciseListDependencies() -> ExerciseListViewModel.Config {
         let fetcher                 = self.dependencies.exerciseFetcherFactory.exerciseFetcher()
         let imageDownloaderFactory  = self.dependencies.imageDownloaderFactory
         let favouriterFactory       = self.dependencies.exerciseFavouriterFactory
@@ -107,6 +122,15 @@ class ContainerFlowController: ExerciseFlowController {
                                             navigator: self,
                                             imageDownloaderFactory: imageDownloaderFactory,
                                             favouriter: favouriterFactory.exerciseFavouriter())
+    }
+    
+    private func fetchMyExerciseListDependencies() -> ExerciseListViewModel.Config {
+        let imageDownloaderFactory  = self.dependencies.imageDownloaderFactory
+        let favouriter              = self.dependencies.exerciseFavouriterFactory.exerciseFavouriter()
+        return ExerciseListViewModel.Config(exerciseFetcher: favouriter,
+                                            navigator: self,
+                                            imageDownloaderFactory: imageDownloaderFactory,
+                                            favouriter: favouriter)
     }
     
     struct Config: Dependencies {

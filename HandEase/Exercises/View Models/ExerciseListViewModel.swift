@@ -28,6 +28,10 @@ class ExerciseListViewModel: NSObject, ExerciseListViewModelling {
         cview.delegate          = self
         cview.dataSource        = self
         
+        self.fetch(cview: cview)
+    }
+    
+    private func fetch(cview: UICollectionView) {
         self.dependencies.exerciseFetcher.fetchExercises(force: false) { (result) in
             switch result {
             case .success(exercises: let exercises):
@@ -70,7 +74,7 @@ extension ExerciseListViewModel: UICollectionViewDataSource {
         castCell.exerciseTap = { self.dependencies.navigator.exerciseTapped(exercise: vm) }
         castCell.favouriteTap = {
             _ = self.dependencies.favouriter.favourite(exercise: exercise)
-            castCell.configureFavourite(viewModel: vm, animated: true)
+            self.fetch(cview: collectionView)
         }
         return cell
     }

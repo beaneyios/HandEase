@@ -25,7 +25,11 @@ class SmallExerciseCell: UICollectionViewCell {
         self.thumbnail.image = nil
         viewModel.image { (image) in
             DispatchQueue.main.async {
+                self.thumbnail.alpha = 0.0
                 self.thumbnail.image = image
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.thumbnail.alpha = 1.0
+                })
             }
         }
         
@@ -37,7 +41,7 @@ class SmallExerciseCell: UICollectionViewCell {
         self.btnFavourite.addTarget(self, action: #selector(favourite), for: .touchUpInside)
     }
     
-    func configureFavourite(viewModel: ExerciseViewModel, animated: Bool) {
+    private func configureFavourite(viewModel: ExerciseViewModel, animated: Bool) {
         FavouriteButtonCoordinator.configureFavourite(favouriteButton: self.btnFavourite,
                                                       favourited: viewModel.isFavourited,
                                                       animated: animated)
