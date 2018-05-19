@@ -32,14 +32,24 @@ class ExerciseFetcherFactory: ExerciseFetcherCreating {
     }
 }
 
+class ExerciseFavouriterFactory: ExerciseFavouriterCreating {
+    func exerciseFavouriter() -> ExerciseFavouriting & ExerciseFetching {
+        let config = ExerciseFavouriter.Config(cacher: Cacher(ttlManager: TTLManager()))
+        return ExerciseFavouriter(dependencies: config)
+    }
+}
+
 class ExerciseViewModelFactory: ExerciseViewModelCreating {
     private var imageDownloader: ImageDownloading
-    init(imageDownloader: ImageDownloading) {
+    private var favouriter: ExerciseFetching & ExerciseFavouriting
+    init(imageDownloader: ImageDownloading, favouriter: ExerciseFetching & ExerciseFavouriting) {
         self.imageDownloader = imageDownloader
+        self.favouriter = favouriter
     }
     
     func exerciseViewModel(exercise: Exercise) -> ExerciseViewModel {
-        return ExerciseViewModel(exercise: exercise, imageDownloader: self.imageDownloader)
+        let config = ExerciseViewModel.Config(favouriter: self.favouriter, imageDownloader: self.imageDownloader)
+        return ExerciseViewModel(exercise: exercise, dependencies: config)
     }
 }
 

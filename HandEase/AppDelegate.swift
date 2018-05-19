@@ -21,10 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func fetchInitialViewController() -> UIViewController? {
-        let config = ContainerFlowController.Config(menuHandlerFactory      : MenuFlowControllerFactory(),
-                                                    exerciseFetcherFactory  : ExerciseFetcherFactory(),
-                                                    imageDownloaderFactory  : ImageDownloaderFactory(),
-                                                    containerFactory        : ContainerFactory())
+        let config = ContainerFlowController.Config(menuHandlerFactory          : MenuFlowControllerFactory(),
+                                                    exerciseFetcherFactory      : ExerciseFetcherFactory(),
+                                                    imageDownloaderFactory      : ImageDownloaderFactory(),
+                                                    containerFactory            : ContainerFactory(),
+                                                    exerciseFavouriterFactory   : ExerciseFavouriterFactory())
         
         let containerFlowController = ContainerFlowController(dependencies: config)
         containerFlowController.configure()

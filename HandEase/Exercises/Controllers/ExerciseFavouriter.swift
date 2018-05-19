@@ -15,7 +15,6 @@ class ExerciseFavouriter: ExerciseFetching {
     private var favourites: [Exercise] = [Exercise]()
     private var cacheURL: URL? = URL(string: "mb://favourites")
     
-    
     typealias Dependencies = HasCacher
     private var dependencies: Dependencies
     private var cacher: Cacheable { return self.dependencies.cacher }

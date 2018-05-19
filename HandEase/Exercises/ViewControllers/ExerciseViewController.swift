@@ -15,9 +15,10 @@ class ExerciseViewController: UIViewController {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblBody: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var btnFavourite: UIButton!
     
     private var flowController: ExerciseFlowController!
-    private var exercise: ExerciseViewModel!
+    private var viewModel: ExerciseViewModel!
     
     override func viewDidLoad() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
@@ -26,10 +27,10 @@ class ExerciseViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.spinner            .startAnimating()
         self.img.alpha          = 0.0
-        self.lblTitle.text      = self.exercise.titleLabel
-        self.lblBody.text       = self.exercise.body
+        self.lblTitle.text      = self.viewModel.titleLabel
+        self.lblBody.text       = self.viewModel.body
         
-        self.exercise.image { (image) in
+        self.viewModel.image { (image) in
             DispatchQueue.main.async {
                 self.spinner            .stopAnimating()
                 self.img.image          = image
@@ -39,15 +40,19 @@ class ExerciseViewController: UIViewController {
                 })
             }
         }
+        
+        FavouriteButtonCoordinator.configureFavourite(favouriteButton: self.btnFavourite,
+                                                      favourited: self.viewModel.isFavourited,
+                                                      animated: false)
     }
     
     func configure(flowController: ExerciseFlowController, exercise: ExerciseViewModel) {
         self.flowController     = flowController
-        self.exercise           = exercise
+        self.viewModel          = exercise
     }
     
     @IBAction func watchVideo(_ sender: Any) {
-        self.flowController.exerciseVideoTapped(exercise: self.exercise)
+        self.flowController.exerciseVideoTapped(exercise: self.viewModel)
     }
     
     @IBAction func viewNotes(_ sender: Any) {
@@ -55,7 +60,10 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func favourite(_ sender: Any) {
-       
+        _ = self.viewModel.favourite()
+        FavouriteButtonCoordinator.configureFavourite(favouriteButton: self.btnFavourite,
+                                                      favourited: self.viewModel.isFavourited,
+                                                      animated: true)
     }
     
     @IBAction func goBack(_ sender: Any) {

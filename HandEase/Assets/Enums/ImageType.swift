@@ -16,6 +16,8 @@ enum ImageType {
     case menuPersonIcon
     case menuPlusIcon
     case menuHeartIcon
+    case exerciseHeartIcon
+    case exerciseHeartIconSaved
     
     var stringlyTypedImage: String {
         switch self {
@@ -26,6 +28,8 @@ enum ImageType {
             case .menuPersonIcon: return "person"
             case .menuPlusIcon: return "plus"
             case .menuHeartIcon: return "heart-unsaved"
+            case .exerciseHeartIcon: return "heart-unsaved"
+            case .exerciseHeartIconSaved: return "heart-saved"
         }
     }
     
@@ -38,6 +42,8 @@ enum ImageType {
             .menuPersonIcon,
             .menuPlusIcon,
             .menuHeartIcon,
+            .exerciseHeartIcon,
+            .exerciseHeartIconSaved
         ]
     }
 }

@@ -19,7 +19,7 @@ class ContainerFlowController: ExerciseFlowController {
     private var menuHandler: MenuHandler!
     private var containerVC: SlideMenuExerciseContainer!    
     
-    typealias Dependencies = HasImageDownloaderFactory & HasExerciseFetcherFactory & HasContainerFactory & HasMenuFlowControllerFactory
+    typealias Dependencies = HasImageDownloaderFactory & HasExerciseFetcherFactory & HasContainerFactory & HasMenuFlowControllerFactory & HasExerciseFavouriterFactory
     
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
@@ -102,7 +102,11 @@ class ContainerFlowController: ExerciseFlowController {
     private func fetchExerciseListDependencies() -> ExerciseListViewModel.Config {
         let fetcher                 = self.dependencies.exerciseFetcherFactory.exerciseFetcher()
         let imageDownloaderFactory  = self.dependencies.imageDownloaderFactory
-        return ExerciseListViewModel.Config(exerciseFetcher: fetcher, navigator: self, imageDownloaderFactory: imageDownloaderFactory)
+        let favouriterFactory       = self.dependencies.exerciseFavouriterFactory
+        return ExerciseListViewModel.Config(exerciseFetcher: fetcher,
+                                            navigator: self,
+                                            imageDownloaderFactory: imageDownloaderFactory,
+                                            favouriter: favouriterFactory.exerciseFavouriter())
     }
     
     struct Config: Dependencies {
@@ -110,5 +114,6 @@ class ContainerFlowController: ExerciseFlowController {
         var exerciseFetcherFactory  : ExerciseFetcherCreating
         var imageDownloaderFactory  : ImageDownloaderCreating
         var containerFactory        : ContainerCreating
+        var exerciseFavouriterFactory: ExerciseFavouriterCreating
     }
 }

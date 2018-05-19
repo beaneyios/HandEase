@@ -51,7 +51,7 @@
                                     <constraint firstItem="6LG-Cp-4l5" firstAttribute="top" secondItem="sSq-jL-3aR" secondAttribute="top" constant="12" id="gL1-GV-pjo"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xud-V4-Izx">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xud-V4-Izx">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="RhD-XA-ZCR">
@@ -123,7 +123,7 @@
                                     <constraint firstItem="OxQ-5G-oYA" firstAttribute="leading" secondItem="FtZ-UH-lOq" secondAttribute="leading" constant="16" id="h5L-b8-9Gb"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BSE-DV-lyj">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSE-DV-lyj">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="b0y-5o-NC4">
@@ -311,6 +311,7 @@
                         <viewLayoutGuide key="safeArea" id="Bai-V6-ffX"/>
                     </view>
                     <connections>
+                        <outlet property="btnFavourite" destination="acM-0e-gwZ" id="dAN-Bo-pFL"/>
                         <outlet property="img" destination="a3b-AG-uJu" id="678-wZ-3xo"/>
                         <outlet property="lblBody" destination="VcE-Ha-A4M" id="w3f-xr-ZAR"/>
                         <outlet property="lblTitle" destination="nOS-Ef-E6n" id="eV9-dP-BBL"/>

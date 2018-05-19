@@ -11,8 +11,10 @@ import UIKit
 import MBNetworking
 
 class ExerciseListViewModel: NSObject, ExerciseListViewModelling {
-    typealias Dependencies = HasExerciseFetcher & HasExerciseFlowController & HasImageDownloaderFactory
+    typealias Dependencies = HasExerciseFetcher & HasExerciseFavouriter & HasExerciseFlowController & HasImageDownloaderFactory
     private var dependencies: Dependencies
+    private var favouriter: ExerciseFetching & ExerciseFavouriting { return self.dependencies.favouriter }
+    private var imageDownloader: ImageDownloading { return self.dependencies.imageDownloaderFactory.imageDownloader() }
     private var exercises: [Exercise] = []
     
     init(dependencies: Dependencies) {
@@ -20,6 +22,8 @@ class ExerciseListViewModel: NSObject, ExerciseListViewModelling {
     }
     
     func bind(cview: UICollectionView) {
+        self.exercises = []
+        
         cview                   .register(SmallExerciseCell.nib, forCellWithReuseIdentifier: "standard_cell")
         cview.delegate          = self
         cview.dataSource        = self
@@ -46,6 +50,7 @@ class ExerciseListViewModel: NSObject, ExerciseListViewModelling {
         var exerciseFetcher: ExerciseFetching
         var navigator: ExerciseFlowController
         var imageDownloaderFactory: ImageDownloaderCreating
+        var favouriter: ExerciseFetching & ExerciseFavouriting
     }
 }
 
@@ -55,17 +60,25 @@ extension ExerciseListViewModel: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print(indexPath.row)
         let cell            = collectionView.dequeueReusableCell(withReuseIdentifier: "standard_cell", for: indexPath)
         guard let castCell  = cell as? SmallExerciseCell else { return SmallExerciseCell() }
         
         let exercise        = self.exercises[indexPath.row]
-        let downloader      = self.dependencies.imageDownloaderFactory.imageDownloader()
-        let vm              = ExerciseViewModel(exercise: exercise, imageDownloader: downloader)
+        let vm              = self.viewModel(for: exercise)
         castCell.configure  (viewModel: vm)
-        castCell.exerciseTap = {
-            self.dependencies.navigator.exerciseTapped(exercise: vm)
+        castCell.exerciseTap = { self.dependencies.navigator.exerciseTapped(exercise: vm) }
+        castCell.favouriteTap = {
+            _ = self.dependencies.favouriter.favourite(exercise: exercise)
+            castCell.configureFavourite(viewModel: vm, animated: true)
         }
         return cell
+    }
+    
+    private func viewModel(for exercise: Exercise) -> ExerciseViewModel {
+        let config          = ExerciseViewModel.Config(favouriter: favouriter, imageDownloader: imageDownloader)
+        let vm              = ExerciseViewModel(exercise: exercise, dependencies: config)
+        return vm
     }
 }
 

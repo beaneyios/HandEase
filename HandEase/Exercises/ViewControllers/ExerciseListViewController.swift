@@ -21,6 +21,10 @@ class ExerciseListViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.viewModel.bind(cview: self.collectionView)
     }
 }

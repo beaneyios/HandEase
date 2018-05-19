@@ -16,6 +16,10 @@ protocol HasExerciseFetcherFactory {
     var exerciseFetcherFactory: ExerciseFetcherCreating { get }
 }
 
+protocol HasExerciseFavouriterFactory {
+    var exerciseFavouriterFactory: ExerciseFavouriterCreating { get }
+}
+
 protocol HasImageDownloaderFactory {
     var imageDownloaderFactory: ImageDownloaderCreating { get }
 }

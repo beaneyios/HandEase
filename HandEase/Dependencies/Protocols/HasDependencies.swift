@@ -17,8 +17,16 @@ protocol HasExerciseFlowController {
     var navigator: ExerciseFlowController { get }
 }
 
+protocol HasExerciseFavouriter {
+    var favouriter: ExerciseFetching & ExerciseFavouriting { get }
+}
+
 protocol HasExerciseFetcher {
     var exerciseFetcher: ExerciseFetching { get }
+}
+
+protocol HasImageDownloader {
+    var imageDownloader: ImageDownloading { get }
 }
 
 protocol HasMenuItemSizer {

@@ -16,9 +16,13 @@ class SmallExerciseCell: UICollectionViewCell {
     @IBOutlet weak var btnFavourite: UIButton!
     
     typealias ExerciseTap = () -> Void
-    var exerciseTap: ExerciseTap?
+    typealias FavouriteTap = () -> Void
+    
+    var exerciseTap     : ExerciseTap?
+    var favouriteTap    : FavouriteTap?
     
     func configure(viewModel: ExerciseViewModel) {
+        self.thumbnail.image = nil
         viewModel.image { (image) in
             DispatchQueue.main.async {
                 self.thumbnail.image = image
@@ -26,9 +30,21 @@ class SmallExerciseCell: UICollectionViewCell {
         }
         
         self.lblTitle.text = viewModel.titleLabel
+        self.configureFavourite(viewModel: viewModel, animated: false)
         
         let tappy = UITapGestureRecognizer(target: self, action: #selector(self.select(sender:)))
         self.addGestureRecognizer(tappy)
+        self.btnFavourite.addTarget(self, action: #selector(favourite), for: .touchUpInside)
+    }
+    
+    func configureFavourite(viewModel: ExerciseViewModel, animated: Bool) {
+        FavouriteButtonCoordinator.configureFavourite(favouriteButton: self.btnFavourite,
+                                                      favourited: viewModel.isFavourited,
+                                                      animated: animated)
+    }
+    
+    @objc func favourite() {
+        self.favouriteTap?()
     }
     
     @objc func select(sender: UITapGestureRecognizer) {

@@ -13,28 +13,23 @@ typealias ImageCompletion = (_ image: UIImage?) -> Void
 
 class ExerciseViewModel {
     private var exercise: Exercise
-    private var imageDownloader: ImageDownloading
     
-    init(exercise: Exercise, imageDownloader: ImageDownloading) {
+    private var dependencies: Dependencies
+    private var imageDownloader: ImageDownloading { return self.dependencies.imageDownloader }
+    private var favouriter: ExerciseFetching & ExerciseFavouriting { return self.dependencies.favouriter }
+    
+    typealias Dependencies = HasImageDownloader & HasExerciseFavouriter
+    
+    init(exercise: Exercise, dependencies: Dependencies) {
         self.exercise = exercise
-        self.imageDownloader = imageDownloader
+        self.dependencies = dependencies
     }
     
-    var titleLabel: String {
-        return exercise.title
-    }
-    
-    var body: String {
-        return exercise.body
-    }
-    
-    var imageUrl: URL? {
-        return URL(string: self.exercise.imageURL)
-    }
-    
-    var videoURL: URL? {
-        return URL(string: self.exercise.videoURL)
-    }
+    var titleLabel: String { return exercise.title }
+    var body: String { return exercise.body }
+    var imageUrl: URL? { return URL(string: self.exercise.imageURL) }
+    var videoURL: URL? { return URL(string: self.exercise.videoURL) }
+    var isFavourited: Bool { return self.favouriter.isFavourite(exercise: self.exercise) }
     
     func image(completion: @escaping ImageCompletion) {
         self.imageDownloader.cancelDownload()
@@ -43,6 +38,10 @@ class ExerciseViewModel {
         self.imageDownloader.downloadImage(url: url, defaultImage: nil) { (result) in
             self.handleImageResult(result: result, completion: completion)
         }
+    }
+    
+    func favourite() -> Bool {
+        return self.favouriter.favourite(exercise: self.exercise)
     }
     
     private func handleImageResult(result: ImageResult, completion: @escaping ImageCompletion) {
@@ -54,5 +53,10 @@ class ExerciseViewModel {
             print(error)
             completion(image)
         }
+    }
+    
+    struct Config: Dependencies {        
+        var favouriter: ExerciseFavouriting & ExerciseFetching
+        var imageDownloader: ImageDownloading
     }
 }
