@@ -41,7 +41,7 @@ class ExerciseViewController: UIViewController {
         }
     }
     
-    func configure(flowController: Navigator, exercise: ExerciseViewModel) {
+    func configure(flowController: ExerciseFlowController, exercise: ExerciseViewModel) {
         self.flowController     = flowController
         self.exercise           = exercise
     }

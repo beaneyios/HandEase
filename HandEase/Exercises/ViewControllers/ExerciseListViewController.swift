@@ -12,15 +12,11 @@ import UIKit
 class ExerciseListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var flowController: Navigator!
-    private var viewModel: ExerciseListViewModel!
-    
-    @IBAction func toggleMenu(_ sender: Any) {
-        self.toggleMenu()
-    }
-    
-    func configure(flowController: Navigator, viewModel: ExerciseListViewModel) {
-        self.flowController     = flowController
+    private var menuFlowController  : MenuOpening!
+    private var viewModel           : ExerciseListViewModel!
+        
+    func configure(menuFlowController: MenuOpening, viewModel: ExerciseListViewModel) {
+        self.menuFlowController = menuFlowController
         self.viewModel          = viewModel
     }
     
@@ -31,6 +27,10 @@ class ExerciseListViewController: UIViewController {
 
 extension ExerciseListViewController: MenuOpening {
     func toggleMenu() {
-        self.flowController?.toggleMenu()
+        self.menuFlowController.toggleMenu()
+    }
+    
+    @IBAction func toggleMenu(_ sender: Any) {
+        self.toggleMenu()
     }
 }

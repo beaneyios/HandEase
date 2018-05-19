@@ -13,12 +13,6 @@ class MenuViewModel: NSObject, MenuViewModellable {
     typealias Dependencies = HasMenuItemSizer & HasMenuTheme & HasMenuItemDataSource
     private var dependencies: Dependencies
     
-    struct Config: Dependencies {
-        var dataSource: MenuItemDataSource
-        var sizer: MenuItemSizer
-        var theme: MenuTheme
-    }
-    
     var action: MenuItemActionClosure?
     
     var backgroundColor: UIColor {
@@ -39,6 +33,12 @@ class MenuViewModel: NSObject, MenuViewModellable {
         cview.dataSource        = self
         cview.backgroundColor   = self.dependencies.theme.backColor.uiColor
         cview.reloadData()
+    }
+    
+    struct Config: Dependencies {
+        var dataSource: MenuItemDataSource
+        var sizer: MenuItemSizer
+        var theme: MenuTheme
     }
 }
 

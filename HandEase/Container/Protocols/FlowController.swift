@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 protocol FlowController: class {
-    var navigationController: UINavigationController      { get }
-    
+    var navigationController: UINavigationController!      { get }
+    func navigate(to vc: StoryboardRepresentation)
     func closeCurrentVC(viewController: UIViewController)
 }
 

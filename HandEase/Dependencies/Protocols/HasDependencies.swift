@@ -8,12 +8,6 @@
 
 import Foundation
 
-//Core dependencies
-protocol HasImageDownloader {
-    var imageDownloader: ImageDownloading { get }
-}
-
-//Exercise dependencies
 protocol HasExerciseFlowController {
     var navigator: ExerciseFlowController { get }
 }
@@ -22,7 +16,6 @@ protocol HasExerciseFetcher {
     var exerciseFetcher: ExerciseFetching { get }
 }
 
-//Menu dependencies
 protocol HasMenuItemSizer {
     var sizer: MenuItemSizer { get }
 }
@@ -34,3 +27,9 @@ protocol HasMenuItemDataSource {
 protocol HasMenuTheme {
     var theme: MenuTheme { get }
 }
+
+protocol HasMenuFlowController {
+    var menuFlowController: MenuHandler { get }
+}
+
+

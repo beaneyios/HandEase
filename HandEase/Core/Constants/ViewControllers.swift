@@ -23,6 +23,12 @@ struct ViewControllerRepresentations {
     static var video         = StoryboardRepresentation(sbName: "Exercises", sbIdentifier: "video")
 }
 
+extension StoryboardRepresentation: Equatable {
+    static func == (lhs: StoryboardRepresentation, rhs: StoryboardRepresentation) -> Bool {
+        return  lhs.sbIdentifier == rhs.sbIdentifier && lhs.sbName == rhs.sbName
+    }
+}
+
 //TODO: I'm force-unwrapping here, so we need to write tests to be absolutely sure they exist.
 struct ViewControllers {
     static var myExercises  : UIViewController { return UIStoryboard.viewController(for: ViewControllerRepresentations.myExercises)! }
