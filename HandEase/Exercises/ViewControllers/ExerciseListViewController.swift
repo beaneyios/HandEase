@@ -13,14 +13,18 @@ class ExerciseListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var menuFlowController  : MenuOpening!
-    private var viewModel           : ExerciseListViewModel!
+    private var viewModel           : ExerciseListViewModelling!
         
-    func configure(menuFlowController: MenuOpening, viewModel: ExerciseListViewModel) {
+    func configure(menuFlowController: MenuOpening, viewModel: ExerciseListViewModelling) {
         self.menuFlowController = menuFlowController
         self.viewModel          = viewModel
     }
     
     override func viewDidLoad() {
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.viewModel.bind(cview: self.collectionView)
     }
 }

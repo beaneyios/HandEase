@@ -1,8 +1,8 @@
 //
-//  ExerciseListViewModel.swift
+//  MyExercisesListViewModel.swift
 //  HandEase
 //
-//  Created by Matt Beaney on 06/05/2018.
+//  Created by Matt Beaney on 20/05/2018.
 //  Copyright © 2018 Matt Beaney. All rights reserved.
 //
 
@@ -10,9 +10,11 @@ import Foundation
 import UIKit
 import MBNetworking
 
-class ExerciseListViewModel: NSObject, ExerciseListViewModelling {
-    typealias Dependencies = HasExerciseFetcher & HasExerciseFlowController & HasImageDownloaderFactory
+class MyExercisesListViewModel: NSObject, ExerciseListViewModelling {
+    typealias Dependencies = HasExerciseFavouriter & HasExerciseFlowController & HasImageDownloaderFactory
     private var dependencies: Dependencies
+    private var favouriter: ExerciseFetching & ExerciseFavouriting { return self.dependencies.favouriter }
+    private var imageDownloader: ImageDownloading { return self.dependencies.imageDownloaderFactory.imageDownloader() }
     private var exercises: [Exercise] = []
     
     init(dependencies: Dependencies) {
@@ -20,11 +22,17 @@ class ExerciseListViewModel: NSObject, ExerciseListViewModelling {
     }
     
     func bind(cview: UICollectionView) {
+        self.exercises = []
+        
         cview                   .register(SmallExerciseCell.nib, forCellWithReuseIdentifier: "standard_cell")
         cview.delegate          = self
         cview.dataSource        = self
         
-        self.dependencies.exerciseFetcher.fetchExercises(force: false) { (result) in
+        self.fetch(cview: cview)
+    }
+    
+    private func fetch(cview: UICollectionView) {
+        self.dependencies.favouriter.fetchExercises(force: false) { (result) in
             switch result {
             case .success(exercises: let exercises):
                 self.exercises = exercises
@@ -43,34 +51,45 @@ class ExerciseListViewModel: NSObject, ExerciseListViewModelling {
     }
     
     struct Config: Dependencies {
-        var exerciseFetcher: ExerciseFetching
         var navigator: ExerciseFlowController
         var imageDownloaderFactory: ImageDownloaderCreating
+        var favouriter: ExerciseFetching & ExerciseFavouriting
     }
 }
 
-extension ExerciseListViewModel: UICollectionViewDataSource {
+extension MyExercisesListViewModel: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.exercises.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print(indexPath.row)
         let cell            = collectionView.dequeueReusableCell(withReuseIdentifier: "standard_cell", for: indexPath)
         guard let castCell  = cell as? SmallExerciseCell else { return SmallExerciseCell() }
         
         let exercise        = self.exercises[indexPath.row]
-        let downloader      = self.dependencies.imageDownloaderFactory.imageDownloader()
-        let vm              = ExerciseViewModel(exercise: exercise, imageDownloader: downloader)
+        let vm              = self.viewModel(for: exercise)
         castCell.configure  (viewModel: vm)
-        castCell.exerciseTap = {
-            self.dependencies.navigator.exerciseTapped(exercise: vm)
+        castCell.exerciseTap = { self.dependencies.navigator.exerciseTapped(exercise: vm) }
+        castCell.favouriteTap = {
+            _ = self.dependencies.favouriter.favourite(exercise: exercise)
+            self.fetch(cview: collectionView)
         }
+        
         return cell
+    }
+    
+    private func viewModel(for exercise: Exercise) -> ExerciseViewModel {
+        let config          = ExerciseViewModel.Config(favouriter: favouriter, imageDownloader: imageDownloader)
+        let vm              = ExerciseViewModel(exercise: exercise, dependencies: config)
+        return vm
     }
 }
 
-extension ExerciseListViewModel: UICollectionViewDelegateFlowLayout {
+extension MyExercisesListViewModel: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width, height: 100.0)
     }
 }
+
+

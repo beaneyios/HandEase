@@ -17,12 +17,21 @@ protocol ContainerCreating {
     func container(flowController: ExerciseFlowController, menuDelegate: MenuHandler) -> SlideMenuExerciseContainer?
 }
 
+protocol ExerciseFavouriterCreating {
+    func exerciseFavouriter() -> ExerciseFetching & ExerciseFavouriting
+}
+
 protocol ExerciseFetcherCreating {
     func exerciseFetcher() -> ExerciseFetching
 }
 
 protocol ExerciseViewModelCreating {
     func exerciseViewModel(exercise: Exercise) -> ExerciseViewModel
+}
+
+protocol ExerciseListViewModelCreating {
+    func allExercisesViewModel(fetcher: ExerciseFetching, imageDownloaderFactory: ImageDownloaderCreating, favouriter: ExerciseFetching & ExerciseFavouriting, navigator: ExerciseFlowController) -> AllExercisesListViewModel
+    func myExercisesViewModel(imageDownloaderFactory: ImageDownloaderCreating, favouriter: ExerciseFetching & ExerciseFavouriting, navigator: ExerciseFlowController) -> MyExercisesListViewModel
 }
 
 protocol ImageDownloaderCreating {
