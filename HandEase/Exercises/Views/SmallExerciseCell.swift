@@ -21,16 +21,11 @@ class SmallExerciseCell: UICollectionViewCell {
     var exerciseTap     : ExerciseTap?
     var favouriteTap    : FavouriteTap?
     
+    //MARK: ---- Configuration ----
     func configure(viewModel: ExerciseViewModel) {
         self.thumbnail.image = nil
         viewModel.image { (image) in
-            DispatchQueue.main.async {
-                self.thumbnail.alpha = 0.0
-                self.thumbnail.image = image
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.thumbnail.alpha = 1.0
-                })
-            }
+            self.configureImage(image: image)
         }
         
         self.lblTitle.text = viewModel.titleLabel
@@ -47,6 +42,17 @@ class SmallExerciseCell: UICollectionViewCell {
                                                       animated: animated)
     }
     
+    private func configureImage(image: UIImage?) {
+        DispatchQueue.main.async {
+            self.thumbnail.alpha = 0.0
+            self.thumbnail.image = image
+            UIView.animate(withDuration: 0.2, animations: {
+                self.thumbnail.alpha = 1.0
+            })
+        }
+    }
+    
+    //MARK: ---- Actions ----
     @objc func favourite() {
         self.favouriteTap?()
     }
