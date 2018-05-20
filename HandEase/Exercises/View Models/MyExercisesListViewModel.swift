@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MBNetworking
 
-class MyExercisesListViewModel: NSObject, ExerciseListViewModelling {
+class MyExercisesListViewModel: NSObject, ListViewModel {
     typealias Dependencies = HasExerciseFavouriter & HasExerciseFlowController & HasImageDownloaderFactory
     private var dependencies: Dependencies
     private var favouriter: ExerciseFetching & ExerciseFavouriting { return self.dependencies.favouriter }

@@ -17,6 +17,11 @@ class ExerciseFavouriter: ExerciseFetching {
     
     typealias Dependencies = HasCacher
     private var dependencies: Dependencies
+    
+    struct Config: Dependencies {
+        var cacher: Cacheable
+    }
+    
     private var cacher: Cacheable { return self.dependencies.cacher }
     
     init(dependencies: Dependencies) {
@@ -42,10 +47,6 @@ class ExerciseFavouriter: ExerciseFetching {
         }
         
         return exercises
-    }
-    
-    struct Config: Dependencies {
-        var cacher: Cacheable
     }
 }
 

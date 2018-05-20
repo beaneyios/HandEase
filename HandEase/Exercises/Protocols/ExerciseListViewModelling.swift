@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-typealias ExerciseItemActionClosure = (_ action: Exercise) -> ()
-
-protocol ExerciseListViewModelling {
+protocol ListViewModel {
     func bind(cview: UICollectionView)
 }

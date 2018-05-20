@@ -62,6 +62,10 @@
 		BEDA7DF320A735A20009F2C2 /* HasDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA7DF220A735A20009F2C2 /* HasDependencies.swift */; };
 		BEDE4B3C20B1826B00983C04 /* AllExercisesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE4B3B20B1826B00983C04 /* AllExercisesListViewModel.swift */; };
 		BEDE4B3E20B1829D00983C04 /* MyExercisesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE4B3D20B1829D00983C04 /* MyExercisesListViewModel.swift */; };
+		BEDE4B4620B1932500983C04 /* ExerciseEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE4B4520B1932500983C04 /* ExerciseEvent.swift */; };
+		BEDE4B4920B1939000983C04 /* ExerciseTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE4B4820B1939000983C04 /* ExerciseTracking.swift */; };
+		BEDE4B4B20B193DB00983C04 /* ExerciseTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE4B4A20B193DB00983C04 /* ExerciseTracker.swift */; };
+		BEDE4B4D20B1A22300983C04 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE4B4C20B1A22300983C04 /* ProgressViewController.swift */; };
 		BEEBAAC1209DEFDA002EA251 /* MenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC0209DEFDA002EA251 /* MenuDelegate.swift */; };
 		BEEBAACA209F779C002EA251 /* ContainerFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC9209F779C002EA251 /* ContainerFlowControllerTests.swift */; };
 		BEEBAACF209F8034002EA251 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAACE209F8034002EA251 /* Exercise.swift */; };
@@ -155,6 +159,10 @@
 		BEDA7DF220A735A20009F2C2 /* HasDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasDependencies.swift; sourceTree = "<group>"; };
 		BEDE4B3B20B1826B00983C04 /* AllExercisesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllExercisesListViewModel.swift; sourceTree = "<group>"; };
 		BEDE4B3D20B1829D00983C04 /* MyExercisesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExercisesListViewModel.swift; sourceTree = "<group>"; };
+		BEDE4B4520B1932500983C04 /* ExerciseEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseEvent.swift; sourceTree = "<group>"; };
+		BEDE4B4820B1939000983C04 /* ExerciseTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTracking.swift; sourceTree = "<group>"; };
+		BEDE4B4A20B193DB00983C04 /* ExerciseTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTracker.swift; sourceTree = "<group>"; };
+		BEDE4B4C20B1A22300983C04 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		BEEBAAC0209DEFDA002EA251 /* MenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
 		BEEBAAC9209F779C002EA251 /* ContainerFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerFlowControllerTests.swift; sourceTree = "<group>"; };
 		BEEBAACE209F8034002EA251 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
@@ -237,6 +245,7 @@
 				BEF6D40C20AB48C00015346D /* Dependencies */,
 				BE3B2925209659B900CA42EA /* Exercises */,
 				BE0F6AE72079404600587714 /* Menu */,
+				BEDE4B3F20B192DD00983C04 /* Progress */,
 			);
 			path = HandEase;
 			sourceTree = "<group>";
@@ -586,6 +595,65 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		BEDE4B3F20B192DD00983C04 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				BEDE4B4020B192F500983C04 /* Controllers */,
+				BEDE4B4120B192FC00983C04 /* Models */,
+				BEDE4B4720B1938500983C04 /* Protocols */,
+				BEDE4B4420B1930800983C04 /* View Controllers */,
+				BEDE4B4220B1930000983C04 /* View Models */,
+				BEDE4B4320B1930500983C04 /* Views */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		BEDE4B4020B192F500983C04 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BEDE4B4A20B193DB00983C04 /* ExerciseTracker.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BEDE4B4120B192FC00983C04 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BEDE4B4520B1932500983C04 /* ExerciseEvent.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BEDE4B4220B1930000983C04 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		BEDE4B4320B1930500983C04 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BEDE4B4420B1930800983C04 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BEDE4B4C20B1A22300983C04 /* ProgressViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BEDE4B4720B1938500983C04 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BEDE4B4820B1939000983C04 /* ExerciseTracking.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		BEEBAAC5209DF2EB002EA251 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -886,8 +954,10 @@
 				BEEBAAD1209F8404002EA251 /* ExerciseFetching.swift in Sources */,
 				BEF6D42720AB5C7D0015346D /* DependencyFactoryProtocols.swift in Sources */,
 				BE0F6B0C2079475A00587714 /* String+Localisation.swift in Sources */,
+				BEDE4B4B20B193DB00983C04 /* ExerciseTracker.swift in Sources */,
 				BE3B292D20965AC500CA42EA /* UIView+AutoLayoutHelpers.swift in Sources */,
 				BEABD6B5207A888100DC2E7D /* MenuItemSizer.swift in Sources */,
+				BEDE4B4620B1932500983C04 /* ExerciseEvent.swift in Sources */,
 				BEB06B22208682600051B0A5 /* ItemAction.swift in Sources */,
 				BEDE4B3E20B1829D00983C04 /* MyExercisesListViewModel.swift in Sources */,
 				BEDA7DF020A72EA50009F2C2 /* ImageDownloader.swift in Sources */,
@@ -895,12 +965,14 @@
 				BEDA7DF320A735A20009F2C2 /* HasDependencies.swift in Sources */,
 				BEABD6B7207A88CD00DC2E7D /* LocalMenuItemSizer.swift in Sources */,
 				BE0F6B04207942C200587714 /* UIImage+ImageType.swift in Sources */,
+				BEDE4B4D20B1A22300983C04 /* ProgressViewController.swift in Sources */,
 				BE18C56A20B0A38000DD3677 /* ExerciseFavouriting.swift in Sources */,
 				BEABD6BB207A977200DC2E7D /* MenuViewController.swift in Sources */,
 				BEF6D41D20AB4C230015346D /* MenuFlowController.swift in Sources */,
 				BE0F6AF7207941FD00587714 /* MenuItemViewModel.swift in Sources */,
 				BE3B291D20964D1900CA42EA /* UIViewController+AddChildViewController.swift in Sources */,
 				BEF6D42920AB5CB50015346D /* HasFactoryDependencies.swift in Sources */,
+				BEDE4B4920B1939000983C04 /* ExerciseTracking.swift in Sources */,
 				BEEBAAD4209F8473002EA251 /* ExerciseFetcher.swift in Sources */,
 				BE3B29222096506700CA42EA /* UIStoryboard+ViewControllers.swift in Sources */,
 				BE0F6B01207942B300587714 /* ImageType.swift in Sources */,
