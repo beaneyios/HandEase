@@ -33,9 +33,11 @@ class ContainerFlowController: ExerciseFlowController {
     
     private var menuHandler: MenuHandler!
     private var containerVC: SlideMenuExerciseContainer!
+    private var rootVC: StoryboardRepresentation
     
-    init(dependencies: Dependencies) {
+    init(rootVC: StoryboardRepresentation, dependencies: Dependencies) {
         self.dependencies = dependencies
+        self.rootVC = rootVC
     }
     
     func configure() {
@@ -67,6 +69,13 @@ class ContainerFlowController: ExerciseFlowController {
         guard let vc = ViewControllers.video as? ExerciseVideoViewController else { return }
         vc.configure(exercise: exercise, flowController: self)
         self.navigationController.pushViewController(vc, animated: true)
+    }
+    
+    /**
+     Starts the navigation.
+    */
+    func setRootViewController() {
+        self.navigate(to: self.rootVC)
     }
     
     /**

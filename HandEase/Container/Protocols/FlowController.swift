@@ -11,6 +11,7 @@ import UIKit
 
 protocol FlowController: class {
     var navigationController: UINavigationController!      { get }
+    func setRootViewController()
     func navigate(to vc: StoryboardRepresentation)
     func closeCurrentVC(viewController: UIViewController)
 }
