@@ -12,14 +12,27 @@ import UIKit
 typealias SlideMenuExerciseContainer = ViewControllerContaining & MenuOpening
 
 class ContainerFlowController: ExerciseFlowController {
+    typealias Dependencies =    HasImageDownloaderFactory       &
+                                HasExerciseFetcherFactory       &
+                                HasContainerFactory             &
+                                HasMenuFlowControllerFactory    &
+                                HasExerciseFavouriterFactory &
+                                HasExerciseListViewModelFactory
     private var dependencies: Dependencies
+    
+    struct Config: Dependencies {
+        var menuHandlerFactory              : MenuFlowControllerFactory
+        var exerciseFetcherFactory          : ExerciseFetcherCreating
+        var imageDownloaderFactory          : ImageDownloaderCreating
+        var containerFactory                : ContainerCreating
+        var exerciseFavouriterFactory       : ExerciseFavouriterCreating
+        var exerciseListViewModelFactory    : ExerciseListViewModelCreating
+    }
     
     var navigationController: UINavigationController!
     
     private var menuHandler: MenuHandler!
-    private var containerVC: SlideMenuExerciseContainer!    
-    
-    typealias Dependencies = HasImageDownloaderFactory & HasExerciseFetcherFactory & HasContainerFactory & HasMenuFlowControllerFactory & HasExerciseFavouriterFactory
+    private var containerVC: SlideMenuExerciseContainer!
     
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
@@ -115,27 +128,17 @@ class ContainerFlowController: ExerciseFlowController {
         let fetcher                 = self.dependencies.exerciseFetcherFactory.exerciseFetcher()
         let imageDownloaderFactory  = self.dependencies.imageDownloaderFactory
         let favouriter              = self.dependencies.exerciseFavouriterFactory.exerciseFavouriter()
-        let config                  = AllExercisesListViewModel.Config(exerciseFetcher: fetcher,
-                                                                        navigator: self,
-                                                                        imageDownloaderFactory: imageDownloaderFactory,
-                                                                        favouriter: favouriter)
-        return AllExercisesListViewModel(dependencies: config)
+        return self.dependencies.exerciseListViewModelFactory.allExercisesViewModel(fetcher: fetcher,
+                                                                                    imageDownloaderFactory: imageDownloaderFactory,
+                                                                                    favouriter: favouriter,
+                                                                                    navigator: self)
     }
     
     private func fetchMyExerciseListViewModel() -> MyExercisesListViewModel {
         let imageDownloaderFactory  = self.dependencies.imageDownloaderFactory
         let favouriter              = self.dependencies.exerciseFavouriterFactory.exerciseFavouriter()
-        let config                  = MyExercisesListViewModel.Config(navigator: self,
-                                                                      imageDownloaderFactory: imageDownloaderFactory,
-                                                                      favouriter: favouriter)
-        return MyExercisesListViewModel(dependencies: config)
-    }
-    
-    struct Config: Dependencies {
-        var menuHandlerFactory      : MenuFlowControllerFactory
-        var exerciseFetcherFactory  : ExerciseFetcherCreating
-        var imageDownloaderFactory  : ImageDownloaderCreating
-        var containerFactory        : ContainerCreating
-        var exerciseFavouriterFactory: ExerciseFavouriterCreating
+        return self.dependencies.exerciseListViewModelFactory.myExercisesViewModel(imageDownloaderFactory: imageDownloaderFactory,
+                                                                                   favouriter: favouriter,
+                                                                                   navigator: self)
     }
 }

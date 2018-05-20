@@ -39,6 +39,23 @@ class ExerciseFavouriterFactory: ExerciseFavouriterCreating {
     }
 }
 
+class ExerciseListViewModelFactory: ExerciseListViewModelCreating {
+    func allExercisesViewModel(fetcher: ExerciseFetching, imageDownloaderFactory: ImageDownloaderCreating, favouriter: ExerciseFetching & ExerciseFavouriting, navigator: ExerciseFlowController) -> AllExercisesListViewModel {
+        let config = AllExercisesListViewModel.Config(exerciseFetcher: fetcher,
+                                                            navigator: navigator,
+                                                            imageDownloaderFactory: imageDownloaderFactory,
+                                                            favouriter: favouriter)
+        return AllExercisesListViewModel(dependencies: config)
+    }
+    
+    func myExercisesViewModel(imageDownloaderFactory: ImageDownloaderCreating, favouriter: ExerciseFetching & ExerciseFavouriting, navigator: ExerciseFlowController) -> MyExercisesListViewModel {
+        let config = MyExercisesListViewModel.Config(navigator: navigator,
+                                                     imageDownloaderFactory: imageDownloaderFactory,
+                                                     favouriter: favouriter)
+        return MyExercisesListViewModel(dependencies: config)
+    }
+}
+
 class ExerciseViewModelFactory: ExerciseViewModelCreating {
     private var imageDownloader: ImageDownloading
     private var favouriter: ExerciseFetching & ExerciseFavouriting

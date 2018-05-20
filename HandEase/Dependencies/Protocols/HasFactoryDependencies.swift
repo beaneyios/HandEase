@@ -20,6 +20,10 @@ protocol HasExerciseFavouriterFactory {
     var exerciseFavouriterFactory: ExerciseFavouriterCreating { get }
 }
 
+protocol HasExerciseListViewModelFactory {
+    var exerciseListViewModelFactory: ExerciseListViewModelCreating { get }
+}
+
 protocol HasImageDownloaderFactory {
     var imageDownloaderFactory: ImageDownloaderCreating { get }
 }

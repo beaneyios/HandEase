@@ -25,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                     exerciseFetcherFactory      : ExerciseFetcherFactory(),
                                                     imageDownloaderFactory      : ImageDownloaderFactory(),
                                                     containerFactory            : ContainerFactory(),
-                                                    exerciseFavouriterFactory   : ExerciseFavouriterFactory())
+                                                    exerciseFavouriterFactory   : ExerciseFavouriterFactory(),
+                                                    exerciseListViewModelFactory: ExerciseListViewModelFactory())
         
         let containerFlowController = ContainerFlowController(dependencies: config)
         containerFlowController.configure()
