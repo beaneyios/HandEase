@@ -74,16 +74,13 @@ class ContainerFlowController: ExerciseFlowController {
         if let exercises = viewController as? ExerciseListViewController {
             switch vc {
             case ViewControllerRepresentations.allExercises:
-                let viewModelConfig = self.fetchAllExerciseListDependencies()
-                let viewModel = ExerciseListViewModel(dependencies: viewModelConfig)
+                let viewModel = self.fetchAllExerciseListViewModel()
                 exercises.configure(menuFlowController: self.menuHandler, viewModel: viewModel)
             case ViewControllerRepresentations.myExercises:
-                let viewModelConfig = self.fetchMyExerciseListDependencies()
-                let viewModel = ExerciseListViewModel(dependencies: viewModelConfig)
+                let viewModel = self.fetchMyExerciseListViewModel()
                 exercises.configure(menuFlowController: self.menuHandler, viewModel: viewModel)
             default:
-                let viewModelConfig = self.fetchAllExerciseListDependencies()
-                let viewModel = ExerciseListViewModel(dependencies: viewModelConfig)
+                let viewModel = self.fetchAllExerciseListViewModel()
                 exercises.configure(menuFlowController: self.menuHandler, viewModel: viewModel)
             }
         }
@@ -114,23 +111,24 @@ class ContainerFlowController: ExerciseFlowController {
         }
     }
     
-    private func fetchAllExerciseListDependencies() -> ExerciseListViewModel.Config {
+    private func fetchAllExerciseListViewModel() -> AllExercisesListViewModel {
         let fetcher                 = self.dependencies.exerciseFetcherFactory.exerciseFetcher()
         let imageDownloaderFactory  = self.dependencies.imageDownloaderFactory
-        let favouriterFactory       = self.dependencies.exerciseFavouriterFactory
-        return ExerciseListViewModel.Config(exerciseFetcher: fetcher,
-                                            navigator: self,
-                                            imageDownloaderFactory: imageDownloaderFactory,
-                                            favouriter: favouriterFactory.exerciseFavouriter())
+        let favouriter              = self.dependencies.exerciseFavouriterFactory.exerciseFavouriter()
+        let config                  = AllExercisesListViewModel.Config(exerciseFetcher: fetcher,
+                                                                        navigator: self,
+                                                                        imageDownloaderFactory: imageDownloaderFactory,
+                                                                        favouriter: favouriter)
+        return AllExercisesListViewModel(dependencies: config)
     }
     
-    private func fetchMyExerciseListDependencies() -> ExerciseListViewModel.Config {
+    private func fetchMyExerciseListViewModel() -> MyExercisesListViewModel {
         let imageDownloaderFactory  = self.dependencies.imageDownloaderFactory
         let favouriter              = self.dependencies.exerciseFavouriterFactory.exerciseFavouriter()
-        return ExerciseListViewModel.Config(exerciseFetcher: favouriter,
-                                            navigator: self,
-                                            imageDownloaderFactory: imageDownloaderFactory,
-                                            favouriter: favouriter)
+        let config                  = MyExercisesListViewModel.Config(navigator: self,
+                                                                      imageDownloaderFactory: imageDownloaderFactory,
+                                                                      favouriter: favouriter)
+        return MyExercisesListViewModel(dependencies: config)
     }
     
     struct Config: Dependencies {

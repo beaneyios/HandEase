@@ -36,7 +36,7 @@ class SmallExerciseCell: UICollectionViewCell {
         self.btnFavourite.addTarget(self, action: #selector(favourite), for: .touchUpInside)
     }
     
-    private func configureFavourite(viewModel: ExerciseViewModel, animated: Bool) {
+    func configureFavourite(viewModel: ExerciseViewModel, animated: Bool) {
         FavouriteButtonCoordinator.configureFavourite(favouriteButton: self.btnFavourite,
                                                       favourited: viewModel.isFavourited,
                                                       animated: animated)
