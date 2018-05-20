@@ -10,16 +10,7 @@ import Foundation
 
 struct LocalMenuItemDataSource : MenuItemDataSource {    
     var items: [MenuItem] {
-        return [           
-            //MARK: MY EXERCISES
-            MenuItem(
-                strTitle    : .menuMyExercises,
-                imgType     : .menuHeartIcon,
-                foreColor   : .menuItemForeColor,
-                backColor   : .menuItemBackColor,
-                action      : .loadView(viewController: ViewControllerRepresentations.myExercises)
-            ),
-            
+        return [
             //MARK: ALL EXERCISES
             MenuItem(
                 strTitle    : .menuAllExercises,
@@ -27,6 +18,15 @@ struct LocalMenuItemDataSource : MenuItemDataSource {
                 foreColor   : .menuItemForeColor,
                 backColor   : .menuItemBackColor,
                 action      : .loadView(viewController: ViewControllerRepresentations.allExercises)
+            ),
+            
+            //MARK: MY EXERCISES
+            MenuItem(
+                strTitle    : .menuMyExercises,
+                imgType     : .menuHeartIcon,
+                foreColor   : .menuItemForeColor,
+                backColor   : .menuItemBackColor,
+                action      : .loadView(viewController: ViewControllerRepresentations.myExercises)
             ),
             
             //MARK: REMIND ME

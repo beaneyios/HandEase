@@ -28,7 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                     exerciseFavouriterFactory   : ExerciseFavouriterFactory(),
                                                     exerciseListViewModelFactory: ExerciseListViewModelFactory())
         
-        let containerFlowController = ContainerFlowController(dependencies: config)
+        let containerFlowController = ContainerFlowController(rootVC: ViewControllerRepresentations.allExercises,
+                                                              dependencies: config)
         containerFlowController.configure()
         
         self.flowController = containerFlowController

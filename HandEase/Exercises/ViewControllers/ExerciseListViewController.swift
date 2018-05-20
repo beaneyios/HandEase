@@ -13,9 +13,9 @@ class ExerciseListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var menuFlowController  : MenuOpening!
-    private var viewModel           : ExerciseListViewModelling!
+    private var viewModel           : ListViewModel!
         
-    func configure(menuFlowController: MenuOpening, viewModel: ExerciseListViewModelling) {
+    func configure(menuFlowController: MenuOpening, viewModel: ListViewModel) {
         self.menuFlowController = menuFlowController
         self.viewModel          = viewModel
     }

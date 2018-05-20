@@ -35,7 +35,7 @@ class ContainerViewController : UIViewController, ViewControllerContaining, Menu
     }
     
     override func viewDidLoad() {
-        self.flowController.navigate(to: ViewControllerRepresentations.myExercises)
+        self.flowController.setRootViewController()
         self.configureMenu()
     }
     
