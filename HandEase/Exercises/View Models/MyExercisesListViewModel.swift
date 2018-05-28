@@ -11,10 +11,12 @@ import UIKit
 import MBNetworking
 
 class MyExercisesListViewModel: NSObject, ListViewModel {
-    typealias Dependencies = HasExerciseFavouriter & HasExerciseFlowController & HasImageDownloaderFactory
+    typealias Dependencies = HasExerciseFavouriter & HasExerciseFlowController & HasImageDownloaderFactory & HasExerciseTracker
     private var dependencies: Dependencies
     private var favouriter: ExerciseFetching & ExerciseFavouriting { return self.dependencies.favouriter }
     private var imageDownloader: ImageDownloading { return self.dependencies.imageDownloaderFactory.imageDownloader() }
+    private var tracker: ExerciseTracking { return self.dependencies.tracker }
+    
     private var exercises: [Exercise] = []
     
     init(dependencies: Dependencies) {
@@ -54,6 +56,7 @@ class MyExercisesListViewModel: NSObject, ListViewModel {
         var navigator: ExerciseFlowController
         var imageDownloaderFactory: ImageDownloaderCreating
         var favouriter: ExerciseFetching & ExerciseFavouriting
+        var tracker: ExerciseTracking
     }
 }
 
@@ -80,7 +83,7 @@ extension MyExercisesListViewModel: UICollectionViewDataSource {
     }
     
     private func viewModel(for exercise: Exercise) -> ExerciseViewModel {
-        let config          = ExerciseViewModel.Config(favouriter: favouriter, imageDownloader: imageDownloader)
+        let config          = ExerciseViewModel.Config(favouriter: favouriter, imageDownloader: imageDownloader, tracker: tracker)
         let vm              = ExerciseViewModel(exercise: exercise, dependencies: config)
         return vm
     }

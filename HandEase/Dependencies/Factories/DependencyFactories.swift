@@ -39,33 +39,61 @@ class ExerciseFavouriterFactory: ExerciseFavouriterCreating {
     }
 }
 
-class ExerciseListViewModelFactory: ExerciseListViewModelCreating {
-    func allExercisesViewModel(fetcher: ExerciseFetching, imageDownloaderFactory: ImageDownloaderCreating, favouriter: ExerciseFetching & ExerciseFavouriting, navigator: ExerciseFlowController) -> AllExercisesListViewModel {
+class ExerciseListViewModelFactory: ListViewModelCreating {
+    func progressListViewModel(tracker: ExerciseTracking,
+                               imageDownloaderFactory: ImageDownloaderCreating,
+                               exerciseViewModelFactory: ExerciseViewModelCreating,
+                               navigator: ExerciseFlowController) -> ListViewModel {
+        let config = ProgressListViewModel.Config(tracker: tracker,
+                                                  imageDownloaderFactory: imageDownloaderFactory,
+                                                  navigator: navigator,
+                                                  exerciseViewModelFactory: exerciseViewModelFactory)
+        return ProgressListViewModel(dependencies: config)
+    }
+    
+    func allExercisesViewModel(fetcher: ExerciseFetching,
+                               imageDownloaderFactory: ImageDownloaderCreating,
+                               favouriter: ExerciseFetching & ExerciseFavouriting,
+                               navigator: ExerciseFlowController,
+                               tracker: ExerciseTracking) -> ListViewModel {
         let config = AllExercisesListViewModel.Config(exerciseFetcher: fetcher,
                                                             navigator: navigator,
                                                             imageDownloaderFactory: imageDownloaderFactory,
-                                                            favouriter: favouriter)
+                                                            favouriter: favouriter,
+                                                            tracker: tracker)
         return AllExercisesListViewModel(dependencies: config)
     }
     
-    func myExercisesViewModel(imageDownloaderFactory: ImageDownloaderCreating, favouriter: ExerciseFetching & ExerciseFavouriting, navigator: ExerciseFlowController) -> MyExercisesListViewModel {
+    func myExercisesViewModel(imageDownloaderFactory: ImageDownloaderCreating,
+                              favouriter: ExerciseFetching & ExerciseFavouriting,
+                              navigator: ExerciseFlowController,
+                              tracker: ExerciseTracking) -> ListViewModel {
         let config = MyExercisesListViewModel.Config(navigator: navigator,
                                                      imageDownloaderFactory: imageDownloaderFactory,
-                                                     favouriter: favouriter)
+                                                     favouriter: favouriter,
+                                                     tracker: tracker)
         return MyExercisesListViewModel(dependencies: config)
     }
 }
 
-class ExerciseViewModelFactory: ExerciseViewModelCreating {
-    private var imageDownloader: ImageDownloading
-    private var favouriter: ExerciseFetching & ExerciseFavouriting
-    init(imageDownloader: ImageDownloading, favouriter: ExerciseFetching & ExerciseFavouriting) {
-        self.imageDownloader = imageDownloader
-        self.favouriter = favouriter
+class ExerciseTrackerFactory: ExerciseTrackerCreating {
+    func exerciseTracker() -> ExerciseTracking {
+        let cacher = Cacher(ttlManager: TTLManager())
+        let config = ExerciseTracker.Config(cacher: cacher)
+        return ExerciseTracker(dependencies: config)
     }
-    
+}
+
+class ExerciseViewModelFactory: ExerciseViewModelCreating {    
     func exerciseViewModel(exercise: Exercise) -> ExerciseViewModel {
-        let config = ExerciseViewModel.Config(favouriter: self.favouriter, imageDownloader: self.imageDownloader)
+        
+        let favouriterFactory       = ExerciseFavouriterFactory()
+        let imageDownloaderFactory  = ImageDownloaderFactory()
+        let tracker                 = ExerciseTrackerFactory()
+        
+        let config = ExerciseViewModel.Config(favouriter        : favouriterFactory.exerciseFavouriter(),
+                                              imageDownloader   : imageDownloaderFactory.imageDownloader(),
+                                              tracker           : tracker.exerciseTracker())
         return ExerciseViewModel(exercise: exercise, dependencies: config)
     }
 }

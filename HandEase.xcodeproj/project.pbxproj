@@ -34,6 +34,11 @@
 		BE18C56820B0A37100DD3677 /* ExerciseFavouriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18C56720B0A37100DD3677 /* ExerciseFavouriter.swift */; };
 		BE18C56A20B0A38000DD3677 /* ExerciseFavouriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18C56920B0A38000DD3677 /* ExerciseFavouriting.swift */; };
 		BE18C56C20B0C3BB00DD3677 /* FavouriteButtonCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18C56B20B0C3BB00DD3677 /* FavouriteButtonCoordinator.swift */; };
+		BE18F46C20BC86CB001EC1FE /* ExerciseEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18F46B20BC86CB001EC1FE /* ExerciseEventViewModel.swift */; };
+		BE18F46E20BC86E1001EC1FE /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18F46D20BC86E1001EC1FE /* EventViewModel.swift */; };
+		BE18F47020BC88AD001EC1FE /* ExerciseImageDownloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18F46F20BC88AD001EC1FE /* ExerciseImageDownloading.swift */; };
+		BE18F47320BC8BE7001EC1FE /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE18F47220BC8BE7001EC1FE /* Progress.storyboard */; };
+		BE18F47520BC8D74001EC1FE /* ListConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18F47420BC8D74001EC1FE /* ListConfigurable.swift */; };
 		BE385BCA209DEEC6001E018E /* MenuOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE385BC9209DEEC6001E018E /* MenuOpening.swift */; };
 		BE3B291D20964D1900CA42EA /* UIViewController+AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B291C20964D1900CA42EA /* UIViewController+AddChildViewController.swift */; };
 		BE3B292020964DF600CA42EA /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B291F20964DF600CA42EA /* ViewControllers.swift */; };
@@ -66,6 +71,9 @@
 		BEDE4B4920B1939000983C04 /* ExerciseTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE4B4820B1939000983C04 /* ExerciseTracking.swift */; };
 		BEDE4B4B20B193DB00983C04 /* ExerciseTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE4B4A20B193DB00983C04 /* ExerciseTracker.swift */; };
 		BEDE4B4D20B1A22300983C04 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE4B4C20B1A22300983C04 /* ProgressViewController.swift */; };
+		BEDE4B4F20B1A2C900983C04 /* ProgressListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE4B4E20B1A2C900983C04 /* ProgressListViewModel.swift */; };
+		BEDE4B5220B1A53E00983C04 /* ExerciseEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE4B5020B1A53E00983C04 /* ExerciseEventCell.swift */; };
+		BEDE4B5320B1A53E00983C04 /* ExerciseEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEDE4B5120B1A53E00983C04 /* ExerciseEventCell.xib */; };
 		BEEBAAC1209DEFDA002EA251 /* MenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC0209DEFDA002EA251 /* MenuDelegate.swift */; };
 		BEEBAACA209F779C002EA251 /* ContainerFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC9209F779C002EA251 /* ContainerFlowControllerTests.swift */; };
 		BEEBAACF209F8034002EA251 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAACE209F8034002EA251 /* Exercise.swift */; };
@@ -131,6 +139,11 @@
 		BE18C56720B0A37100DD3677 /* ExerciseFavouriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFavouriter.swift; sourceTree = "<group>"; };
 		BE18C56920B0A38000DD3677 /* ExerciseFavouriting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFavouriting.swift; sourceTree = "<group>"; };
 		BE18C56B20B0C3BB00DD3677 /* FavouriteButtonCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteButtonCoordinator.swift; sourceTree = "<group>"; };
+		BE18F46B20BC86CB001EC1FE /* ExerciseEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseEventViewModel.swift; sourceTree = "<group>"; };
+		BE18F46D20BC86E1001EC1FE /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		BE18F46F20BC88AD001EC1FE /* ExerciseImageDownloading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseImageDownloading.swift; sourceTree = "<group>"; };
+		BE18F47220BC8BE7001EC1FE /* Progress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
+		BE18F47420BC8D74001EC1FE /* ListConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListConfigurable.swift; sourceTree = "<group>"; };
 		BE385BC9209DEEC6001E018E /* MenuOpening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOpening.swift; sourceTree = "<group>"; };
 		BE3B291C20964D1900CA42EA /* UIViewController+AddChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddChildViewController.swift"; sourceTree = "<group>"; };
 		BE3B291F20964DF600CA42EA /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
@@ -163,6 +176,9 @@
 		BEDE4B4820B1939000983C04 /* ExerciseTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTracking.swift; sourceTree = "<group>"; };
 		BEDE4B4A20B193DB00983C04 /* ExerciseTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTracker.swift; sourceTree = "<group>"; };
 		BEDE4B4C20B1A22300983C04 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		BEDE4B4E20B1A2C900983C04 /* ProgressListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressListViewModel.swift; sourceTree = "<group>"; };
+		BEDE4B5020B1A53E00983C04 /* ExerciseEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseEventCell.swift; sourceTree = "<group>"; };
+		BEDE4B5120B1A53E00983C04 /* ExerciseEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseEventCell.xib; sourceTree = "<group>"; };
 		BEEBAAC0209DEFDA002EA251 /* MenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
 		BEEBAAC9209F779C002EA251 /* ContainerFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerFlowControllerTests.swift; sourceTree = "<group>"; };
 		BEEBAACE209F8034002EA251 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
@@ -451,6 +467,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		BE18F47120BC8BDB001EC1FE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BE18F47220BC8BE7001EC1FE /* Progress.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		BE3B291B20964D0700CA42EA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +558,7 @@
 			isa = PBXGroup;
 			children = (
 				BE71C6A72098FDB400DFB510 /* FlowController.swift */,
+				BE18F47420BC8D74001EC1FE /* ListConfigurable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -591,6 +616,7 @@
 			isa = PBXGroup;
 			children = (
 				BEDA7DED20A72DED0009F2C2 /* ImageDownloading.swift */,
+				BE18F46F20BC88AD001EC1FE /* ExerciseImageDownloading.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -598,6 +624,7 @@
 		BEDE4B3F20B192DD00983C04 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				BE18F47120BC8BDB001EC1FE /* Storyboards */,
 				BEDE4B4020B192F500983C04 /* Controllers */,
 				BEDE4B4120B192FC00983C04 /* Models */,
 				BEDE4B4720B1938500983C04 /* Protocols */,
@@ -627,6 +654,8 @@
 		BEDE4B4220B1930000983C04 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				BEDE4B4E20B1A2C900983C04 /* ProgressListViewModel.swift */,
+				BE18F46B20BC86CB001EC1FE /* ExerciseEventViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -634,6 +663,8 @@
 		BEDE4B4320B1930500983C04 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BEDE4B5020B1A53E00983C04 /* ExerciseEventCell.swift */,
+				BEDE4B5120B1A53E00983C04 /* ExerciseEventCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -650,6 +681,7 @@
 			isa = PBXGroup;
 			children = (
 				BEDE4B4820B1939000983C04 /* ExerciseTracking.swift */,
+				BE18F46D20BC86E1001EC1FE /* EventViewModel.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -856,11 +888,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0F6AC4207909FE00587714 /* LaunchScreen.storyboard in Resources */,
+				BEDE4B5320B1A53E00983C04 /* ExerciseEventCell.xib in Resources */,
 				BE0F826A207A7EF800919C51 /* Localizable.strings in Resources */,
 				BE3B292B20965A1B00CA42EA /* Exercises.storyboard in Resources */,
 				BE0F6AF3207940D600587714 /* MenuItemCollectionViewCell.xib in Resources */,
 				BE0F6AC1207909FE00587714 /* Assets.xcassets in Resources */,
 				BE0F6ABF207909FE00587714 /* Container.storyboard in Resources */,
+				BE18F47320BC8BE7001EC1FE /* Progress.storyboard in Resources */,
 				BE0F6AEF2079408B00587714 /* Menu.storyboard in Resources */,
 				BEEBAADC209F8A0D002EA251 /* SmallExerciseCell.xib in Resources */,
 			);
@@ -947,6 +981,8 @@
 				BE0F6ABA207909FE00587714 /* AppDelegate.swift in Sources */,
 				BE3B2929209659D300CA42EA /* ExerciseListViewController.swift in Sources */,
 				BEABD6BD207A9AB700DC2E7D /* CustomColor.swift in Sources */,
+				BE18F46C20BC86CB001EC1FE /* ExerciseEventViewModel.swift in Sources */,
+				BEDE4B5220B1A53E00983C04 /* ExerciseEventCell.swift in Sources */,
 				BEEBAADB209F8A0D002EA251 /* SmallExerciseCell.swift in Sources */,
 				BEF6D40920AB28C10015346D /* ExerciseViewController.swift in Sources */,
 				BEDE4B3C20B1826B00983C04 /* AllExercisesListViewModel.swift in Sources */,
@@ -967,6 +1003,7 @@
 				BE0F6B04207942C200587714 /* UIImage+ImageType.swift in Sources */,
 				BEDE4B4D20B1A22300983C04 /* ProgressViewController.swift in Sources */,
 				BE18C56A20B0A38000DD3677 /* ExerciseFavouriting.swift in Sources */,
+				BEDE4B4F20B1A2C900983C04 /* ProgressListViewModel.swift in Sources */,
 				BEABD6BB207A977200DC2E7D /* MenuViewController.swift in Sources */,
 				BEF6D41D20AB4C230015346D /* MenuFlowController.swift in Sources */,
 				BE0F6AF7207941FD00587714 /* MenuItemViewModel.swift in Sources */,
@@ -976,11 +1013,14 @@
 				BEEBAAD4209F8473002EA251 /* ExerciseFetcher.swift in Sources */,
 				BE3B29222096506700CA42EA /* UIStoryboard+ViewControllers.swift in Sources */,
 				BE0F6B01207942B300587714 /* ImageType.swift in Sources */,
+				BE18F46E20BC86E1001EC1FE /* EventViewModel.swift in Sources */,
 				BEF6D42B20AB5D020015346D /* DependencyFactories.swift in Sources */,
 				BE3B292020964DF600CA42EA /* ViewControllers.swift in Sources */,
+				BE18F47020BC88AD001EC1FE /* ExerciseImageDownloading.swift in Sources */,
 				BEEBAAE3209F91FF002EA251 /* UIView+Swoosh.swift in Sources */,
 				BE71C6A22098F90900DFB510 /* LocalMenuTheme.swift in Sources */,
 				BE0F6B08207944BE00587714 /* LocalMenuItemDataSource.swift in Sources */,
+				BE18F47520BC8D74001EC1FE /* ListConfigurable.swift in Sources */,
 				BE0F6B0A207944F000587714 /* LocalisedKey.swift in Sources */,
 				BEEBAAD7209F887D002EA251 /* ExerciseViewModel.swift in Sources */,
 				BE18C56C20B0C3BB00DD3677 /* FavouriteButtonCoordinator.swift in Sources */,

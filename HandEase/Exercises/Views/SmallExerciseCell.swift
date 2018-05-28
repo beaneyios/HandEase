@@ -24,22 +24,29 @@ class SmallExerciseCell: UICollectionViewCell {
     //MARK: ---- Configuration ----
     func configure(viewModel: ExerciseViewModel) {
         self.thumbnail.image = nil
+        self.configureTitle(titleLabel: viewModel.titleLabel)
+        self.configureFavourite(viewModel: viewModel, animated: false)
+        self.configureTap()
+        
         viewModel.image { (image) in
             self.configureImage(image: image)
         }
-        
-        self.lblTitle.text = viewModel.titleLabel
-        self.configureFavourite(viewModel: viewModel, animated: false)
-        
-        let tappy = UITapGestureRecognizer(target: self, action: #selector(self.select(sender:)))
-        self.addGestureRecognizer(tappy)
-        self.btnFavourite.addTarget(self, action: #selector(favourite), for: .touchUpInside)
     }
     
     func configureFavourite(viewModel: ExerciseViewModel, animated: Bool) {
         FavouriteButtonCoordinator.configureFavourite(favouriteButton: self.btnFavourite,
                                                       favourited: viewModel.isFavourited,
                                                       animated: animated)
+    }
+    
+    private func configureTitle(titleLabel: String) {
+        self.lblTitle.text = titleLabel
+    }
+    
+    private func configureTap() {
+        let tappy = UITapGestureRecognizer(target: self, action: #selector(self.select(sender:)))
+        self.addGestureRecognizer(tappy)
+        self.btnFavourite.addTarget(self, action: #selector(favourite), for: .touchUpInside)
     }
     
     private func configureImage(image: UIImage?) {

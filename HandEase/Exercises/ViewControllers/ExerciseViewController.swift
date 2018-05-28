@@ -66,6 +66,10 @@ class ExerciseViewController: UIViewController {
                                                       animated: true)
     }
     
+    @IBAction func completeExercise(_ sender: Any) {
+        self.viewModel.trackExerciseComplete()
+    }
+    
     @IBAction func goBack(_ sender: Any) {
         self.flowController.closeCurrentVC(viewController: self)
     }

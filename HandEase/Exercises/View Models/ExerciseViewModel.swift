@@ -11,14 +11,14 @@ import UIKit
 
 typealias ImageCompletion = (_ image: UIImage?) -> Void
 
-class ExerciseViewModel {
+class ExerciseViewModel: ExerciseImageDownloading {
     private var exercise: Exercise
     
     private var dependencies: Dependencies
     private var imageDownloader: ImageDownloading { return self.dependencies.imageDownloader }
     private var favouriter: ExerciseFetching & ExerciseFavouriting { return self.dependencies.favouriter }
     
-    typealias Dependencies = HasImageDownloader & HasExerciseFavouriter
+    typealias Dependencies = HasImageDownloader & HasExerciseFavouriter & HasExerciseTracker
     
     init(exercise: Exercise, dependencies: Dependencies) {
         self.exercise = exercise
@@ -44,19 +44,13 @@ class ExerciseViewModel {
         return self.favouriter.favourite(exercise: self.exercise)
     }
     
-    private func handleImageResult(result: ImageResult, completion: @escaping ImageCompletion) {
-        switch result {
-        case .successful(image: let image):
-            completion(image)
-        case .failure(error: let error, defaultImage: let image):
-            //TODO: Handle error logging.
-            print(error)
-            completion(image)
-        }
+    func trackExerciseComplete() {
+        self.dependencies.tracker.trackExerciseCompleted(exercise: self.exercise)
     }
     
     struct Config: Dependencies {        
         var favouriter: ExerciseFavouriting & ExerciseFetching
         var imageDownloader: ImageDownloading
+        var tracker: ExerciseTracking
     }
 }

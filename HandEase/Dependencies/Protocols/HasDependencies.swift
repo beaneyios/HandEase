@@ -25,6 +25,10 @@ protocol HasExerciseFetcher {
     var exerciseFetcher: ExerciseFetching { get }
 }
 
+protocol HasExerciseTracker {
+    var tracker: ExerciseTracking { get }
+}
+
 protocol HasImageDownloader {
     var imageDownloader: ImageDownloading { get }
 }

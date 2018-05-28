@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MBNetworking
 
 typealias SlideMenuExerciseContainer = ViewControllerContaining & MenuOpening
 
@@ -16,8 +17,10 @@ class ContainerFlowController: ExerciseFlowController {
                                 HasExerciseFetcherFactory       &
                                 HasContainerFactory             &
                                 HasMenuFlowControllerFactory    &
-                                HasExerciseFavouriterFactory &
-                                HasExerciseListViewModelFactory
+                                HasExerciseFavouriterFactory    &
+                                HasExerciseListViewModelFactory &
+                                HasExerciseTrackerFactory       &
+                                HasExerciseViewModelFactory
     private var dependencies: Dependencies
     
     struct Config: Dependencies {
@@ -26,7 +29,9 @@ class ContainerFlowController: ExerciseFlowController {
         var imageDownloaderFactory          : ImageDownloaderCreating
         var containerFactory                : ContainerCreating
         var exerciseFavouriterFactory       : ExerciseFavouriterCreating
-        var exerciseListViewModelFactory    : ExerciseListViewModelCreating
+        var exerciseListViewModelFactory    : ListViewModelCreating
+        var exerciseTrackerFactory          : ExerciseTrackerCreating
+        var exerciseViewModelFactory        : ExerciseViewModelCreating
     }
     
     var navigationController: UINavigationController!
@@ -93,13 +98,16 @@ class ContainerFlowController: ExerciseFlowController {
         
         guard let viewController = UIStoryboard.viewController(for: vc) else { return }
         
-        if let exercises = viewController as? ExerciseListViewController {
+        if let exercises = viewController as? ListConfigurable {
             switch vc {
             case ViewControllerRepresentations.allExercises:
                 let viewModel = self.fetchAllExerciseListViewModel()
                 exercises.configure(menuFlowController: self.menuHandler, viewModel: viewModel)
             case ViewControllerRepresentations.myExercises:
                 let viewModel = self.fetchMyExerciseListViewModel()
+                exercises.configure(menuFlowController: self.menuHandler, viewModel: viewModel)
+            case ViewControllerRepresentations.progress:
+                let viewModel = self.fetchProgressListViewModel()
                 exercises.configure(menuFlowController: self.menuHandler, viewModel: viewModel)
             default:
                 let viewModel = self.fetchAllExerciseListViewModel()
@@ -133,21 +141,36 @@ class ContainerFlowController: ExerciseFlowController {
         }
     }
     
-    private func fetchAllExerciseListViewModel() -> AllExercisesListViewModel {
+    private func fetchAllExerciseListViewModel() -> ListViewModel {
         let fetcher                 = self.dependencies.exerciseFetcherFactory.exerciseFetcher()
         let imageDownloaderFactory  = self.dependencies.imageDownloaderFactory
         let favouriter              = self.dependencies.exerciseFavouriterFactory.exerciseFavouriter()
+        let tracker                 = self.dependencies.exerciseTrackerFactory.exerciseTracker()
         return self.dependencies.exerciseListViewModelFactory.allExercisesViewModel(fetcher: fetcher,
                                                                                     imageDownloaderFactory: imageDownloaderFactory,
                                                                                     favouriter: favouriter,
-                                                                                    navigator: self)
+                                                                                    navigator: self,
+                                                                                    tracker: tracker)
     }
     
-    private func fetchMyExerciseListViewModel() -> MyExercisesListViewModel {
+    private func fetchMyExerciseListViewModel() -> ListViewModel {
         let imageDownloaderFactory  = self.dependencies.imageDownloaderFactory
         let favouriter              = self.dependencies.exerciseFavouriterFactory.exerciseFavouriter()
+        let tracker                 = self.dependencies.exerciseTrackerFactory.exerciseTracker()
         return self.dependencies.exerciseListViewModelFactory.myExercisesViewModel(imageDownloaderFactory: imageDownloaderFactory,
                                                                                    favouriter: favouriter,
-                                                                                   navigator: self)
+                                                                                   navigator: self,
+                                                                                   tracker: tracker)
+    }
+    
+    private func fetchProgressListViewModel() -> ListViewModel {
+        let tracker                     = self.dependencies.exerciseTrackerFactory.exerciseTracker()
+        let imageDownloaderFactory      = self.dependencies.imageDownloaderFactory
+        let exerciseViewModelFactory    = self.dependencies.exerciseViewModelFactory
+        let config = ProgressListViewModel.Config(tracker: tracker,
+                                                  imageDownloaderFactory: imageDownloaderFactory,
+                                                  navigator: self,
+                                                  exerciseViewModelFactory: exerciseViewModelFactory)
+        return  ProgressListViewModel(dependencies: config)
     }
 }

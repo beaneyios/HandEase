@@ -13,7 +13,7 @@ struct ViewControllerRepresentations {
     static var myExercises   = StoryboardRepresentation(sbName: "Exercises", sbIdentifier: "myExercises")
     static var allExercises  = StoryboardRepresentation(sbName: "Exercises", sbIdentifier: "allExercises")
     static var remindMe      = StoryboardRepresentation(sbName: "", sbIdentifier: "")
-    static var progress      = StoryboardRepresentation(sbName: "", sbIdentifier: "")
+    static var progress      = StoryboardRepresentation(sbName: "Progress", sbIdentifier: "progress")
     static var leaflets      = StoryboardRepresentation(sbName: "", sbIdentifier: "")
     static var donate        = StoryboardRepresentation(sbName: "", sbIdentifier: "")
     static var about         = StoryboardRepresentation(sbName: "", sbIdentifier: "")

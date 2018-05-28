@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol HasCacherFactory {
+    var cacherFactory: CacherCreating { get }
+}
+
 protocol HasContainerFactory {
     var containerFactory: ContainerCreating { get }
 }
@@ -20,8 +24,16 @@ protocol HasExerciseFavouriterFactory {
     var exerciseFavouriterFactory: ExerciseFavouriterCreating { get }
 }
 
+protocol HasExerciseTrackerFactory {
+    var exerciseTrackerFactory: ExerciseTrackerCreating { get }
+}
+
 protocol HasExerciseListViewModelFactory {
-    var exerciseListViewModelFactory: ExerciseListViewModelCreating { get }
+    var exerciseListViewModelFactory: ListViewModelCreating { get }
+}
+
+protocol HasProgressListViewModelFactory {
+    var progressListViewModelFactory: ListViewModelCreating { get }
 }
 
 protocol HasImageDownloaderFactory {

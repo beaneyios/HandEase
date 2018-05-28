@@ -14,18 +14,16 @@ class ExerciseListViewController: UIViewController {
     
     private var menuFlowController  : MenuOpening!
     private var viewModel           : ListViewModel!
-        
+            
+    override func viewWillAppear(_ animated: Bool) {
+        self.viewModel.bind(cview: self.collectionView)
+    }
+}
+
+extension ExerciseListViewController: ListConfigurable {
     func configure(menuFlowController: MenuOpening, viewModel: ListViewModel) {
         self.menuFlowController = menuFlowController
         self.viewModel          = viewModel
-    }
-    
-    override func viewDidLoad() {
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.viewModel.bind(cview: self.collectionView)
     }
 }
 
