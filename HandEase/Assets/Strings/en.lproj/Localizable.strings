@@ -6,10 +6,13 @@
   Copyright © 2018 Matt Beaney. All rights reserved.
 */
 
-"menu.myExercises"      = "My Exercises";
-"menu.allExercises"     = "All Exercises";
-"menu.remindMe"         = "Remind Me";
-"menu.menuProgress"     = "Progress";
-"menu.menuLeaflets"     = "Leaflets";
-"menu.menuDonate"       = "Donate";
-"menu.menuAbout"        = "About";
+"menu.myExercises"          = "My Exercises";
+"menu.allExercises"         = "All Exercises";
+"menu.remindMe"             = "Remind Me";
+"menu.menuProgress"         = "Progress";
+"menu.menuLeaflets"         = "Leaflets";
+"menu.menuDonate"           = "Donate";
+"menu.menuAbout"            = "About";
+"exercises.myExercises"     = "My Exercises";
+"exercises.allExercises"    = "All Exercises";
+"exercises.progress"        = "Progress";

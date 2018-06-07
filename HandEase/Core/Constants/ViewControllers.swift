@@ -21,6 +21,7 @@ struct ViewControllerRepresentations {
     static var container     = StoryboardRepresentation(sbName: "Container", sbIdentifier: "homeContainer")
     static var exercise      = StoryboardRepresentation(sbName: "Exercises", sbIdentifier: "exercise")
     static var video         = StoryboardRepresentation(sbName: "Exercises", sbIdentifier: "video")
+    static var containerNav  = StoryboardRepresentation(sbName: "Exercises", sbIdentifier: "nav")
 }
 
 extension StoryboardRepresentation: Equatable {
@@ -42,6 +43,7 @@ struct ViewControllers {
     static var container    : UIViewController { return UIStoryboard.viewController(for: ViewControllerRepresentations.container)! }
     static var exercise     : UIViewController { return UIStoryboard.viewController(for: ViewControllerRepresentations.exercise)! }
     static var video        : UIViewController { return UIStoryboard.viewController(for: ViewControllerRepresentations.video)! }
+    static var containerNav : UIViewController { return UIStoryboard.viewController(for: ViewControllerRepresentations.containerNav)! }
 }
 
 struct StoryboardRepresentation {

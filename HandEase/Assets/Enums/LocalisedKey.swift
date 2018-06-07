@@ -17,6 +17,10 @@ enum LocalisedKey: String {
     case menuDonate         = "menu.menuDonate"
     case menuAbout          = "menu.menuAbout"
     
+    case titleMyExercises   = "exercises.myExercises"
+    case titleAllExercises  = "exercises.allExercises"
+    case titleProgress      = "exercises.progress"
+    
     var localisedString: String {
         return NSLocalizedString(self.rawValue, comment: "")
     }

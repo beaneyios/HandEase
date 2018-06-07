@@ -21,9 +21,8 @@ class ProgressViewController: UIViewController {
 }
 
 extension ProgressViewController: ListConfigurable {
-    func configure(menuFlowController: MenuOpening, viewModel: ListViewModel) {
-        self.menuFlowController = menuFlowController
-        self.viewModel          = viewModel
+    func configure(viewModel: ListViewModel) {
+        self.viewModel = viewModel
     }
 }
 

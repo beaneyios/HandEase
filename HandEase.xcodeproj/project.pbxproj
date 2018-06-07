@@ -76,6 +76,7 @@
 		BEDE4B5320B1A53E00983C04 /* ExerciseEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEDE4B5120B1A53E00983C04 /* ExerciseEventCell.xib */; };
 		BEE6076420C9CC1800B53DF1 /* ExerciseFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE6076320C9CC1800B53DF1 /* ExerciseFactories.swift */; };
 		BEE6076620C9CCFA00B53DF1 /* FlowControllerFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE6076520C9CCFA00B53DF1 /* FlowControllerFactories.swift */; };
+		BEE6076820C9CF4400B53DF1 /* ContainerNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE6076720C9CF4400B53DF1 /* ContainerNavigationBarViewController.swift */; };
 		BEEBAAC1209DEFDA002EA251 /* MenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC0209DEFDA002EA251 /* MenuDelegate.swift */; };
 		BEEBAACA209F779C002EA251 /* ContainerFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAAC9209F779C002EA251 /* ContainerFlowControllerTests.swift */; };
 		BEEBAACF209F8034002EA251 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBAACE209F8034002EA251 /* Exercise.swift */; };
@@ -183,6 +184,7 @@
 		BEDE4B5120B1A53E00983C04 /* ExerciseEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseEventCell.xib; sourceTree = "<group>"; };
 		BEE6076320C9CC1800B53DF1 /* ExerciseFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFactories.swift; sourceTree = "<group>"; };
 		BEE6076520C9CCFA00B53DF1 /* FlowControllerFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowControllerFactories.swift; sourceTree = "<group>"; };
+		BEE6076720C9CF4400B53DF1 /* ContainerNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerNavigationBarViewController.swift; sourceTree = "<group>"; };
 		BEEBAAC0209DEFDA002EA251 /* MenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
 		BEEBAAC9209F779C002EA251 /* ContainerFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerFlowControllerTests.swift; sourceTree = "<group>"; };
 		BEEBAACE209F8034002EA251 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 			isa = PBXGroup;
 			children = (
 				BEB06B2620868A1E0051B0A5 /* ContainerViewController.swift */,
+				BEE6076720C9CF4400B53DF1 /* ContainerNavigationBarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -992,6 +995,7 @@
 				BEEBAADB209F8A0D002EA251 /* SmallExerciseCell.swift in Sources */,
 				BEF6D40920AB28C10015346D /* ExerciseViewController.swift in Sources */,
 				BEDE4B3C20B1826B00983C04 /* AllExercisesListViewModel.swift in Sources */,
+				BEE6076820C9CF4400B53DF1 /* ContainerNavigationBarViewController.swift in Sources */,
 				BE0F6B062079444F00587714 /* MenuItemDataSource.swift in Sources */,
 				BEEBAAD1209F8404002EA251 /* ExerciseFetching.swift in Sources */,
 				BEF6D42720AB5C7D0015346D /* DependencyFactoryProtocols.swift in Sources */,

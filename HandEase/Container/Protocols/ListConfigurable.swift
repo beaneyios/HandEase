@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ListConfigurable {
-    func configure(menuFlowController: MenuOpening, viewModel: ListViewModel)
+    func configure(viewModel: ListViewModel)
 }

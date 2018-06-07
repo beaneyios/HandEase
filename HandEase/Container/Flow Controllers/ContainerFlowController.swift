@@ -94,26 +94,37 @@ class ContainerFlowController: ExerciseFlowController {
             return
         }
         
-        guard let viewController = UIStoryboard.viewController(for: vc) else { return }
+        guard let exerciseViewController     = UIStoryboard.viewController(for: vc) else { return }
+        guard let navContainerViewController = ViewControllers.containerNav as? ContainerNavigationBarViewController else { return }
         
-        if let exercises = viewController as? ListConfigurable {
+        if let exercises = exerciseViewController as? ListConfigurable {
+            var navTitle = ""
+            
             switch vc {
             case ViewControllerRepresentations.allExercises:
                 let viewModel = self.fetchAllExerciseListViewModel()
-                exercises.configure(menuFlowController: self.menuHandler, viewModel: viewModel)
+                exercises.configure(viewModel: viewModel)
+                navTitle = LocalisedKey.titleAllExercises.localisedString
             case ViewControllerRepresentations.myExercises:
                 let viewModel = self.fetchMyExerciseListViewModel()
-                exercises.configure(menuFlowController: self.menuHandler, viewModel: viewModel)
+                exercises.configure(viewModel: viewModel)
+                navTitle = LocalisedKey.titleMyExercises.localisedString
             case ViewControllerRepresentations.progress:
                 let viewModel = self.fetchProgressListViewModel()
-                exercises.configure(menuFlowController: self.menuHandler, viewModel: viewModel)
+                exercises.configure(viewModel: viewModel)
+                navTitle = LocalisedKey.titleProgress.localisedString
             default:
                 let viewModel = self.fetchAllExerciseListViewModel()
-                exercises.configure(menuFlowController: self.menuHandler, viewModel: viewModel)
+                exercises.configure(viewModel: viewModel)
+                navTitle = LocalisedKey.titleAllExercises.localisedString
             }
+            
+            navContainerViewController.configure(menuFlowController: self.menuHandler,
+                                                 childViewController: exerciseViewController,
+                                                 strTitle: navTitle)
         }
         
-        self.setViewControllerOnContainer(viewController: viewController)
+        self.setViewControllerOnContainer(viewController: navContainerViewController)
     }
     
     /**
