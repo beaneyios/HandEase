@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,39 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="paN-gJ-fvp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otO-cD-IOe">
-                                        <rect key="frame" x="16" y="18" width="50" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                        <state key="normal" title="Menu">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="toggleMenu:" destination="tlT-1U-AhN" eventType="touchUpInside" id="pqN-J7-as9"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9J-ED-NJn">
-                                        <rect key="frame" x="147.5" y="18" width="80" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.14117647059999999" green="0.36862745099999999" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="otO-cD-IOe" secondAttribute="bottom" constant="11" id="8C0-xc-I4P"/>
-                                    <constraint firstAttribute="bottom" secondItem="t9J-ED-NJn" secondAttribute="bottom" constant="11" id="OYR-iz-Oh7"/>
-                                    <constraint firstItem="otO-cD-IOe" firstAttribute="leading" secondItem="paN-gJ-fvp" secondAttribute="leading" constant="16" id="VtY-Tb-43R"/>
-                                    <constraint firstItem="t9J-ED-NJn" firstAttribute="centerX" secondItem="paN-gJ-fvp" secondAttribute="centerX" id="jzb-XQ-OCX"/>
-                                    <constraint firstItem="t9J-ED-NJn" firstAttribute="top" secondItem="paN-gJ-fvp" secondAttribute="topMargin" constant="-10" id="m2O-hc-XGM"/>
-                                    <constraint firstItem="otO-cD-IOe" firstAttribute="top" secondItem="paN-gJ-fvp" secondAttribute="topMargin" constant="-10" id="wyS-ey-oZJ"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2F4-Tc-uWF">
-                                <rect key="frame" x="6" y="70" width="363" height="591"/>
+                                <rect key="frame" x="6" y="26" width="363" height="635"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="8" id="ks5-q3-AUn">
                                     <size key="itemSize" width="50" height="50"/>
@@ -65,12 +33,9 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ktU-X3-Gc5" firstAttribute="bottom" secondItem="2F4-Tc-uWF" secondAttribute="bottom" constant="6" id="34Q-F8-Ly7"/>
-                            <constraint firstItem="paN-gJ-fvp" firstAttribute="top" secondItem="FW6-wN-4BM" secondAttribute="top" id="IaE-cE-KGz"/>
                             <constraint firstItem="2F4-Tc-uWF" firstAttribute="trailing" secondItem="ktU-X3-Gc5" secondAttribute="trailing" constant="-6" id="i7X-x2-R33"/>
-                            <constraint firstItem="paN-gJ-fvp" firstAttribute="leading" secondItem="FW6-wN-4BM" secondAttribute="leading" id="iRh-6y-mwV"/>
-                            <constraint firstItem="2F4-Tc-uWF" firstAttribute="top" secondItem="paN-gJ-fvp" secondAttribute="bottom" constant="6" id="qNO-mx-sIb"/>
+                            <constraint firstItem="2F4-Tc-uWF" firstAttribute="top" secondItem="ktU-X3-Gc5" secondAttribute="top" constant="6" id="sdZ-ry-Xms"/>
                             <constraint firstItem="2F4-Tc-uWF" firstAttribute="leading" secondItem="ktU-X3-Gc5" secondAttribute="leading" constant="6" id="zDB-9x-ev1"/>
-                            <constraint firstAttribute="trailing" secondItem="paN-gJ-fvp" secondAttribute="trailing" id="zWo-KV-YDa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ktU-X3-Gc5"/>
                     </view>
