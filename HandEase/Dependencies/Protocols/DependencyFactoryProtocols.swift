@@ -17,6 +17,10 @@ protocol ContainerCreating {
     func container(flowController: ExerciseFlowController, menuDelegate: MenuHandler) -> SlideMenuExerciseContainer?
 }
 
+protocol ExerciseFlowControllerCreating {
+    func exerciseFlowController() -> ExerciseFlowController
+}
+
 protocol ExerciseFavouriterCreating {
     func exerciseFavouriter() -> ExerciseFetching & ExerciseFavouriting
 }

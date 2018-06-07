@@ -1,37 +1,22 @@
 //
-//  DependencyFactories.swift
+//  ExerciseFactories.swift
 //  HandEase
 //
-//  Created by Matt Beaney on 15/05/2018.
+//  Created by Matt Beaney on 07/06/2018.
 //  Copyright © 2018 Matt Beaney. All rights reserved.
 //
 
 import Foundation
 import MBNetworking
 
-class CacherFactory: CacherCreating {
-    func cacher() -> Cacher {
-        return Cacher(ttlManager: TTLManager())
-    }
-}
-
-class ContainerFactory: ContainerCreating {
-    func container(flowController: ExerciseFlowController, menuDelegate: MenuHandler) -> SlideMenuExerciseContainer? {
-        guard let container = ViewControllers.container as? ContainerViewController else {
-            return nil
-        }
-        
-        container.configure(flowController: flowController, menuDelegate: menuDelegate)
-        return container
-    }
-}
-
+/// Creates a class that will fetch a list of exercises.
 class ExerciseFetcherFactory: ExerciseFetcherCreating {
     func exerciseFetcher() -> ExerciseFetching {
         return ExerciseFetcher(getter: NetworkGetter(), cacher: Cacher(ttlManager: TTLManager()))
     }
 }
 
+/// Creates a class that manages favouriting of exercises.
 class ExerciseFavouriterFactory: ExerciseFavouriterCreating {
     func exerciseFavouriter() -> ExerciseFavouriting & ExerciseFetching {
         let config = ExerciseFavouriter.Config(cacher: Cacher(ttlManager: TTLManager()))
@@ -39,6 +24,7 @@ class ExerciseFavouriterFactory: ExerciseFavouriterCreating {
     }
 }
 
+/// Creates a class that facilitates binding of exercises to a collection view.
 class ExerciseListViewModelFactory: ListViewModelCreating {
     func progressListViewModel(tracker: ExerciseTracking,
                                imageDownloaderFactory: ImageDownloaderCreating,
@@ -57,10 +43,10 @@ class ExerciseListViewModelFactory: ListViewModelCreating {
                                navigator: ExerciseFlowController,
                                tracker: ExerciseTracking) -> ListViewModel {
         let config = AllExercisesListViewModel.Config(exerciseFetcher: fetcher,
-                                                            navigator: navigator,
-                                                            imageDownloaderFactory: imageDownloaderFactory,
-                                                            favouriter: favouriter,
-                                                            tracker: tracker)
+                                                      navigator: navigator,
+                                                      imageDownloaderFactory: imageDownloaderFactory,
+                                                      favouriter: favouriter,
+                                                      tracker: tracker)
         return AllExercisesListViewModel(dependencies: config)
     }
     
@@ -76,6 +62,7 @@ class ExerciseListViewModelFactory: ListViewModelCreating {
     }
 }
 
+/// Creates a class that tracks exercise interactions.
 class ExerciseTrackerFactory: ExerciseTrackerCreating {
     func exerciseTracker() -> ExerciseTracking {
         let cacher = Cacher(ttlManager: TTLManager())
@@ -84,7 +71,8 @@ class ExerciseTrackerFactory: ExerciseTrackerCreating {
     }
 }
 
-class ExerciseViewModelFactory: ExerciseViewModelCreating {    
+/// Creates a class that manages a single exercise.
+class ExerciseViewModelFactory: ExerciseViewModelCreating {
     func exerciseViewModel(exercise: Exercise) -> ExerciseViewModel {
         
         let favouriterFactory       = ExerciseFavouriterFactory()
@@ -95,19 +83,5 @@ class ExerciseViewModelFactory: ExerciseViewModelCreating {
                                               imageDownloader   : imageDownloaderFactory.imageDownloader(),
                                               tracker           : tracker.exerciseTracker())
         return ExerciseViewModel(exercise: exercise, dependencies: config)
-    }
-}
-
-class ImageDownloaderFactory: ImageDownloaderCreating {
-    func imageDownloader() -> ImageDownloader {
-        let getter = NetworkGetter()
-        let cacher = Cacher(ttlManager: TTLManager())
-        return ImageDownloader(getter: getter, cacher: cacher)
-    }
-}
-
-class MenuFlowControllerFactory: MenuFlowControllerCreating {
-    func menuFlowController(parent: FlowController) -> MenuHandler {
-        return MenuFlowController(parentFlowController: parent)
     }
 }

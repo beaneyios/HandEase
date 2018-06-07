@@ -43,9 +43,7 @@ class ContainerFlowController: ExerciseFlowController {
     init(rootVC: StoryboardRepresentation, dependencies: Dependencies) {
         self.dependencies = dependencies
         self.rootVC = rootVC
-    }
-    
-    func configure() {
+        
         self.menuHandler = dependencies.menuHandlerFactory.menuFlowController(parent: self)
         self.containerVC = dependencies.containerFactory.container(flowController: self, menuDelegate: self.menuHandler)
         

@@ -21,18 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func fetchInitialViewController() -> UIViewController? {
-        let config = ContainerFlowController.Config(menuHandlerFactory          : MenuFlowControllerFactory(),
-                                                    exerciseFetcherFactory      : ExerciseFetcherFactory(),
-                                                    imageDownloaderFactory      : ImageDownloaderFactory(),
-                                                    containerFactory            : ContainerFactory(),
-                                                    exerciseFavouriterFactory   : ExerciseFavouriterFactory(),
-                                                    exerciseListViewModelFactory: ExerciseListViewModelFactory(),
-                                                    exerciseTrackerFactory      : ExerciseTrackerFactory(), exerciseViewModelFactory: ExerciseViewModelFactory())
-        
-        let containerFlowController = ContainerFlowController(rootVC: ViewControllerRepresentations.allExercises,
-                                                              dependencies: config)
-        containerFlowController.configure()
-        
+        let containerFlowController = ContainerFlowControllerFactory().exerciseFlowController()
         self.flowController = containerFlowController
         return containerFlowController.navigationController
     }    
