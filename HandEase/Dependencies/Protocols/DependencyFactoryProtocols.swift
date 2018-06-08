@@ -46,19 +46,7 @@ protocol MenuFlowControllerCreating {
 }
 
 protocol ListViewModelCreating {
-    func allExercisesViewModel(fetcher: ExerciseFetching,
-                               imageDownloaderFactory: ImageDownloaderCreating,
-                               favouriter: ExerciseFetching & ExerciseFavouriting,
-                               navigator: ExerciseFlowController,
-                               tracker: ExerciseTracking) -> ListViewModel
-    
-    func myExercisesViewModel(imageDownloaderFactory: ImageDownloaderCreating,
-                              favouriter: ExerciseFetching & ExerciseFavouriting,
-                              navigator: ExerciseFlowController,
-                              tracker: ExerciseTracking) -> ListViewModel
-    
-    func progressListViewModel(tracker: ExerciseTracking,
-                               imageDownloaderFactory: ImageDownloaderCreating,
-                               exerciseViewModelFactory: ExerciseViewModelCreating,
-                               navigator: ExerciseFlowController) -> ListViewModel
+    func allExercisesViewModel(navigator: ExerciseFlowController) -> ListViewModel
+    func myExercisesViewModel(navigator: ExerciseFlowController) -> ListViewModel
+    func progressListViewModel(navigator: ExerciseFlowController) -> ListViewModel
 }

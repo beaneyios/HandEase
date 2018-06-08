@@ -16,6 +16,11 @@ enum ImageType {
     case menuPersonIcon
     case menuPlusIcon
     case menuHeartIcon
+    
+    case tabPersonIcon
+    case tabHeartIcon
+    case tabDoublePageIcon
+    
     case exerciseHeartIcon
     case exerciseHeartIconSaved
     
@@ -28,6 +33,11 @@ enum ImageType {
             case .menuPersonIcon: return "person"
             case .menuPlusIcon: return "plus"
             case .menuHeartIcon: return "heart-unsaved"
+            
+            case .tabPersonIcon: return "tab-person"
+            case .tabHeartIcon: return "tab-heart"
+            case .tabDoublePageIcon: return "tab-double-page"
+            
             case .exerciseHeartIcon: return "heart-unsaved"
             case .exerciseHeartIconSaved: return "heart-saved"
         }
@@ -42,6 +52,11 @@ enum ImageType {
             .menuPersonIcon,
             .menuPlusIcon,
             .menuHeartIcon,
+            
+            .tabPersonIcon,
+            .tabHeartIcon,
+            .tabDoublePageIcon,
+            
             .exerciseHeartIcon,
             .exerciseHeartIconSaved
         ]

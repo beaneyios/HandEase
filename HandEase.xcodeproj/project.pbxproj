@@ -46,6 +46,7 @@
 		BE3B2929209659D300CA42EA /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B2928209659D300CA42EA /* ExerciseListViewController.swift */; };
 		BE3B292B20965A1B00CA42EA /* Exercises.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE3B292A20965A1B00CA42EA /* Exercises.storyboard */; };
 		BE3B292D20965AC500CA42EA /* UIView+AutoLayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B292C20965AC500CA42EA /* UIView+AutoLayoutHelpers.swift */; };
+		BE54AF0F20CB2B3500906000 /* TabBarFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE54AF0E20CB2B3500906000 /* TabBarFlowController.swift */; };
 		BE71C6A02098F8BA00DFB510 /* MenuTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71C69F2098F8BA00DFB510 /* MenuTheme.swift */; };
 		BE71C6A22098F90900DFB510 /* LocalMenuTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71C6A12098F90900DFB510 /* LocalMenuTheme.swift */; };
 		BE71C6A52098FB1F00DFB510 /* ContainerFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71C6A42098FB1F00DFB510 /* ContainerFlowController.swift */; };
@@ -154,6 +155,7 @@
 		BE3B2928209659D300CA42EA /* ExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
 		BE3B292A20965A1B00CA42EA /* Exercises.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exercises.storyboard; sourceTree = "<group>"; };
 		BE3B292C20965AC500CA42EA /* UIView+AutoLayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayoutHelpers.swift"; sourceTree = "<group>"; };
+		BE54AF0E20CB2B3500906000 /* TabBarFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlowController.swift; sourceTree = "<group>"; };
 		BE71C69F2098F8BA00DFB510 /* MenuTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTheme.swift; sourceTree = "<group>"; };
 		BE71C6A12098F90900DFB510 /* LocalMenuTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMenuTheme.swift; sourceTree = "<group>"; };
 		BE71C6A42098FB1F00DFB510 /* ContainerFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerFlowController.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				BE3B2925209659B900CA42EA /* Exercises */,
 				BE0F6AE72079404600587714 /* Menu */,
 				BEDE4B3F20B192DD00983C04 /* Progress */,
+				BE54AF0B20CB2AFC00906000 /* Tab Bar */,
 			);
 			path = HandEase;
 			sourceTree = "<group>";
@@ -550,6 +553,30 @@
 				BE3B292A20965A1B00CA42EA /* Exercises.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		BE54AF0B20CB2AFC00906000 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				BE54AF0D20CB2B1800906000 /* Flow Controllers */,
+				BE54AF0C20CB2B1200906000 /* View Controllers */,
+			);
+			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		BE54AF0C20CB2B1200906000 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BE54AF0D20CB2B1800906000 /* Flow Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE54AF0E20CB2B3500906000 /* TabBarFlowController.swift */,
+			);
+			path = "Flow Controllers";
 			sourceTree = "<group>";
 		};
 		BE71C6A32098FAFD00DFB510 /* Flow Controllers */ = {
@@ -1019,6 +1046,7 @@
 				BEF6D41D20AB4C230015346D /* MenuFlowController.swift in Sources */,
 				BE0F6AF7207941FD00587714 /* MenuItemViewModel.swift in Sources */,
 				BE3B291D20964D1900CA42EA /* UIViewController+AddChildViewController.swift in Sources */,
+				BE54AF0F20CB2B3500906000 /* TabBarFlowController.swift in Sources */,
 				BEF6D42920AB5CB50015346D /* HasFactoryDependencies.swift in Sources */,
 				BEDE4B4920B1939000983C04 /* ExerciseTracking.swift in Sources */,
 				BEEBAAD4209F8473002EA251 /* ExerciseFetcher.swift in Sources */,

@@ -26,10 +26,25 @@ class ExerciseFavouriterFactory: ExerciseFavouriterCreating {
 
 /// Creates a class that facilitates binding of exercises to a collection view.
 class ExerciseListViewModelFactory: ListViewModelCreating {
-    func progressListViewModel(tracker: ExerciseTracking,
-                               imageDownloaderFactory: ImageDownloaderCreating,
-                               exerciseViewModelFactory: ExerciseViewModelCreating,
-                               navigator: ExerciseFlowController) -> ListViewModel {
+    private var exerciseViewModelFactory    : ExerciseViewModelCreating
+    private var favouriter                  : ExerciseFetching & ExerciseFavouriting
+    private var fetcher                     : ExerciseFetching
+    private var imageDownloaderFactory      : ImageDownloaderCreating
+    private var tracker                     : ExerciseTracking
+    
+    init(exerciseViewModelFactory: ExerciseViewModelCreating,
+         fetcher: ExerciseFetching,
+         favouriter: ExerciseFetching & ExerciseFavouriting,
+         imageDownloaderFactory: ImageDownloaderCreating,
+         tracker: ExerciseTracking) {
+        self.tracker = tracker
+        self.imageDownloaderFactory = imageDownloaderFactory
+        self.exerciseViewModelFactory = exerciseViewModelFactory
+        self.fetcher = fetcher
+        self.favouriter = favouriter
+    }
+    
+    func progressListViewModel(navigator: ExerciseFlowController) -> ListViewModel {
         let config = ProgressListViewModel.Config(tracker: tracker,
                                                   imageDownloaderFactory: imageDownloaderFactory,
                                                   navigator: navigator,
@@ -37,11 +52,7 @@ class ExerciseListViewModelFactory: ListViewModelCreating {
         return ProgressListViewModel(dependencies: config)
     }
     
-    func allExercisesViewModel(fetcher: ExerciseFetching,
-                               imageDownloaderFactory: ImageDownloaderCreating,
-                               favouriter: ExerciseFetching & ExerciseFavouriting,
-                               navigator: ExerciseFlowController,
-                               tracker: ExerciseTracking) -> ListViewModel {
+    func allExercisesViewModel(navigator: ExerciseFlowController) -> ListViewModel {
         let config = AllExercisesListViewModel.Config(exerciseFetcher: fetcher,
                                                       navigator: navigator,
                                                       imageDownloaderFactory: imageDownloaderFactory,
@@ -50,10 +61,7 @@ class ExerciseListViewModelFactory: ListViewModelCreating {
         return AllExercisesListViewModel(dependencies: config)
     }
     
-    func myExercisesViewModel(imageDownloaderFactory: ImageDownloaderCreating,
-                              favouriter: ExerciseFetching & ExerciseFavouriting,
-                              navigator: ExerciseFlowController,
-                              tracker: ExerciseTracking) -> ListViewModel {
+    func myExercisesViewModel(navigator: ExerciseFlowController) -> ListViewModel {
         let config = MyExercisesListViewModel.Config(navigator: navigator,
                                                      imageDownloaderFactory: imageDownloaderFactory,
                                                      favouriter: favouriter,

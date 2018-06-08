@@ -17,14 +17,35 @@ class MenuFlowControllerFactory: MenuFlowControllerCreating {
 class ContainerFlowControllerFactory: ExerciseFlowControllerCreating {
     func exerciseFlowController() -> ExerciseFlowController {
         let config = ContainerFlowController.Config(menuHandlerFactory          : MenuFlowControllerFactory(),
-                                                    exerciseFetcherFactory      : ExerciseFetcherFactory(),
                                                     imageDownloaderFactory      : ImageDownloaderFactory(),
                                                     containerFactory            : ContainerFactory(),
-                                                    exerciseFavouriterFactory   : ExerciseFavouriterFactory(),
-                                                    exerciseListViewModelFactory: ExerciseListViewModelFactory(),
-                                                    exerciseTrackerFactory      : ExerciseTrackerFactory(), exerciseViewModelFactory: ExerciseViewModelFactory())
-        
+                                                    exerciseListViewModelFactory: self.exerciseListViewModelFactory())
         return ContainerFlowController(rootVC: ViewControllerRepresentations.allExercises,
                                        dependencies: config)
+    }
+    
+    func exerciseListViewModelFactory() -> ListViewModelCreating {
+        return ExerciseListViewModelFactory(exerciseViewModelFactory: ExerciseViewModelFactory(),
+                                            fetcher: ExerciseFetcherFactory().exerciseFetcher(),
+                                            favouriter: ExerciseFavouriterFactory().exerciseFavouriter(),
+                                            imageDownloaderFactory: ImageDownloaderFactory(),
+                                            tracker: ExerciseTrackerFactory().exerciseTracker())
+    }
+}
+
+class TabBarFlowControllerFactory: ExerciseFlowControllerCreating {
+    func exerciseFlowController() -> ExerciseFlowController {
+        let config = TabBarFlowController.Config(imageDownloaderFactory: ImageDownloaderFactory(),
+                                                 exerciseListViewModelFactory: self.exerciseListViewModelFactory())
+        
+        return TabBarFlowController(dependencies: config)
+    }
+    
+    func exerciseListViewModelFactory() -> ListViewModelCreating {
+        return ExerciseListViewModelFactory(exerciseViewModelFactory: ExerciseViewModelFactory(),
+                                            fetcher: ExerciseFetcherFactory().exerciseFetcher(),
+                                            favouriter: ExerciseFavouriterFactory().exerciseFavouriter(),
+                                            imageDownloaderFactory: ImageDownloaderFactory(),
+                                            tracker: ExerciseTrackerFactory().exerciseTracker())
     }
 }

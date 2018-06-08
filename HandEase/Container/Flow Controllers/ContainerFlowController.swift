@@ -14,24 +14,16 @@ typealias SlideMenuExerciseContainer = ViewControllerContaining & MenuOpening
 
 class ContainerFlowController: ExerciseFlowController {
     typealias Dependencies =    HasImageDownloaderFactory       &
-                                HasExerciseFetcherFactory       &
                                 HasContainerFactory             &
                                 HasMenuFlowControllerFactory    &
-                                HasExerciseFavouriterFactory    &
-                                HasExerciseListViewModelFactory &
-                                HasExerciseTrackerFactory       &
-                                HasExerciseViewModelFactory
+                                HasExerciseListViewModelFactory
     private var dependencies: Dependencies
     
     struct Config: Dependencies {
         var menuHandlerFactory              : MenuFlowControllerFactory
-        var exerciseFetcherFactory          : ExerciseFetcherCreating
         var imageDownloaderFactory          : ImageDownloaderCreating
         var containerFactory                : ContainerCreating
-        var exerciseFavouriterFactory       : ExerciseFavouriterCreating
         var exerciseListViewModelFactory    : ListViewModelCreating
-        var exerciseTrackerFactory          : ExerciseTrackerCreating
-        var exerciseViewModelFactory        : ExerciseViewModelCreating
     }
     
     var navigationController: UINavigationController!
@@ -52,26 +44,6 @@ class ContainerFlowController: ExerciseFlowController {
             navigationController.setNavigationBarHidden(true, animated: false)
             self.navigationController = navigationController
         }
-    }
-    
-    /**
-     Handles opening a specific exercise.
-     - parameter exercise: The view model representing the exercise itself.
-    */
-    func exerciseTapped(exercise: ExerciseViewModel) {
-        guard let vc = ViewControllers.exercise as? ExerciseViewController else { return }
-        vc.configure(flowController: self, exercise: exercise)
-        self.navigationController.pushViewController(vc, animated: true)
-    }
-    
-    /**
-     Handles opening a specific exercise video.
-     - parameter exercise: The view model representing the exercise itself.
-    */
-    func exerciseVideoTapped(exercise: ExerciseViewModel) {
-        guard let vc = ViewControllers.video as? ExerciseVideoViewController else { return }
-        vc.configure(exercise: exercise, flowController: self)
-        self.navigationController.pushViewController(vc, animated: true)
     }
     
     /**
@@ -127,13 +99,6 @@ class ContainerFlowController: ExerciseFlowController {
         self.setViewControllerOnContainer(viewController: navContainerViewController)
     }
     
-    /**
-     Whatever view sits on top of the stack, this will close it.
-    */
-    func closeCurrentVC(viewController: UIViewController) {
-        self.navigationController.popViewController(animated: true)
-    }
-    
     private func setViewControllerOnContainer(viewController: UIViewController) {
         let setClosure = { (_ viewController: UIViewController) in
             self.containerVC.setCurrentViewController(viewController: viewController)
@@ -151,35 +116,14 @@ class ContainerFlowController: ExerciseFlowController {
     }
     
     private func fetchAllExerciseListViewModel() -> ListViewModel {
-        let fetcher                 = self.dependencies.exerciseFetcherFactory.exerciseFetcher()
-        let imageDownloaderFactory  = self.dependencies.imageDownloaderFactory
-        let favouriter              = self.dependencies.exerciseFavouriterFactory.exerciseFavouriter()
-        let tracker                 = self.dependencies.exerciseTrackerFactory.exerciseTracker()
-        return self.dependencies.exerciseListViewModelFactory.allExercisesViewModel(fetcher: fetcher,
-                                                                                    imageDownloaderFactory: imageDownloaderFactory,
-                                                                                    favouriter: favouriter,
-                                                                                    navigator: self,
-                                                                                    tracker: tracker)
+        return self.dependencies.exerciseListViewModelFactory.allExercisesViewModel(navigator: self)
     }
     
     private func fetchMyExerciseListViewModel() -> ListViewModel {
-        let imageDownloaderFactory  = self.dependencies.imageDownloaderFactory
-        let favouriter              = self.dependencies.exerciseFavouriterFactory.exerciseFavouriter()
-        let tracker                 = self.dependencies.exerciseTrackerFactory.exerciseTracker()
-        return self.dependencies.exerciseListViewModelFactory.myExercisesViewModel(imageDownloaderFactory: imageDownloaderFactory,
-                                                                                   favouriter: favouriter,
-                                                                                   navigator: self,
-                                                                                   tracker: tracker)
+        return self.dependencies.exerciseListViewModelFactory.myExercisesViewModel(navigator: self)
     }
     
     private func fetchProgressListViewModel() -> ListViewModel {
-        let tracker                     = self.dependencies.exerciseTrackerFactory.exerciseTracker()
-        let imageDownloaderFactory      = self.dependencies.imageDownloaderFactory
-        let exerciseViewModelFactory    = self.dependencies.exerciseViewModelFactory
-        let config = ProgressListViewModel.Config(tracker: tracker,
-                                                  imageDownloaderFactory: imageDownloaderFactory,
-                                                  navigator: self,
-                                                  exerciseViewModelFactory: exerciseViewModelFactory)
-        return  ProgressListViewModel(dependencies: config)
+        return self.dependencies.exerciseListViewModelFactory.progressListViewModel(navigator: self)
     }
 }

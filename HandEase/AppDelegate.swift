@@ -21,9 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func fetchInitialViewController() -> UIViewController? {
-        let containerFlowController = ContainerFlowControllerFactory().exerciseFlowController()
-        self.flowController = containerFlowController
-        return containerFlowController.navigationController
-    }    
+        let flowController = TabBarFlowControllerFactory().exerciseFlowController()
+        self.flowController = flowController
+        return flowController.navigationController
+    }
 }
-
