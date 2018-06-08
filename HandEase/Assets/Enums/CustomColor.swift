@@ -12,6 +12,9 @@ import UIKit
 enum CustomColor {
     case menuItemForeColor
     case menuItemBackColor
+    
+    case tabItemForeColor
+    
     case swooshSelectionColor
     
     var uiColor: UIColor {
@@ -19,6 +22,7 @@ enum CustomColor {
         case .menuItemForeColor: return UIColor.white
         case .menuItemBackColor: return #colorLiteral(red: 0.1411764706, green: 0.368627451, blue: 0.6980392157, alpha: 1)
         case .swooshSelectionColor: return #colorLiteral(red: 0.1411764706, green: 0.368627451, blue: 0.6980392157, alpha: 1)
+        case .tabItemForeColor: return #colorLiteral(red: 0.1411764706, green: 0.368627451, blue: 0.6980392157, alpha: 1)
         }
     }
 }

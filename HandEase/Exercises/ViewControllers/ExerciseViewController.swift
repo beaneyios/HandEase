@@ -17,8 +17,8 @@ class ExerciseViewController: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var btnFavourite: UIButton!
     
-    private var flowController: ExerciseFlowController!
-    private var viewModel: ExerciseViewModel!
+    private var flowController  : ExerciseFlowController!
+    private var viewModel       : ExerciseViewModel!
     
     override func viewDidLoad() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil

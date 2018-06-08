@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class TabBarFlowController: ExerciseFlowController {
-    typealias Dependencies =    HasImageDownloaderFactory       &
+    typealias Dependencies =    HasImageDownloaderFactory &
                                 HasExerciseListViewModelFactory
     private var dependencies: Dependencies
     
@@ -31,13 +31,19 @@ class TabBarFlowController: ExerciseFlowController {
         
     func setRootViewController() {
         let allExercisesVC  = ViewControllers.allExercises
-        allExercisesVC.tabBarItem = UITabBarItem(title: "All Exercises", image: UIImage(type: .tabDoublePageIcon), selectedImage: nil)
+        allExercisesVC.tabBarItem = UITabBarItem(title: "All Exercises",
+                                                 image: UIImage(type: .tabDoublePageIcon),
+                                                 selectedImage: nil)
         
         let myExercisesVC   = ViewControllers.myExercises
-        myExercisesVC.tabBarItem = UITabBarItem(title: "My Exercises", image: UIImage(type: .tabHeartIcon), selectedImage: nil)
+        myExercisesVC.tabBarItem = UITabBarItem(title: "My Exercises",
+                                                image: UIImage(type: .tabHeartIcon),
+                                                selectedImage: nil)
         
         let progressVC      = ViewControllers.progress
-        progressVC.tabBarItem = UITabBarItem(title: "Progress", image: UIImage(type: .tabPersonIcon), selectedImage: nil)
+        progressVC.tabBarItem = UITabBarItem(title: "Progress",
+                                             image: UIImage(type: .tabPersonIcon),
+                                             selectedImage: nil)
         
         guard   let allExercisesList    = allExercisesVC as? ListConfigurable,
                 let myExercisesList     = myExercisesVC as? ListConfigurable,
@@ -57,13 +63,12 @@ class TabBarFlowController: ExerciseFlowController {
         progressList.configure(viewModel: progressViewModel)
         
         self.tabBar.viewControllers = [allExercisesVC, myExercisesVC, progressVC]
+        self.tabBar.tabBar.tintColor = CustomColor.tabItemForeColor.uiColor
         
         let navigationController = UINavigationController(rootViewController: self.tabBar)
         navigationController.setNavigationBarHidden(true, animated: false)
         self.navigationController = navigationController
     }
     
-    func navigate(to vc: StoryboardRepresentation) {
-        
-    }
+    func navigate(to vc: StoryboardRepresentation) {}
 }
